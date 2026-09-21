@@ -1,9 +1,10 @@
 <?php
 class DB extends DBmysql {
    public $dbhost = 'localhost';
-   public $dbuser = 'itsmuser';
-   public $dbpassword = 'S%40D%25cure';
-   public $dbdefault = 'ITSM';
+   public $dbuser = 'root';
+   public $dbpassword = '';
+   public $dbdefault = 'glpi';
+   public $use_timezones = true;
    public $use_utf8mb4 = true;
    public $allow_myisam = false;
    public $allow_datetime = false;

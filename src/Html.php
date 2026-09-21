@@ -721,12 +721,12 @@ class Html
             $ref_title
          </span>";
         }
-
         if (is_array($ref_btts) && count($ref_btts)) {
             foreach ($ref_btts as $key => $val) {
                 echo "<a class='btn btn-outline-secondary' href='" . $key . "'>" . $val . "</a>";
             }
         }
+
         echo "</div>";
     }
 

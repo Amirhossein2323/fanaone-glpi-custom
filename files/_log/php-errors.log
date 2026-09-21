@@ -149164,3 +149164,137 @@ Response:
   Backtrace :
   ajax/fuzzysearch.php:43                            Html::fuzzySearch()
   
+[2026-09-21 18:53:34] glpiphplog.WARNING:   *** PHP Warning (2): mysqli::real_connect(): (HY000/1045): Access denied for user 'itsmuser'@'localhost' (using password: YES) in C:\xampp\htdocs\src\DBmysql.php at line 250
+  Backtrace :
+  src\DBmysql.php:250                                mysqli->real_connect()
+  src\DBmysql.php:209                                DBmysql->connect()
+  src\DBConnection.php:412                           DBmysql->__construct()
+  src\DBConnection.php:501                           DBConnection::switchToMaster()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-09-21 18:53:34] glpiphplog.WARNING:   *** PHP Warning (2): Undefined array key "glpilanguage" in C:\xampp\htdocs\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-09-21 18:53:34] glpiphplog.WARNING:   *** PHP Warning (2): Undefined array key "" in C:\xampp\htdocs\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-09-21 18:53:34] glpiphplog.WARNING:   *** PHP Warning (2): Trying to access array offset on value of type null in C:\xampp\htdocs\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-09-21 18:55:09] glpiphplog.WARNING:   *** PHP Warning (2): mysqli::real_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\src\DBmysql.php at line 250
+  Backtrace :
+  src\DBmysql.php:250                                mysqli->real_connect()
+  src\DBmysql.php:209                                DBmysql->connect()
+  src\DBConnection.php:412                           DBmysql->__construct()
+  src\DBConnection.php:501                           DBConnection::switchToMaster()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-09-21 18:55:10] glpiphplog.WARNING:   *** PHP Warning (2): mysqli::real_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\src\DBmysql.php at line 250
+  Backtrace :
+  src\DBmysql.php:250                                mysqli->real_connect()
+  src\DBmysql.php:209                                DBmysql->connect()
+  src\DBConnection.php:412                           DBmysql->__construct()
+  src\DBConnection.php:501                           DBConnection::switchToMaster()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  front\locale.php:41                                include()
+  
+[2026-09-21 19:11:17] glpiphplog.WARNING:   *** PHP User Warning (512): Missing required intl PHP extension in C:\xampp\htdocs\src\Session.php at line 694
+  Backtrace :
+  src\Session.php:694                                trigger_error()
+  src\Console\Application.php:451                    Session::loadLanguage()
+  src\Console\Application.php:110                    Glpi\Console\Application->computeAndLoadOutputLang()
+  bin\console:121                                    Glpi\Console\Application->__construct()
+  
+[2026-09-21 19:11:20] glpiphplog.CRITICAL:   *** Uncaught Exception Error: Class "Normalizer" not found in C:\xampp\htdocs\vendor\symfony\string\AbstractUnicodeString.php at line 31
+  Backtrace :
+  ...mfony\console\Descriptor\TextDescriptor.php:327 Symfony\Component\Console\Helper\Helper::width()
+  ...ymfony\console\Descriptor\TextDescriptor.php:97 Symfony\Component\Console\Descriptor\TextDescriptor->calculateTotalWidthForOptions()
+  ...mfony\console\Descriptor\TextDescriptor.php:195 Symfony\Component\Console\Descriptor\TextDescriptor->describeInputDefinition()
+  ...or\symfony\console\Descriptor\Descriptor.php:55 Symfony\Component\Console\Descriptor\TextDescriptor->describeApplication()
+  ...\symfony\console\Helper\DescriptorHelper.php:65 Symfony\Component\Console\Descriptor\Descriptor->describe()
+  vendor\symfony\console\Command\ListCommand.php:71  Symfony\Component\Console\Helper\DescriptorHelper->describe()
+  vendor\symfony\console\Command\Command.php:298     Symfony\Component\Console\Command\ListCommand->execute()
+  vendor\symfony\console\Application.php:1040        Symfony\Component\Console\Command\Command->run()
+  src\Console\Application.php:272                    Symfony\Component\Console\Application->doRunCommand()
+  vendor\symfony\console\Application.php:301         Glpi\Console\Application->doRunCommand()
+  vendor\symfony\console\Application.php:171         Symfony\Component\Console\Application->doRun()
+  bin\console:122                                    Symfony\Component\Console\Application->run()
+  
+[2026-09-21 19:11:25] glpiphplog.WARNING:   *** PHP User Warning (512): Missing required intl PHP extension in C:\xampp\htdocs\src\Session.php at line 694
+  Backtrace :
+  src\Session.php:694                                trigger_error()
+  src\Console\Application.php:451                    Session::loadLanguage()
+  src\Console\Application.php:110                    Glpi\Console\Application->computeAndLoadOutputLang()
+  bin\console:121                                    Glpi\Console\Application->__construct()
+  
+[2026-09-21 19:13:11] glpiphplog.WARNING:   *** PHP User Warning (512): Missing required intl PHP extension in C:\xampp\htdocs\src\Session.php at line 694
+  Backtrace :
+  src\Session.php:694                                trigger_error()
+  src\Console\Application.php:451                    Session::loadLanguage()
+  src\Console\Application.php:110                    Glpi\Console\Application->computeAndLoadOutputLang()
+  bin\console:121                                    Glpi\Console\Application->__construct()
+  
+[2026-09-21 19:13:12] glpiphplog.WARNING: Test logger  
+[2026-09-21 19:13:13] glpiphplog.CRITICAL:   *** Uncaught Exception Error: Class "Normalizer" not found in C:\xampp\htdocs\vendor\symfony\string\AbstractUnicodeString.php at line 31
+  Backtrace :
+  vendor\symfony\console\Helper\Table.php:835        Symfony\Component\Console\Helper\Helper::width()
+  vendor\symfony\console\Helper\Table.php:816        Symfony\Component\Console\Helper\Table->getCellWidth()
+  vendor\symfony\console\Helper\Table.php:387        Symfony\Component\Console\Helper\Table->calculateColumnsWidth()
+  ...Console\System\CheckRequirementsCommand.php:109 Symfony\Component\Console\Helper\Table->render()
+  vendor\symfony\console\Command\Command.php:298     Glpi\Console\System\CheckRequirementsCommand->execute()
+  vendor\symfony\console\Application.php:1040        Symfony\Component\Console\Command\Command->run()
+  src\Console\Application.php:272                    Symfony\Component\Console\Application->doRunCommand()
+  vendor\symfony\console\Application.php:301         Glpi\Console\Application->doRunCommand()
+  vendor\symfony\console\Application.php:171         Symfony\Component\Console\Application->doRun()
+  bin\console:122                                    Symfony\Component\Console\Application->run()
+  
+[2026-09-21 19:13:24] glpiphplog.WARNING:   *** PHP User Warning (512): Missing required intl PHP extension in C:\xampp\htdocs\src\Session.php at line 694
+  Backtrace :
+  src\Session.php:694                                trigger_error()
+  src\Console\Application.php:451                    Session::loadLanguage()
+  src\Console\Application.php:110                    Glpi\Console\Application->computeAndLoadOutputLang()
+  bin\console:121                                    Glpi\Console\Application->__construct()
+  
+[2026-09-21 19:15:47] glpiphplog.WARNING: Test logger  
+[2026-09-21 19:17:52] glpiphplog.WARNING: Test logger  
+[2026-09-21 19:17:52] glpiphplog.WARNING: Test logger  
+[2026-09-21 19:19:08] glpiphplog.WARNING: Test logger  
+[2026-09-21 19:19:19] glpiphplog.WARNING: Test logger  
+[2026-09-21 19:19:19] glpiphplog.WARNING: Test logger  
+[2026-09-21 19:21:07] glpiphplog.WARNING: Test logger  
+[2026-09-21 19:21:07] glpiphplog.WARNING: Test logger  
+[2026-09-21 19:23:40] glpiphplog.WARNING: Test logger  
+[2026-09-21 19:23:40] glpiphplog.WARNING: Test logger  
+[2026-09-21 19:58:10] glpiphplog.WARNING: Test logger  
+[2026-09-21 19:58:10] glpiphplog.WARNING: Test logger  
+[2026-09-21 20:00:17] glpiphplog.WARNING: Test logger  
+[2026-09-21 20:00:17] glpiphplog.WARNING: Test logger  
+[2026-09-21 20:01:05] glpiphplog.WARNING: Test logger  
+[2026-09-21 20:01:06] glpiphplog.WARNING: Test logger  
+[2026-09-21 20:01:12] glpiphplog.WARNING: Test logger  
+[2026-09-21 20:01:12] glpiphplog.WARNING: Test logger  
+[2026-09-21 20:01:40] glpiphplog.WARNING: Test logger  
+[2026-09-21 20:01:40] glpiphplog.WARNING: Test logger  

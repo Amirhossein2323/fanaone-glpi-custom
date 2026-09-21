@@ -9378,8 +9378,8 @@ flex-direction: row-reverse;
   border-bottom-right-radius: 0;
 }
 .btn-group > .btn:nth-child(n + 3), .btn-group > :not(.btn-check) + .btn, .btn-group > .btn-group:not(:first-child) > .btn {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .dropdown-toggle-split {
   padding-right: 0.75rem;
