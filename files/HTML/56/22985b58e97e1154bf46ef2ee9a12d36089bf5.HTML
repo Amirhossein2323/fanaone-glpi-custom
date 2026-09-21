@@ -1,0 +1,2722 @@
+
+<!-- saved from url=(0060)file:///C:/Users/m.ashkbous/Desktop/New%20Folder%20(4)/.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>ZAP Scanning Report</title>
+<style>
+body{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #000;
+  font-size: 13px;
+}
+h1{
+  text-align: center;
+  font-weight: bold;
+  font-size: 32px
+}
+h3{
+  font-size: 16px;
+}
+table{
+  border: none;
+  font-size: 13px;
+}
+td, th {
+  padding: 3px 4px;
+  word-break: break-word;
+}
+th{
+  font-weight: bold;
+}
+.results th{
+  text-align: left;
+}
+.spacer{
+  margin: 10px;
+}
+.spacer-lg{
+  margin: 40px;
+}
+.indent1{
+  padding: 4px 20px;
+}
+.indent2{
+  padding: 4px 40px;
+}
+.risk-high{
+  background-color: red;
+  color: #FFF;
+}
+.risk-medium{
+  background-color: orange;
+  color: #FFF;
+}
+.risk-low{
+  background-color: yellow;
+  color: #000;
+}
+.risk-info{
+  background-color: blue;
+  color: #FFF;
+}
+.summary th{
+  color: #FFF;
+}
+</style>
+</head>
+<body>
+<h1>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAABqbAAAamwHdbkbTAAAAB3RJTUUH4QsKDDQPKy6k8AAABxpJREFUWMO9l31sVWcdxz+/55xzbwt9QddJExClvIzNxTKJDZi22oJSbFZpmRb4g8sfhpEIwXQNTKh0NYgiMKIwo5AsdIxdQldGNBN5W2OTFRVcIZE1YwExcXOdc1DK+nLvOc/PP87tC9CWsj98bp6ck3Ofc57v7+37/T3wYGMucBR4F/gK/8exAugAdPXq1bpx40YFekZdHYuP+8PuGP+lAc8CmzIyMtLq6uqora3FcRwAzp49m/7Wv5O95tsNEfyEKvwH9B1V2hT7GnB+PABkhGePAvVA9dy5c6mvr2fp0qX3LOru7iYrK4toSQ1OXhGKohpOiyVQe0NVn9PGFb8iFofGFSMCMMPulwEXgbdXrlxZ3dHRQXt7+4ibA2RmZtLc3Ex/y/O4fg8RMUSMS8RxiRiPqPE+4xrnl07syA3Q+aN5wADlwO1oNPpqQ0NDfl9fH4cPH2bOnDn3dV9VVRWVlVV88vsteNF0XCO4xuA6Bs9xiBgPz/EmueKcIxavHyk/BPjnli1bpm3btu1TZ2hmxkTk8aeYMK8aay1WFVWwqgSqBDYgqQFJGxygccWa4e86IhJpbW39Zk5ODgUFBZ8KwOLFZeyr/wHZs0vw0jMxIqFpAuFt+EOYZ/OrAi41t96dhF8HThcWFnpnzpwhGo0+MIhnamvZs+8AM55uIhn4+Cnrkza8Wqv4NiBhfXwNCgxy3jauuKMKPOCPrpHSU2fOUlJS8sAg8qZP50bGY0xeuIFk4JO0SnIYiMAqSRuQDPyPgsbqh++ugqSsPXGC+WsoLS1lzZqnHxhA40svcfPvfyDNjRARwTOCJ+E0IjgiOGIwRnIkFl97NwBMX9dPvEfLSC+t5cCB/eTk5Ix78ylTplBcXMxDjy3EweIZISKSqoxwcyOCYwRXHETkuSEAsTjE4kVGTLrjpdP7p33U1NTQ2dk5bgCbN28Ow7BoA8YmcVOWR1KWuyKIgEEwYjBiJhN75Ushr15qRp747g9dcRZ4RtCuf3HhdBMlpQuZNm3auAAUFBRw+fJlWl/dy9SCaqwGIBIyJGBTUwemWqzy/mAIRPmaEUGsJeNbz+IVfJ+ioiI2bNgwbi80NTUxJWciV47/GM9Lwwg4CA6CSblbBqYYRPjqEACRR8JaVcRPkPHlJ5m66kX27W8kL2/6uMPR3t7Ox+++yQcXjmLEIEYQA8YIkuIHSYVDkBnDk3DSEDwAi5c5mUfWNtGVPovc3FwOHTp0XwDZ2dm0nTvH9Td+zSedVxDVkIQAEQ1BoIgKCpnmflqpQcAXyjYxo6KeVatWUVZWRiKRGPO1+fPns2vXLjoOr7uvFA8HcHMoQ8IHmkqOINnH1d81kJeXR0VFRcqKkUcQBLS0tHD79u2QXHq7UmkIqgKqoIKKAnQPNiSqXFG0QFVCXbcGK4pVIdnTBcDOnTupqqoa06q2tjZKS0uZ8LmZzKiox5nwWXzfx9qBfmGgCkDRa4MeUNE3repg2QSEiwMFk5nDF8vrWLZsGTNnzqS9vX1UAEVFRezYsYOeD68y8fNPEFifAL2rDAfBnJdhGv0NzzgtoYYbHGOICkSMIWKEqBE8x+X91v18cKGJyspKDh48SFZW1ohAlixZQstfLzM99iK9iQQJqySsxVfFDyz9Nolv/fw7gumsPtIbMZE0zxhcR3DFEDVCZIDTjeA5Drb3Jv84sYOu639j69atNDQ0jAgiN3cyPQ/NJXvhM/QnEwRW8dWSDAL6bbLTHlyee0cVWNWfBhpgVbEWfFUSqiSGqVoyCCCaxayndjKn+nm2736BzIyJHDt27B4AFy9eovvtU3R3nA5DkFJEXwNUtWHEptSsPtIXNW7UMy4mJSLeMA+4IrhCKC6A46XR+VYz772xj/z8fJqampg1a9bg906ePElZWRlZy3+DZuSGPUGQ/G/QuDznHjVMeaEyaS2+WqxVbMryxMDVKv0W+qzSr0pPoo/Mx8uZs/51rgdTmD17NrFYbJArFi9ezKZNm7h1dD1B4JO0PgG23KR6QxnlYLHXM846z7i4oX4P6vmA9Q6ENMsQZyiGxK1OPjr5M5Kd77B7925qamoAWLBgAX+59jFU7tmivy3fPvq5INXDSyx+3DXOd1xx8YzBiGBMKCIDwmKMDLEWEnoMUDdK37U2bp/6BQ9PSueV+BEWLVpEdnYW3be6f67wo7EOJoMgiMX3uuKs84zBEQcjghjBMCAmhF1niskGCMaiqFWs8ehrj+Off5nCwkK2b99OcXExwFTgvdEB3AmizIi85oqTNgDCSKrPFWV4DFRD/beqWLX4YUXdst0ffk+b168CVqZWpwN9YwO4Wzhi8c1GpM6ISTcYREJPMOSAQYZLHc1upY5meyjfBq/XAUwGbgL9Y4dgrBGLFwtSITAPkekCk1L73wS9qsoFxR6nceWfx/O5/wGLCSMJ+zJrfwAAAABJRU5ErkJggg==">
+ZAP Scanning Report
+</h1>
+<p>
+
+</p>
+<h3>Summary of Alerts</h3>
+<table width="45%" class="summary">
+<tbody><tr bgcolor="#666666">
+<th width="45%" height="24">Risk 
+      Level</th><th width="55%" align="center">Number 
+      of Alerts</th>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td><a href="file:///C:/Users/m.ashkbous/Desktop/New%20Folder%20(4)/.html#high">High</a></td><td align="center">0</td>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td><a href="file:///C:/Users/m.ashkbous/Desktop/New%20Folder%20(4)/.html#medium">Medium</a></td><td align="center">2</td>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td><a href="file:///C:/Users/m.ashkbous/Desktop/New%20Folder%20(4)/.html#low">Low</a></td><td align="center">4</td>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td><a href="file:///C:/Users/m.ashkbous/Desktop/New%20Folder%20(4)/.html#info">Informational</a></td><td align="center">3</td>
+</tr>
+</tbody></table>
+<div class="spacer-lg"></div>
+<h3>Alert Detail</h3>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+<tbody><tr height="24" class="risk-medium">
+<th width="20%"><a name="medium"></a>Medium (Medium)</th><th width="80%">X-Frame-Options Header Not Set</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>X-Frame-Options header is not included in the HTTP response to protect against 'ClickJacking' attacks.</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/en/subsidiary-companies/fanava-satellite/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%DA%AF%D8%B1%D9%88%D9%87-%D9%81%D9%86%D8%A2%D9%88%D8%A7-%D8%AD%D8%A7%D9%85%DB%8C-%D8%AF%D9%88%D9%85%DB%8C%D9%86-%D8%AF%D9%88%D8%B1%D9%87-%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A7%D8%AA-bluecup/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%B3%D8%A7%D9%85%D8%A7%D9%86%D9%87%D9%87%D8%A7%DB%8C-%D9%85%D9%84%DB%8C-%D9%88-%D8%AA%D8%B3%D9%87%DB%8C%D9%84%DA%AF%D8%B1%DB%8C-%D8%AF%D8%B1-%D8%AD/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D8%B1%D9%88%D9%86%D9%85%D8%A7%DB%8C%DB%8C-%D8%A7%D8%B2-%D9%84%D9%88%DA%AF%D9%88%DB%8C-%D8%AC%D8%AF%DB%8C%D8%AF-%DA%AF%D8%B1%D9%88%D9%87-%D9%81%D9%86%D8%A2%D9%88%D8%A7-%D8%AF%D8%B1-%D8%A7/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/specialized-committees/appointments-committee/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d9%86%da%af%d8%a7%d9%87%db%8c-%d8%a8%d9%87-%d9%85%d8%a7%d9%87%db%8c%d8%aa-%d9%88-%da%86%db%8c%d8%b3%d8%aa%db%8c-nft/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/en/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/portfolio/portfolio012/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D8%B1%D8%A7%D8%AF%DB%8C%D9%88-%D9%81%D9%86%D8%A7%D9%88%D8%B1%DB%8C%D8%9B-%D9%85%D8%B2%D8%A7%DB%8C%D8%A7-%D9%88-%D9%85%D8%B9%D8%A7%DB%8C%D8%A8-%D9%84%D9%86%D8%AF%D8%AA%DA%A9/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/author/ad-fanava/page/2/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%DA%86%D8%B7%D9%88%D8%B1-%D9%85%D9%88%D9%81%D9%82%DB%8C%D8%AA-%D9%88-%D8%B4%D8%A7%D8%AF%DB%8C-%D8%B1%D8%A7-%D8%AF%D8%B1-%D9%85%D8%AD%DB%8C%D8%B7-%DA%A9%D8%A7%D8%B1-%D8%AA%D8%AC%D8%B1%D8%A8%D9%87/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D8%B1%D8%A7%D8%AF%DB%8C%D9%88-%D9%81%D9%86%D8%A7%D9%88%D8%B1%DB%8C%D8%9B-%D8%AA%D8%A7%D8%AB%DB%8C%D8%B1-%D9%85%D8%AB%D8%A8%D8%AA-%D8%A7%D8%B7%D9%84%D8%A7%D8%B9-%D8%B1%D8%B3%D8%A7%D9%86%DB%8C-%D8%A8/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/category/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/subsidiaries/fanavasat/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%b1%d8%a7%d8%af%db%8c%d9%88-%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c%d8%9b-%d8%b2%d9%86%d8%ac%db%8c%d8%b1%d9%87-%d8%ae%d8%af%d9%85%d8%a7%d8%aa-%d9%85%d8%ad%d8%b5%d9%88%d9%84%d8%a7%d8%aa-%d9%86%d9%88/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/portfolio/portfolio008/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%b1%d8%a7%d8%af%db%8c%d9%88-%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c%d8%9b-%da%86%da%af%d9%88%d9%86%d9%87-%d8%af%d8%b1-%d8%af%d8%a7%d9%85-%d8%aa%d9%84%d9%87-%d8%a8%d8%af%d9%87%db%8c-%d9%86%db%8c%d8%a7/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/nft-%DA%86%DB%8C%D8%B3%D8%AA%D8%9F/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d9%85%d8%af%db%8c%d8%b1%d8%b9%d8%a7%d9%85%d9%84-%da%af%d8%b1%d9%88%d9%87-%d9%81%d9%86%d8%a2%d9%88%d8%a7-%da%a9%d9%84%d8%a7%d9%86-%d8%af%d8%a7%d8%af%d9%87%d8%9b-%d8%b1%da%a9%d9%86-%d8%a7/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/blog/page/5/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">187</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Most modern Web browsers support the X-Frame-Options HTTP header. Ensure it's set on all web pages returned by your site (if you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. ALLOW-FROM allows specific websites to frame the web page in supported web browsers).</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">16</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">15</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</tbody></table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+<tbody><tr height="24" class="risk-medium">
+<th width="20%"><a name="medium"></a>Medium (Medium)</th><th width="80%">Application Error Disclosure</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-includes/js/plupload/moxie.min.js?ver=1.3.5.1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">Internal Server Error</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p></p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">200</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">13</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</tbody></table>
+<div class="spacer"></div>
+<a name="low"></a><table width="100%" class="results">
+  
+  
+  
+<tbody><tr height="24" class="risk-low">
+<th width="20%">Low (Medium)</th><th width="80%">Incomplete or No Cache-control and Pragma HTTP Header Set</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>The cache-control and pragma HTTP header have not been set properly or are missing allowing the browser and proxies to cache content.</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D8%AA%D9%81%D8%A7%D9%87%D9%85-%D9%86%D8%A7%D9%85%D9%87-%D9%87%D9%85%DA%A9%D8%A7%D8%B1%DB%8C-%DA%AF%D8%B1%D9%88%D9%87-%D9%81%D9%86-%D8%A2%D9%88%D8%A7-%D9%88-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%AE%D8%AF/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=0</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/grsweb/css/parts/mod-load-more-button.min.css?ver=8.2.7.1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=31536000, public</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%b3%d9%88%d8%aa-%d8%a2%d8%ba%d8%a7%d8%b2-%d8%a8%d9%87-%da%a9%d8%a7%d8%b1-%d8%a7%d9%84%da%a9%d8%a7%d9%85%d9%be-%db%b2%db%b8-%d8%a8%d9%87-%d8%b5%d8%af%d8%a7-%d8%af%d8%b1%d8%a2%d9%85%d8%af/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=0</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%b1%d8%a7%d8%af%db%8c%d9%88-%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c%d8%9b-%d9%87%d9%88%d8%b4%d9%85%d9%86%d8%af%d8%b3%d8%a7%d8%b2%db%8c-%d8%b2%d9%86%d8%ac%db%8c%d8%b1%d9%87-%d9%87%d8%a7%db%8c/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=0</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-content/uploads/elementor/css/post-22497.css?ver=1766782511</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=31536000, public</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/grsweb/css/parts/int-elem-base.min.css?ver=8.2.7.1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=31536000, public</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D8%AA%D8%B9%D8%B1%DB%8C%D9%81-%D8%A8%D9%84%D8%A7%DA%A9%DA%86%DB%8C%D9%86-%D8%A8%D9%87-%D8%B2%D8%A8%D8%A7%D9%86-%D8%B3%D8%A7%D8%AF%D9%87/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=0</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D8%B1%D8%A7%D8%AF%DB%8C%D9%88-%D9%81%D9%86%D8%A7%D9%88%D8%B1%DB%8C%D8%9B-%D8%A7%D9%87%D9%85%DB%8C%D8%AA-%D8%AF%D8%A7%D8%AF%D9%87-%D8%AF%D8%B1-%D8%B2%D9%86%D8%AC%DB%8C%D8%B1%D9%87-%D8%AA%D8%A7%D9%85/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=0</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/wp/v2/pages/21999</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=0</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-content/cache/min/1/wp-content/uploads/elementor/css/post-22590.css?ver=1766782613</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=31536000, public</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffanava.com%2Fsubsidiaries%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=0</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%da%af%d8%b1%d9%88%d9%87-%d9%81%d9%86%d8%a2%d9%88%d8%a7-%d8%ad%d8%a7%d9%85%db%8c-%d8%af%d9%88%d9%85%db%8c%d9%86-%d8%af%d9%88%d8%b1%d9%87-%d9%85%d8%b3%d8%a7%d8%a8%d9%82%d8%a7%d8%aa-bluecup/feed/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=3600</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-content/cache/min/1/wp-content/uploads/elementor/css/post-21992.css?ver=1766783340</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=31536000, public</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Four-team%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=0</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/grsweb/css/parts/single-post-el-tags.min.css?ver=8.2.7.1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=31536000, public</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/en/board-of-directors-and-ceo/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=0, public</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/subsidiaries/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=0, public</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D9%BE%DB%8C%D8%A7%D9%85-%D8%AA%D8%B3%D9%84%DB%8C%D8%AA-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A2%DB%8C%D8%AA%D8%A7%D9%84%D9%84%D9%87-%D8%B1%D8%A6%DB%8C%D8%B3%DB%8C-%D9%88-%D9%87%DB%8C%D8%A3%D8%AA-%D9%87/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=0</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%ad%d8%b6%d9%88%d8%b1-%da%af%d8%b1%d9%88%d9%87-%d9%81%d9%86%d8%a2%d9%88%d8%a7-%d8%af%d8%b1-%d8%af%d9%88%d9%85%db%8c%d9%86-%d8%b1%d9%88%db%8c%d8%af%d8%a7%d8%af-%d9%85%d9%84%db%8c-%d9%87/feed/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=3600</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/grsweb/css/parts/el-social-icons.min.css?ver=8.2.7.1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">max-age=31536000, public</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">461</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Whenever possible ensure the cache-control HTTP header is set with no-cache, no-store, must-revalidate; and that the pragma HTTP header is set with no-cache.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">525</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">13</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</tbody></table>
+<div class="spacer"></div>
+<a name="low"></a><table width="100%" class="results">
+  
+  
+  
+<tbody><tr height="24" class="risk-low">
+<th width="20%">Low (Medium)</th><th width="80%">Absence of Anti-CSRF Tokens</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>No Anti-CSRF tokens were found in a HTML submission form.</p><p>A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.</p><p></p><p>CSRF attacks are effective in a number of situations, including:</p><p>    * The victim has an active session on the target site.</p><p>    * The victim is authenticated via HTTP auth on the target site.</p><p>    * The victim is on the same local network as the target site.</p><p></p><p>CSRF has primarily been used to perform an action against a target site using the victim's privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D9%BE%DB%8C%D8%A7%D9%85-%D9%85%D8%AF%DB%8C%D8%B1%D8%B9%D8%A7%D9%85%D9%84-%DA%AF%D8%B1%D9%88%D9%87-%D9%81%D9%86-%D8%A2%D9%88%D8%A7/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%DA%AF%D8%B1%D9%88%D9%87-%D9%81%D9%86%D8%A2%D9%88%D8%A7-%D8%AD%D8%A7%D9%85%DB%8C-%D8%AF%D9%88%D9%85%DB%8C%D9%86-%D8%AF%D9%88%D8%B1%D9%87-%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A7%D8%AA-bluecup/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF%D8%B3%D8%A7%D8%B2%DB%8C-%D9%81%D8%AF%D8%B1%D8%A7%D8%B3%DB%8C%D9%88%D9%86-%DA%A9%D8%B4%D8%AA%DB%8C-%D8%A8%D8%A7-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%DA%AF%D8%B1%D9%88/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D9%87%D8%AF%DB%8C%D9%87-%D9%85%D8%AA%D9%81%D8%A7%D9%88%D8%AA-%D9%81%D9%86%D8%A2%D9%88%D8%A7-%D8%AF%D8%B1-%D8%A7%D9%84%DA%A9%D8%A7%D9%85%D9%BE%D8%9B-%D9%BE%D8%B4%D8%AA%D9%88%D8%A7%D9%86%D9%87/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c%d8%8c-%d9%85%d9%88%d8%aa%d9%88%d8%b1-%d9%85%d8%ad%d8%b1%da%a9-%d9%86%d9%88%d8%a2%d9%88%d8%b1%db%8c-%d8%af%d8%b1-%da%a9%d8%b3%d8%a8/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%b1%d8%a7%d8%af%db%8c%d9%88-%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c%d8%9b-%d8%b2%d9%86%d8%ac%db%8c%d8%b1%d9%87-%d8%ae%d8%af%d9%85%d8%a7%d8%aa-%d9%85%d8%ad%d8%b5%d9%88%d9%84%d8%a7%d8%aa-%d9%86%d9%88/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D8%B1%D8%A7%D8%AF%DB%8C%D9%88-%D9%81%D9%86%D8%A7%D9%88%D8%B1%DB%8C%D8%9B-%D8%B4%D8%A8%DA%A9%D9%87-5g-%D8%AE%D8%B5%D9%88%D8%B5%DB%8C/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%aa%d8%b9%d8%a7%d9%85%d9%84%d9%90-%d9%85%d8%a8%d8%aa%d9%86%db%8c-%d8%a8%d8%b1-%da%af%d9%81%d8%aa%da%af%d9%88%d8%8c-%da%af%d8%b0%d8%b1-%d8%a7%d8%b2-%d8%b1%d9%88%d8%a7%d8%a8%d8%b7-%d8%b9%d9%85%d9%88/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D9%85%D8%AC%D9%85%D8%B9-%D8%B9%D9%85%D9%88%D9%85%DB%8C-%D8%B9%D8%A7%D8%AF%DB%8C-%DA%AF%D8%B1%D9%88%D9%87-%D9%81%D9%86-%D8%A2%D9%88%D8%A7-%DB%B2%DB%B1-%D8%AA%DB%8C%D8%B1/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/nft%D9%87%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%A7%D8%B1%D8%B2%D8%B4%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C-%D9%85%DB%8C%D8%B4%D9%88%D9%86%D8%AF%D8%9F/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%b1%d8%a7%d8%af%db%8c%d9%88-%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c%d8%9b-%d8%aa%d8%a7%d8%ab%db%8c%d8%b1-%d9%85%d8%ab%d8%a8%d8%aa-%d8%a7%d8%b7%d9%84%d8%a7%d8%b9-%d8%b1%d8%b3%d8%a7%d9%86%db%8c-%d8%a8/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D8%AD%D8%B6%D9%88%D8%B1-%DA%AF%D8%B1%D9%88%D9%87-%D9%81%D9%86%D8%A2%D9%88%D8%A7-%D8%AF%D8%B1-%D8%A8%DB%8C%D8%B3%D8%AA%D9%88%D9%87%D8%B4%D8%AA%D9%85%DB%8C%D9%86-%D9%86%D9%85%D8%A7/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%b3%d9%88%d8%aa-%d8%a2%d8%ba%d8%a7%d8%b2-%d8%a8%d9%87-%da%a9%d8%a7%d8%b1-%d8%a7%d9%84%da%a9%d8%a7%d9%85%d9%be-%db%b2%db%b8-%d8%a8%d9%87-%d8%b5%d8%af%d8%a7-%d8%af%d8%b1%d8%a2%d9%85%d8%af/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%b1%d8%a7%d8%af%db%8c%d9%88-%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c%d8%9b-%da%86%da%af%d9%88%d9%86%d9%87-%d8%af%d8%b1-%d8%af%d8%a7%d9%85-%d8%aa%d9%84%d9%87-%d8%a8%d8%af%d9%87%db%8c-%d9%86%db%8c%d8%a7/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%b1%d8%a7%d8%af%db%8c%d9%88-%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c%d8%9b-%d8%a7%d9%87%d9%85%db%8c%d8%aa-%d9%87%d9%88%db%8c%d8%aa-%d8%a8%d8%b5%d8%b1%db%8c-%d8%af%d8%b1-%d8%b3%d8%a7%d8%b2%d9%85%d8%a7/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D8%AA%D8%B9%D8%B1%DB%8C%D9%81-%D8%A8%D9%84%D8%A7%DA%A9%DA%86%DB%8C%D9%86-%D8%A8%D9%87-%D8%B2%D8%A8%D8%A7%D9%86-%D8%B3%D8%A7%D8%AF%D9%87/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D9%85%D8%AC%D9%85%D8%B9-%D8%B9%D9%85%D9%88%D9%85%DB%8C-%D8%B9%D8%A7%D8%AF%DB%8C-%D8%B3%D8%A7%D9%84%D8%A7%D9%86%D9%87-%DA%AF%D8%B1%D9%88%D9%87-%D9%81%D9%86-%D8%A2%D9%88%D8%A7/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d9%87%d8%af%db%8c%d9%87-%d9%85%d8%aa%d9%81%d8%a7%d9%88%d8%aa-%d9%81%d9%86%d8%a2%d9%88%d8%a7-%d8%af%d8%b1-%d8%a7%d9%84%da%a9%d8%a7%d9%85%d9%be%d8%9b-%d9%be%d8%b4%d8%aa%d9%88%d8%a7%d9%86%d9%87/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D9%86%D8%B5%D8%A8-%DB%B5%DB%B0-%D9%87%D8%B2%D8%A7%D8%B1-%D8%AF%D8%B3%D8%AA%DA%AF%D8%A7%D9%87-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%D9%87-%D9%81%D8%B1%D9%88%D8%B4%DA%AF%D8%A7%D9%87%DB%8C-%D8%A8%D8%A7%D9%86/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D8%A8%D8%A7%D8%B2%D8%AF%DB%8C%D8%AF-%D9%88%D8%B2%DB%8C%D8%B1-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A7%D8%B2-%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA-%D9%85%D8%A8%D8%AA%D9%86%DB%8C-%D8%A8%D8%B1/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;form action="https://fanava.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">99</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Other information</td><td width="80%"><p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret] was found in the following HTML form: [Form 1: "wpml_language_code" "author" "email" "url" "wp-comment-cookies-consent" "aiowps-captcha-string-info" "aiowps-captcha-temp-string" "aiowps-captcha-answer-694ef86c1ed48" "submit" "comment_post_ID" "comment_parent" "9fq6jy6i" "0ex0torl" "5wsiknlk" "aios_antibot_keys_expiry" ].</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>http://cwe.mitre.org/data/definitions/352.html</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">352</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">9</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</tbody></table>
+<div class="spacer"></div>
+<a name="low"></a><table width="100%" class="results">
+  
+  
+  
+<tbody><tr height="24" class="risk-low">
+<th width="20%">Low (Medium)</th><th width="80%">X-Content-Type-Options Header Missing</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/grsweb/css/parts/widget-wd-recent-posts.min.css?ver=8.2.7.1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/en/subsidiary-companies/fanava-shabake-gostar/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-includes/js/imagesloaded.min.js?ver=5.0.0</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-content/uploads/2025/10/IMG_8424.png</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/tag/%D8%B1%D8%A7%D8%AF%DB%8C%D9%88-%D9%81%D9%86%D8%A7%D9%88%D8%B1%DB%8C/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-content/cache/min/1/wp-content/uploads/elementor/css/post-22513.css?ver=1766783637</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/contact/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/grsweb/css/parts/el-section-title-rtl.min.css?ver=8.2.7.1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/en/fanava-group-logo/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/subsidiaries/tazmingostar/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/portfolio/portfolio003/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/grsweb/css/parts/base-rtl.min.css?ver=8.2.7.1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/specialized-committees/risk-committee/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/grsweb/js/libs/swiper.min.js?ver=8.2.7.1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%b1%d8%a7%d8%af%db%8c%d9%88-%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c%d8%9b-%da%86%d8%b1%d8%a7-%d8%b2%d9%86%d8%ac%db%8c%d8%b1%d9%87-%d8%aa%d8%a7%d9%85%db%8c%d9%86-%d8%af%d8%b1-%d8%ad%d9%88%d8%b2%d9%87/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/grsweb/css/parts/opt-scrolltotop.min.css?ver=8.2.7.1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF%D8%B3%D8%A7%D8%B2%DB%8C-%D9%81%D8%AF%D8%B1%D8%A7%D8%B3%DB%8C%D9%88%D9%86-%DA%A9%D8%B4%D8%AA%DB%8C-%D8%A8%D8%A7-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%DA%AF%D8%B1%D9%88/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-content/uploads/2025/12/IMG_8308-1-1200x800.jpg</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/grsweb_plugin/elementor/assets/lib/animations/styles/fadeInRight.min.css?ver=3.32.3</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/grsweb/css/parts/lib-swiper-arrows.min.css?ver=8.2.7.1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">656</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Other information</td><td width="80%"><p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At "High" threshold this scan rule will not alert on client or server error responses.</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">16</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">15</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</tbody></table>
+<div class="spacer"></div>
+<a name="low"></a><table width="100%" class="results">
+  
+  
+  
+<tbody><tr height="24" class="risk-low">
+<th width="20%">Low (Medium)</th><th width="80%">Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>The web/application server is leaking information via one or more "X-Powered-By" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/en/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/portfolio/portfolio012/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/en/subsidiary-companies/fanava-satellite/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/specialized-committees/appointments-committee/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/portfolio/portfolio008/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/subsidiaries/fanavanet/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/en/subsidiary-companies/fanava-card/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/blog/page/4/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/specialized-committees/investment-committee/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/specialized-committees/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/en/specialized-committees/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/author/ad-fanava/page/3/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/portfolio/portfolio009/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/author/ad-fanava/page/2/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/subsidiaries/fanavasat/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/blog/page/3/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/portfolio/portfolio001/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/author/ad-fanava/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/subsidiaries/fanavatsp/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/portfolio/portfolio010/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">X-Powered-By: WP Rocket/3.20.0.1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">72</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Ensure that your web server, application server, load balancer, etc. is configured to suppress "X-Powered-By" headers.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>http://blogs.msdn.com/b/varunm/archive/2013/04/23/remove-unwanted-http-response-headers.aspx</p><p>http://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">200</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">13</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</tbody></table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+<tbody><tr height="24" class="risk-info">
+<th width="20%"><a name="info"></a>Informational (Low)</th><th width="80%">Timestamp Disclosure - Unix</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>A timestamp was disclosed by the application/web server - Unix</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D8%B1%D8%A7%D8%AF%DB%8C%D9%88-%D9%81%D9%86%D8%A7%D9%88%D8%B1%DB%8C%D8%9B-%D8%B2%D9%86%D8%AC%DB%8C%D8%B1%D9%87-%D8%AE%D8%AF%D9%85%D8%A7%D8%AA-%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA-%D9%86%D9%88/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1766782134</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%b1%d8%a7%d8%af%db%8c%d9%88-%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c%d8%9b-%d8%ad%d8%b6%d9%88%d8%b1-%d9%85%d8%aa%d9%81%d8%a7%d9%88%d8%aa-%d9%81%d9%86%d8%a2%d9%88%d8%a7-%d8%af%d8%b1-%d8%a7/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1766783074</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-content/uploads/2025/08/Catalog-1403-V2-4web_compressed.pdf</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">0000000203</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D8%B3%D9%88%D8%AA-%D8%A2%D8%BA%D8%A7%D8%B2-%D8%A8%D9%87-%DA%A9%D8%A7%D8%B1-%D8%A7%D9%84%DA%A9%D8%A7%D9%85%D9%BE-%DB%B2%DB%B8-%D8%A8%D9%87-%D8%B5%D8%AF%D8%A7-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">88789694</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/portfolio/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">88789694</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-content/uploads/2025/08/Catalog-1403-V2-4web_compressed.pdf</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">0000000103</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%a7%d9%87%d9%85%db%8c%d8%aa-%d8%aa%d9%88%d8%a7%d8%b2%d9%86-%d9%85%db%8c%d8%a7%d9%86-%d8%a7%d8%b1%d8%aa%d9%82%d8%a7-%d9%88-%d8%aa%d9%88%d8%b3%d8%b9%d9%87-%d8%aa%d9%88%d8%a7%d9%86-%d9%81%d9%86%db%8c/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1766782613</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-content/uploads/2025/08/Catalog-1403-V2-4web_compressed.pdf</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">0000000141</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-content/uploads/2025/09/Catalog-1403-V2-4web.pdf</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">0000000170</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/category/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/page/2/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1766782613</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%b1%d9%88%d9%86%d9%85%d8%a7%db%8c%db%8c-%d8%a7%d8%b2-%d9%84%d9%88%da%af%d9%88%db%8c-%d8%ac%d8%af%db%8c%d8%af-%da%af%d8%b1%d9%88%d9%87-%d9%81%d9%86%d8%a2%d9%88%d8%a7-%d8%af%d8%b1-%d8%a7/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1766782134</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-content/uploads/2025/08/Catalog-1403-V2-4web_compressed.pdf</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">0006039904</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/author/ad-fanava/page/3/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">88789694</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-content/uploads/2025/08/Catalog-1403-V2-4web_compressed.pdf</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">0002125493</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/feed/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">28507455</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%a2%db%8c%d9%86%d8%af%d9%87-%d8%aa%d8%ad%d9%88%d9%84-%d8%af%db%8c%d8%ac%db%8c%d8%aa%d8%a7%d9%84-%d8%af%d8%b1-%da%a9%d8%b3%d8%a8%d9%88%da%a9%d8%a7%d8%b1%d9%87%d8%a7%db%8c-%d8%a7%db%8c%d8%b1/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1766782134</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-includes/fonts/dashicons.ttf?99ac726223c749443b642ce33df8b800</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">67676763</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-content/uploads/2025/09/Catalog-1403-V2-4web.pdf</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">0005858650</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d9%87%d8%af%db%8c%d9%87-%d9%85%d8%aa%d9%81%d8%a7%d9%88%d8%aa-%d9%81%d9%86%d8%a2%d9%88%d8%a7-%d8%af%d8%b1-%d8%a7%d9%84%da%a9%d8%a7%d9%85%d9%be%d8%9b-%d9%be%d8%b4%d8%aa%d9%88%d8%a7%d9%86%d9%87/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1766783266</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D8%B1%D8%A7%D8%AF%DB%8C%D9%88-%D9%81%D9%86%D8%A7%D9%88%D8%B1%DB%8C%D8%9B-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%AF%D8%B1-%D8%AF%D8%A7%D9%85-%D8%AA%D9%84%D9%87-%D8%A8%D8%AF%D9%87%DB%8C-%D9%86%DB%8C%D8%A7/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1766782613</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">1502</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Other information</td><td width="80%"><p>1766782134, which evaluates to: 2025-12-27 00:18:54</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">200</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">13</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</tbody></table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+<tbody><tr height="24" class="risk-info">
+<th width="20%"><a name="info"></a>Informational (Low)</th><th width="80%">Information Disclosure - Suspicious Comments</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/tag/%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/en/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%ad%d8%b6%d9%88%d8%b1-%da%af%d8%b1%d9%88%d9%87-%d9%81%d9%86%d8%a2%d9%88%d8%a7-%d8%af%d8%b1-%d8%a8%db%8c%d8%b3%d8%aa%d9%88%d9%87%d8%b4%d8%aa%d9%85%db%8c%d9%86-%d9%86%d9%85%d8%a7/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/category/%da%af%d8%b2%d8%a7%d8%b1%d8%b4%d9%87%d8%a7%db%8c-%d8%aa%d8%b5%d9%88%db%8c%d8%b1%db%8c/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D9%81%D8%B1%D9%87%D9%85%D9%86%D8%AF-%D9%85%D8%B9%DB%8C%D9%86-%D9%87%D8%AF%D8%A7%DB%8C%D8%AA-%D9%81%D9%86%D8%A2%D9%88%D8%A7-%D8%B3%DB%8C%D8%B3%D8%AA%D9%85-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%B9/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/portfolio/portfolio010/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%aa%d8%ad%d9%88%d9%84-%d8%af%db%8c%d8%ac%db%8c%d8%aa%d8%a7%d9%84-%d8%af%d8%b1-%d8%b5%d9%86%d8%b9%d8%aa-ict/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/en/social-responsibilities/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c%d8%8c-%d9%85%d9%88%d8%aa%d9%88%d8%b1-%d9%85%d8%ad%d8%b1%da%a9-%d9%86%d9%88%d8%a2%d9%88%d8%b1%db%8c-%d8%af%d8%b1-%da%a9%d8%b3%d8%a8/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/specialized-committees/investment-committee/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/category/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/page/3/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/portfolio/portfolio005/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D8%A2%DB%8C%D9%86%D8%AF%D9%87-%D8%AA%D8%AD%D9%88%D9%84-%D8%AF%DB%8C%D8%AC%DB%8C%D8%AA%D8%A7%D9%84-%D8%AF%D8%B1-%DA%A9%D8%B3%D8%A8%D9%88%DA%A9%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D8%A7%DB%8C%D8%B1/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d9%82%d8%af%d8%b1%d8%af%d8%a7%d9%86%db%8c-%d9%85%d8%af%db%8c%d8%b1%d8%b9%d8%a7%d9%85%d9%84-%da%af%d8%b1%d9%88%d9%87-%d9%81%d9%86%d8%a2%d9%88%d8%a7-%d8%a7%d8%b2-%d9%88%d8%a7%d8%ad%d8%af/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%aa%d9%81%d8%a7%d9%87%d9%85-%d9%86%d8%a7%d9%85%d9%87-%d9%87%d9%85%da%a9%d8%a7%d8%b1%db%8c-%da%af%d8%b1%d9%88%d9%87-%d9%81%d9%86-%d8%a2%d9%88%d8%a7-%d9%88-%d8%aa%d9%88%d8%b3%d8%b9%d9%87-%d8%ae%d8%af/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%d8%b1%d8%a7%d8%af%db%8c%d9%88-%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c%d8%9b-%da%86%d8%b1%d8%a7-%d8%a8%d8%a7%db%8c%d8%af-%d8%af%d8%b1-%d8%b3%d8%a7%d8%b2%d9%85%d8%a7%d9%86%d9%87%d8%a7%db%8c%d9%85/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%D9%BE%DB%8C%D8%A7%D9%85-%D9%85%D8%AF%DB%8C%D8%B1%D8%B9%D8%A7%D9%85%D9%84-%DA%AF%D8%B1%D9%88%D9%87-%D9%81%D9%86-%D8%A2%D9%88%D8%A7/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/%da%af%d8%b1%d9%88%d9%87-%d9%81%d9%86%d8%a2%d9%88%d8%a7-%d8%ad%d8%a7%d9%85%db%8c-%d8%b3%db%8c%d8%b2%d8%af%d9%87%d9%85%db%8c%d9%86-%d9%85%d8%a7%d8%b1%d8%a7%d8%aa%d9%88%d9%86-%d8%a8%d8%b1%d9%86/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/portfolio/portfolio001/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">203</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Other information</td><td width="80%"><p>The following comment/snippet was identified via the pattern: \bADMIN\b</p><p>&lt;script type="speculationrules"&gt;</p><p>{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/grs-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/grsweb_plugin\/*","\/grsweb-ch\/*","\/grsweb\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}</p><p>&lt;/script&gt;</p><p>The following comment/snippet was identified via the pattern: \bADMIN\b</p><p>&lt;script type="text/javascript" id="woodmart-theme-js-extra"&gt;</p><p>/* &lt;![CDATA[ */</p><p>var woodmart_settings = {"menu_storage_key":"woodmart_9dd8e287de516d55d6cb6dbdef260d09","ajax_dropdowns_save":"1","photoswipe_close_on_scroll":"1","woocommerce_ajax_add_to_cart":"yes","variation_gallery_storage_method":"new","elementor_no_gap":"enabled","adding_to_cart":"\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062c\u0627\u0645","added_to_cart":"\u0645\u062d\u0635\u0648\u0644 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0628\u0647 \u0633\u0628\u062f \u062e\u0631\u06cc\u062f \u0634\u0645\u0627 \u0627\u0641\u0632\u0648\u062f\u0647 \u0634\u062f.","continue_shopping":"\u0627\u062f\u0627\u0645\u0647 \u062e\u0631\u06cc\u062f","view_cart":"\u0646\u0645\u0627\u06cc\u0634 \u0633\u0628\u062f \u062e\u0631\u06cc\u062f","go_to_checkout":"\u062a\u0633\u0648\u06cc\u0647 \u062d\u0633\u0627\u0628","loading":"\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc...","countdown_days":"\u0631\u0648\u0632","countdown_hours":"\u0633\u0627\u0639\u062a","countdown_mins":"\u062f\u0642\u06cc\u0642\u0647","countdown_sec":"\u062b\u0627\u0646\u06cc\u0647","cart_url":"","ajaxurl":"https:\/\/fanava.com\/grs-admin\/admin-ajax.php","add_to_cart_action":"widget","added_popup":"no","categories_toggle":"yes","enable_popup":"no","popup_delay":"2000","popup_event":"time","popup_scroll":"1000","popup_pages":"0","promo_popup_hide_mobile":"yes","product_images_captions":"no","ajax_add_to_cart":"1","all_results":"\u0645\u0634\u0627\u0647\u062f\u0647 \u0647\u0645\u0647 \u0646\u062a\u0627\u06cc\u062c","zoom_enable":"yes","ajax_scroll":"yes","ajax_scroll_class":".wd-page-content","ajax_scroll_offset":"100","infinit_scroll_offset":"300","product_slider_auto_height":"no","price_filter_action":"click","product_slider_autoplay":"","close":"\u0628\u0633\u062a\u0646 ( \u062e\u0631\u0648\u062c)","share_fb":"\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc \u062f\u0631 Facebook","pin_it":"\u0627\u06cc\u0646 \u0631\u0627 \u0633\u0646\u062c\u0627\u0642 \u06a9\u0646","tweet":"\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc \u062f\u0631 X","download_image":"\u062f\u0627\u0646\u0644\u0648\u062f \u062a\u0635\u0648\u06cc\u0631","off_canvas_column_close_btn_text":"\u0628\u0633\u062a\u0646","cookies_version":"1","header_banner_version":"1","promo_version":"1","header_banner_close_btn":"yes","header_banner_enabled":"no","whb_header_clone":"\n\t&lt;div class=\"whb-sticky-header whb-clone whb-main-header {{wrapperClasses}}\"&gt;\n\t\t&lt;div class=\"{{cloneClass}}\"&gt;\n\t\t\t&lt;div class=\"container\"&gt;\n\t\t\t\t&lt;div class=\"whb-flex-row whb-general-header-inner\"&gt;\n\t\t\t\t\t&lt;div class=\"whb-column whb-col-left whb-visible-lg\"&gt;\n\t\t\t\t\t\t{{.site-logo}}\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;div class=\"whb-column whb-col-center whb-visible-lg\"&gt;\n\t\t\t\t\t\t{{.wd-header-main-nav}}\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;div class=\"whb-column whb-col-right whb-visible-lg\"&gt;\n\t\t\t\t\t\t{{.wd-header-my-account}}\n\t\t\t\t\t\t{{.wd-header-search:not(.wd-header-search-mobile)}}\n\t\t\t\t\t\t{{.wd-header-wishlist}}\n\t\t\t\t\t\t{{.wd-header-compare}}\n\t\t\t\t\t\t{{.wd-header-cart}}\n\t\t\t\t\t\t{{.wd-header-fs-nav}}\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t{{.whb-mobile-left}}\n\t\t\t\t\t{{.whb-mobile-center}}\n\t\t\t\t\t{{.whb-mobile-right}}\n\t\t\t\t&lt;\/div&gt;\n\t\t\t&lt;\/div&gt;\n\t\t&lt;\/div&gt;\n\t&lt;\/div&gt;\n","pjax_timeout":"5000","split_nav_fix":"","shop_filters_close":"no","woo_installed":"","base_hover_mobile_click":"no","centered_gallery_start":"1","quickview_in_popup_fix":"","one_page_menu_offset":"150","hover_width_small":"1","is_multisite":"","current_blog_id":"1","swatches_scroll_top_desktop":"no","swatches_scroll_top_mobile":"no","lazy_loading_offset":"0","add_to_cart_action_timeout":"no","add_to_cart_action_timeout_number":"3","single_product_variations_price":"no","google_map_style_text":"\u0627\u0633\u062a\u0627\u06cc\u0644 \u0633\u0641\u0627\u0631\u0634\u06cc","quick_shop":"yes","sticky_product_details_offset":"150","sticky_add_to_cart_offset":"250","sticky_product_details_different":"100","preloader_delay":"300","comment_images_upload_size_text":"\u0641\u0627\u06cc\u0644 \u0647\u0627 \u062e\u06cc\u0644\u06cc \u0628\u0632\u0631\u06af \u0647\u0633\u062a\u0646\u062f. \u0633\u0627\u06cc\u0632 \u0641\u0627\u06cc\u0644 \u0645\u062c\u0627\u0632 1 \u0645\u06af\u0627\u0628\u0627\u06cc\u062a \u0645\u06cc \u0628\u0627\u0634\u062f.","comment_images_count_text":"\u0634\u0645\u0627 \u0645\u06cc \u062a\u0648\u0627\u0646\u06cc\u062f 3 \u062a\u0635\u0648\u06cc\u0631 \u0628\u0631\u0627\u06cc \u0646\u0638\u0631 \u062e\u0648\u062f \u0622\u067e\u0644\u0648\u062f \u06a9\u0646\u06cc\u062f.","single_product_comment_images_required":"no","comment_required_images_error_text":"\u062a\u0635\u0648\u06cc\u0631 \u0627\u0644\u0632\u0627\u0645\u06cc \u0645\u06cc \u0628\u0627\u0634\u062f.","comment_images_upload_mimes_text":"\u0641\u0631\u0645\u062a \u0647\u0627\u06cc \u062a\u0635\u0648\u06cc\u0631\u06cc \u0645\u062c\u0627\u0632 \u0628\u0631\u0627\u06cc \u0622\u067e\u0644\u0648\u062f png, jpeg \u0645\u06cc \u0628\u0627\u0634\u0646\u062f.","comment_images_added_count_text":"%s \u062a\u0635\u0648\u06cc\u0631 \u0627\u0636\u0627\u0641\u0647 \u0634\u062f\u0647 \u0627\u0633\u062a","comment_images_upload_size":"1048576","comment_images_count":"3","search_input_padding":"no","comment_images_upload_mimes":{"jpg|jpeg|jpe":"image\/jpeg","png":"image\/png"},"home_url":"https:\/\/fanava.com\/","shop_url":"","age_verify":"no","banner_version_cookie_expires":"60","promo_version_cookie_expires":"7","age_verify_expires":"30","countdown_timezone":"GMT","cart_redirect_after_add":"no","swatches_labels_name":"no","product_categories_placeholder":"Select a category","product_categories_no_results":"No matches found","cart_hash_key":"wc_cart_hash_96d21f7bf3799e26630af655c96d435a","fragment_name":"wc_fragments_96d21f7bf3799e26630af655c96d435a","photoswipe_template":"&lt;div class=\"pswp\" aria-hidden=\"true\" role=\"dialog\" tabindex=\"-1\"&gt;&lt;div class=\"pswp__bg\"&gt;&lt;\/div&gt;&lt;div class=\"pswp__scroll-wrap\"&gt;&lt;div class=\"pswp__container\"&gt;&lt;div class=\"pswp__item\"&gt;&lt;\/div&gt;&lt;div class=\"pswp__item\"&gt;&lt;\/div&gt;&lt;div class=\"pswp__item\"&gt;&lt;\/div&gt;&lt;\/div&gt;&lt;div class=\"pswp__ui pswp__ui--hidden\"&gt;&lt;div class=\"pswp__top-bar\"&gt;&lt;div class=\"pswp__counter\"&gt;&lt;\/div&gt;&lt;button class=\"pswp__button pswp__button--close\" title=\"Close (Esc)\"&gt;&lt;\/button&gt; &lt;button class=\"pswp__button pswp__button--share\" title=\"Share\"&gt;&lt;\/button&gt; &lt;button class=\"pswp__button pswp__button--fs\" title=\"Toggle fullscreen\"&gt;&lt;\/button&gt; &lt;button class=\"pswp__button pswp__button--zoom\" title=\"Zoom in\/out\"&gt;&lt;\/button&gt;&lt;div class=\"pswp__preloader\"&gt;&lt;div class=\"pswp__preloader__icn\"&gt;&lt;div class=\"pswp__preloader__cut\"&gt;&lt;div class=\"pswp__preloader__donut\"&gt;&lt;\/div&gt;&lt;\/div&gt;&lt;\/div&gt;&lt;\/div&gt;&lt;\/div&gt;&lt;div class=\"pswp__share-modal pswp__share-modal--hidden pswp__single-tap\"&gt;&lt;div class=\"pswp__share-tooltip\"&gt;&lt;\/div&gt;&lt;\/div&gt;&lt;button class=\"pswp__button pswp__button--arrow--left\" title=\"Previous (arrow left)\"&gt;&lt;\/button&gt; &lt;button class=\"pswp__button pswp__button--arrow--right\" title=\"Next (arrow right)&gt;\"&gt;&lt;\/button&gt;&lt;div class=\"pswp__caption\"&gt;&lt;div class=\"pswp__caption__center\"&gt;&lt;\/div&gt;&lt;\/div&gt;&lt;\/div&gt;&lt;\/div&gt;&lt;\/div&gt;","load_more_button_page_url":"yes","load_more_button_page_url_opt":"yes","menu_item_hover_to_click_on_responsive":"no","clear_menu_offsets_on_resize":"yes","three_sixty_framerate":"60","three_sixty_prev_next_frames":"5","ajax_search_delay":"300","animated_counter_speed":"3000","site_width":"1222","cookie_secure_param":"1","cookie_path":"\/","theme_dir":"https:\/\/fanava.com\/grsweb","slider_distortion_effect":"sliderWithNoise","current_page_builder":"elementor","collapse_footer_widgets":"yes","carousel_breakpoints":{"1025":"lg","768.98":"md","0":"sm"},"grid_gallery_control":"hover","grid_gallery_enable_arrows":"none","ajax_shop":"1","add_to_cart_text":"\u0627\u0641\u0632\u0648\u062f\u0646 \u0628\u0647 \u0633\u0628\u062f \u062e\u0631\u06cc\u062f","mobile_navigation_drilldown_back_to":"\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 %s","mobile_navigation_drilldown_back_to_main_menu":"\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u0641\u0647\u0631\u0633\u062a","mobile_navigation_drilldown_back_to_categories":"\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062f\u0633\u062a\u0647 \u0628\u0646\u062f\u06cc \u0647\u0627","search_history_title":"\u062a\u0627\u0631\u06cc\u062e\u0686\u0647 \u062c\u0633\u062a\u062c\u0648","search_history_clear_all":"\u067e\u0627\u06a9\u0633\u0627\u0632\u06cc","search_history_items_limit":"5","swiper_prev_slide_msg":"Previous slide","swiper_next_slide_msg":"Next slide","swiper_first_slide_msg":"This is the first slide","swiper_last_slide_msg":"\u0627\u06cc\u0646 \u0627\u062e\u0631\u06cc\u0646 \u0627\u0633\u0644\u0627\u06cc\u062f \u0627\u0633\u062a.","swiper_pagination_bullet_msg":"Go to slide {{index}}","swiper_slide_label_msg":"{{index}} \/ {{slidesLength}}","tooltip_left_selector":".wd-buttons[class*=\"wd-pos-r\"] .wd-action-btn, .wd-portfolio-btns .portfolio-enlarge","tooltip_top_selector":".wd-tooltip, .wd-buttons:not([class*=\"wd-pos-r\"]) &gt; .wd-action-btn, body:not(.catalog-mode-on):not(.login-see-prices) .wd-hover-base .wd-bottom-actions .wd-action-btn.wd-style-icon, .wd-hover-base .wd-compare-btn, body:not(.logged-in) .wd-review-likes a","ajax_links":".wd-nav-product-cat a, .wd-page-wrapper .widget_product_categories a, .widget_layered_nav_filters a, .woocommerce-widget-layered-nav a, .filters-area:not(.custom-content) a, body.post-type-archive-product:not(.woocommerce-account) .woocommerce-pagination a, body.tax-product_cat:not(.woocommerce-account) .woocommerce-pagination a, .wd-shop-tools a:not([rel=\"v:url\"]), .woodmart-woocommerce-layered-nav a, .woodmart-price-filter a, .wd-clear-filters a, .woodmart-woocommerce-sort-by a, .woocommerce-widget-layered-nav-list a, .wd-widget-stock-status a, .widget_nav_mega_menu a, .wd-products-shop-view a, .wd-products-per-page a, .wd-cat a, body[class*=\"tax-pa_\"] .woocommerce-pagination a, .wd-product-category-filter a, .widget_brand_nav a","is_criteria_enabled":"","summary_criteria_ids":"","review_likes_tooltip":"\u0644\u0637\u0641\u0627 \u0628\u0631\u0627\u06cc \u0627\u0631\u0632\u06cc\u0627\u0628\u06cc \u0646\u0638\u0631\u0627\u062a \u0648\u0627\u0631\u062f \u062d\u0633\u0627\u0628 \u06a9\u0627\u0631\u0628\u0631\u06cc \u0634\u0648\u06cc\u062f.","vimeo_library_url":"https:\/\/fanava.com\/grsweb\/js\/libs\/vimeo-player.min.js","reviews_criteria_rating_required":"no","is_rating_summary_filter_enabled":""};</p><p>var woodmart_page_css = {"wd-style-base-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/base-rtl.min.css","wd-helpers-wpb-elem-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/helpers-wpb-elem.min.css","wd-wpml-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/int-wpml-rtl.min.css","wd-elementor-base-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/int-elem-base-rtl.min.css","wd-wp-blocks-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/wp-blocks.min.css","wd-header-base-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/header-base-rtl.min.css","wd-mod-tools-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/mod-tools.min.css","wd-header-elements-base-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/header-el-base-rtl.min.css","wd-info-box-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/el-info-box-rtl.min.css","wd-header-mobile-nav-dropdown-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/header-el-mobile-nav-dropdown.min.css","wd-page-title-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/page-title.min.css","wd-blog-loop-base-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/blog-loop-base.min.css","wd-post-types-mod-predefined-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/post-types-mod-predefined.min.css","wd-blog-loop-design-masonry-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/blog-loop-design-masonry.min.css","wd-post-types-mod-categories-style-bg-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/post-types-mod-categories-style-bg.min.css","wd-post-types-mod-date-style-bg-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/post-types-mod-date-style-bg.min.css","wd-blog-mod-author-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/blog-mod-author.min.css","wd-social-icons-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/el-social-icons.min.css","wd-blog-mod-comments-button-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/blog-mod-comments-button.min.css","wd-off-canvas-sidebar-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/opt-off-canvas-sidebar.min.css","wd-widget-nav-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/widget-nav.min.css","wd-widget-wd-recent-posts-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/widget-wd-recent-posts.min.css","wd-widget-collapse-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/opt-widget-collapse.min.css","wd-footer-base-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/footer-base.min.css","wd-scroll-top-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/opt-scrolltotop-rtl.min.css","wd-mod-sticky-sidebar-opener-css":"https:\/\/fanava.com\/grsweb\/css\/parts\/mod-sticky-sidebar-opener.min.css"};</p><p>/* ]]&gt; */</p><p>&lt;/script&gt;</p><p>The following comment/snippet was identified via the pattern: \bADMIN\b</p><p>&lt;script type="text/javascript" id="elementor-frontend-js-before"&gt;</p><p>/* &lt;![CDATA[ */</p><p>var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc \u062f\u0631 Facebook","shareOnTwitter":"\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc \u062f\u0631 Twitter","pinIt":"\u067e\u06cc\u0646 \u06a9\u0646\u06cc\u062f","download":"\u062f\u0627\u0646\u0644\u0648\u062f","downloadImage":"\u062f\u0627\u0646\u0644\u0648\u062f \u062a\u0635\u0648\u06cc\u0631","fullscreen":"\u062a\u0645\u0627\u0645\u200c\u0635\u0641\u062d\u0647","zoom":"\u0628\u0632\u0631\u06af\u0646\u0645\u0627\u06cc\u06cc","share":"\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc","playVideo":"\u067e\u062e\u0634 \u0648\u06cc\u062f\u06cc\u0648","previous":"\u0642\u0628\u0644\u06cc","next":"\u0628\u0639\u062f\u06cc","close":"\u0628\u0633\u062a\u0646","a11yCarouselPrevSlideMessage":"\u0627\u0633\u0644\u0627\u06cc\u062f \u0642\u0628\u0644\u06cc","a11yCarouselNextSlideMessage":"\u0627\u0633\u0644\u0627\u06cc\u062f \u0628\u0639\u062f\u06cc","a11yCarouselFirstSlideMessage":"\u0627\u06cc\u0646 \u0627\u0648\u0644\u06cc\u0646 \u0627\u0633\u0644\u0627\u06cc\u062f \u0627\u0633\u062a","a11yCarouselLastSlideMessage":"\u0627\u06cc\u0646 \u0622\u062e\u0631\u06cc\u0646 \u0627\u0633\u0644\u0627\u06cc\u062f \u0627\u0633\u062a","a11yCarouselPaginationBulletMessage":"\u0631\u0641\u062a\u0646 \u0628\u0647 \u0627\u0633\u0644\u0627\u06cc\u062f"},"is_rtl":true,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"\u062d\u0627\u0644\u062a \u0639\u0645\u0648\u062f\u06cc \u0645\u0648\u0628\u0627\u06cc\u0644","value":768,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"\u062d\u0627\u0644\u062a \u0627\u0641\u0642\u06cc \u0645\u0648\u0628\u0627\u06cc\u0644","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"\u062d\u0627\u0644\u062a \u0639\u0645\u0648\u062f\u06cc \u062a\u0628\u0644\u062a","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"\u062d\u0627\u0644\u062a \u0627\u0641\u0642\u06cc \u062a\u0628\u0644\u062a","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"\u0644\u067e \u062a\u0627\u067e","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"\u0635\u0641\u062d\u0647 \u0639\u0631\u06cc\u0636 (Widescreen)","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":true},"version":"3.32.3","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"nested-elements":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"import-export-customization":true},"urls":{"assets":"https:\/\/fanava.com\/grsweb_plugin\/elementor\/assets\/","ajaxurl":"https:\/\/fanava.com\/grs-admin\/admin-ajax.php","uploadUrl":"https:\/\/fanava.com\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"80cc231680"},"swiperClass":"swiper","settings":{"editorPreferences":[]},"kit":{"viewport_mobile":"768.98","active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":0,"title":"\u0647\u0648\u0634 \u0645\u0635\u0646\u0648\u0639\u06cc &amp;#8211; \u06af\u0631\u0648\u0647 \u0641\u0646 \u0622\u0648\u0627","excerpt":""}};</p><p>var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc \u062f\u0631 Facebook","shareOnTwitter":"\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc \u062f\u0631 Twitter","pinIt":"\u067e\u06cc\u0646 \u06a9\u0646\u06cc\u062f","download":"\u062f\u0627\u0646\u0644\u0648\u062f","downloadImage":"\u062f\u0627\u0646\u0644\u0648\u062f \u062a\u0635\u0648\u06cc\u0631","fullscreen":"\u062a\u0645\u0627\u0645\u200c\u0635\u0641\u062d\u0647","zoom":"\u0628\u0632\u0631\u06af\u0646\u0645\u0627\u06cc\u06cc","share":"\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc","playVideo":"\u067e\u062e\u0634 \u0648\u06cc\u062f\u06cc\u0648","previous":"\u0642\u0628\u0644\u06cc","next":"\u0628\u0639\u062f\u06cc","close":"\u0628\u0633\u062a\u0646","a11yCarouselPrevSlideMessage":"\u0627\u0633\u0644\u0627\u06cc\u062f \u0642\u0628\u0644\u06cc","a11yCarouselNextSlideMessage":"\u0627\u0633\u0644\u0627\u06cc\u062f \u0628\u0639\u062f\u06cc","a11yCarouselFirstSlideMessage":"\u0627\u06cc\u0646 \u0627\u0648\u0644\u06cc\u0646 \u0627\u0633\u0644\u0627\u06cc\u062f \u0627\u0633\u062a","a11yCarouselLastSlideMessage":"\u0627\u06cc\u0646 \u0622\u062e\u0631\u06cc\u0646 \u0627\u0633\u0644\u0627\u06cc\u062f \u0627\u0633\u062a","a11yCarouselPaginationBulletMessage":"\u0631\u0641\u062a\u0646 \u0628\u0647 \u0627\u0633\u0644\u0627\u06cc\u062f"},"is_rtl":true,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"\u062d\u0627\u0644\u062a \u0639\u0645\u0648\u062f\u06cc \u0645\u0648\u0628\u0627\u06cc\u0644","value":768,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"\u062d\u0627\u0644\u062a \u0627\u0641\u0642\u06cc \u0645\u0648\u0628\u0627\u06cc\u0644","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"\u062d\u0627\u0644\u062a \u0639\u0645\u0648\u062f\u06cc \u062a\u0628\u0644\u062a","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"\u062d\u0627\u0644\u062a \u0627\u0641\u0642\u06cc \u062a\u0628\u0644\u062a","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"\u0644\u067e \u062a\u0627\u067e","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"\u0635\u0641\u062d\u0647 \u0639\u0631\u06cc\u0636 (Widescreen)","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":true},"version":"3.32.3","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"nested-elements":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"import-export-customization":true},"urls":{"assets":"https:\/\/fanava.com\/grsweb_plugin\/elementor\/assets\/","ajaxurl":"https:\/\/fanava.com\/grs-admin\/admin-ajax.php","uploadUrl":"https:\/\/fanava.com\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"80cc231680"},"swiperClass":"swiper","settings":{"editorPreferences":[]},"kit":{"viewport_mobile":"768.98","active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":0,"title":"\u0647\u0648\u0634 \u0645\u0635\u0646\u0648\u0639\u06cc &amp;#8211; \u06af\u0631\u0648\u0647 \u0641\u0646 \u0622\u0648\u0627","excerpt":""}};</p><p>/* ]]&gt; */</p><p>&lt;/script&gt;</p><p>The following comment/snippet was identified via the pattern: \bDB\b</p><p>&lt;script&gt;var rocket_beacon_data = {"ajax_url":"https:\/\/fanava.com\/grs-admin\/admin-ajax.php","nonce":"d688f1f9cc","url":"https:\/\/fanava.com\/tag\/%D9%87%D9%88%D8%B4-%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C","is_mobile":false,"width_threshold":1600,"height_threshold":700,"delay":500,"debug":null,"status":{"atf":true,"lrc":true,"preconnect_external_domain":true},"elements":"img, video, picture, p, main, div, li, svg, section, header, span","lrc_threshold":1800,"preconnect_external_domain_elements":["link","script","iframe"],"preconnect_external_domain_exclusions":["static.cloudflareinsights.com","rel=\"profile\"","rel=\"preconnect\"","rel=\"dns-prefetch\"","rel=\"icon\""]}&lt;/script&gt;</p><p></p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p></p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">200</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">13</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</tbody></table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+<tbody><tr height="24" class="risk-info">
+<th width="20%"><a name="info"></a>Informational (Low)</th><th width="80%">Charset Mismatch </th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>This check identifies responses where the HTTP Content-Type header declares a charset different from the charset defined by the body of the HTML or XML. When there's a charset mismatch between the HTTP header and content body Web browsers can be forced into an undesirable content-sniffing mode to determine the content's correct character set.</p><p></p><p>An attacker could manipulate content on the page to be interpreted in an encoding of their choice. For example, if an attacker can control content at the beginning of the page, they could inject script using UTF-7 encoded text and manipulate some browsers into interpreting that text.</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Fcontact%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Fsubsidiaries%2Ffanavasystem%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Fsubsidiaries%2Ffanavaidc%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2F%25da%25af%25d8%25b1%25d9%2588%25d9%2587-%25d9%2581%25d9%2586%25d8%25a2%25d9%2588%25d8%25a7-%25d8%25ad%25d8%25a7%25d9%2585%25db%258c-%25d8%25af%25d9%2588%25d9%2585%25db%258c%25d9%2586-%25d8%25af%25d9%2588%25d8%25b1%25d9%2587-%25d9%2585%25d8%25b3%25d8%25a7%25d8%25a8%25d9%2582%25d8%25a7%25d8%25aa-bluecup%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Fsubsidiaries%2Ftazmingostar%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2F%25d8%25ae%25d8%25af%25d9%2585%25d8%25a7%25d8%25aa-%25d9%2588-%25d9%2585%25d8%25ad%25d8%25b5%25d9%2588%25d9%2584%25d8%25a7%25d8%25aa%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2F%25d9%25be%25d8%25a7%25db%258c%25da%25af%25d8%25a7%25d9%2587-%25d8%25af%25d8%25a7%25d9%2586%25d8%25b4-%25d9%2581%25d9%2586-%25d8%25a2%25d9%2588%25d8%25a7%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2F%25d9%2585%25d8%25ac%25d9%2584%25d9%2587-%25d9%2587%25d9%2585-%25d8%25a2%25d9%2588%25d8%25a7%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Fspecialized-committees%2Faudit-committee%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Four-team%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Fsubsidiaries%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Fsubsidiaries%2Ffanavanet%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Flicenses%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Fjob-positions%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Fsubsidiaries%2Ffanavasg%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Fspecialized-committees%2Frisk-committee%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Fcsr%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Fcompany-history%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/en/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Fen%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://fanava.com/wp-json/oembed/1.0/embed?format=xml&amp;url=https%3A%2F%2Ffanava.com%2Fsubsidiaries%2Ffanavatsp%2F</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">30</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Force UTF-8 for all text content in both the HTTP header and meta tags in HTML or encoding declarations in XML.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Other information</td><td width="80%"><p>There was a charset mismatch between the HTTP Header and the XML encoding declaration: [UTF-8] and [null] do not match.</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>http://code.google.com/p/browsersec/wiki/Part2#Character_set_handling_and_detection</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">16</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">15</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</tbody></table>
+
+
+</body></html>

@@ -1,0 +1,11 @@
+2025-11-01 13:20:39 [10@itsm]
+0 seconds for "Installation of plugin FusionInventory" @ 2025-11-01 13:20:39 [10@itsm]
+0 seconds for "Clean data from old installation of the plugin" @ 2025-11-01 13:20:39 [10@itsm]
+0 seconds for "Clean rules from old installation of the plugin" @ 2025-11-01 13:20:42 [10@itsm]
+3 seconds for "Creation tables in database" @ 2025-11-01 13:20:42 [10@itsm]
+0 seconds for "Creation of folders" @ 2025-11-01 13:20:43 [10@itsm]
+1 seconds for "Initialize profiles" @ 2025-11-01 13:20:43 [10@itsm]
+0 seconds for "Initialize configuration" @ 2025-11-01 13:20:43 [10@itsm]
+0 seconds for "Initialize agent TASKS" @ 2025-11-01 13:20:43 [10@itsm]
+0 seconds for "Initialize cron task" @ 2025-11-01 13:20:48 [10@itsm]
+5 seconds for "Create rules" @ 

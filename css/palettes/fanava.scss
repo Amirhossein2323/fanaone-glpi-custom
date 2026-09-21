@@ -1,0 +1,898 @@
+$primary: #238fbd;
+$secondary: #64748b;
+$info: #4fb0d2;
+$success: #16a34a;
+$warning: #d97706;
+$danger: #dc2626;
+$body-bg: #f6f7f9;
+$body-color: #172033;
+$border-color: #e2e8f0;
+$border-radius: .625rem;
+$border-radius-lg: .8rem;
+$enable-negative-margins: true;
+$link-hover-decoration: none;
+
+@font-face {
+  font-family: "IRANSansX";
+  src: url("/public/fonts/IRANSansXV.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@import "defaults";
+@import "../includes/palette_light";
+
+html[dir="rtl"] body { direction: rtl; text-align: right; }
+
+body {
+  background: #f6f7f9;
+  color: #172033;
+  font-family: "IRANSansX", Tahoma, sans-serif !important;
+  font-size: .875rem;
+}
+button, input, select, textarea, .form-control, .form-select, .select2-container,
+.dropdown-menu, .tooltip, .popover { font-family: "IRANSansX", Tahoma, sans-serif !important; }
+
+/* Header and navigation — preserve Tabler's flex and icon mechanics. */
+.vertical-layout .sidebar {
+  background: linear-gradient(165deg, #06263b 0%, #0a3b59 58%, #005486 100%);
+  border: 0;
+  box-shadow: 8px 0 30px rgba(2, 6, 24, .12);
+  right: 0 !important;
+  left: auto !important;
+}
+.vertical-layout .page > header.navbar,
+.vertical-layout .page-wrapper {
+  margin-right: 15rem !important;
+  margin-left: 0 !important;
+}
+@media (min-width: 1200px) {
+  .vertical-layout .page > header.navbar > .container-fluid {
+    column-gap: 1rem;
+  }
+  .vertical-layout .page > header.navbar .breadcrumb {
+    flex: 0 1 auto;
+    min-width: 0;
+    margin: 0;
+  }
+  .vertical-layout .page > header.navbar form[role="search"] {
+    margin-inline: .35rem;
+  }
+}
+.vertical-layout.navbar-collapsed .page > header.navbar,
+.vertical-layout.navbar-collapsed .page-wrapper {
+  margin-right: 4.5rem !important;
+  margin-left: 0 !important;
+}
+.vertical-layout .sidebar .glpi-logo {
+  position: relative;
+  width: 10rem !important;
+  height: 3.8rem !important;
+  background: none !important;
+}
+.vertical-layout .sidebar .glpi-logo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/public/pics/fanaone-logo.png");
+  background-repeat: no-repeat;
+  background-size: 16.3rem 10.9rem;
+  background-position: -2.5rem -3.3rem;
+}
+.vertical-layout.navbar-collapsed .sidebar .glpi-logo {
+  width: 3.5rem !important;
+}
+.vertical-layout.navbar-collapsed .sidebar .glpi-logo::after {
+  background-size: 16.3rem 10.9rem;
+  background-position: -2.5rem -3.3rem;
+}
+.vertical-layout .sidebar .navbar-brand { justify-content: center; }
+.vertical-layout .sidebar .navbar-brand { min-height: 4.5rem; border-bottom: 1px solid rgba(255,255,255,.08); }
+.vertical-layout .sidebar .nav-link {
+  color: #c5e5f1;
+  border-radius: .65rem;
+  margin: .14rem .65rem;
+  padding: .65rem .8rem;
+  transition: background-color .16s ease, color .16s ease, transform .16s ease;
+}
+.vertical-layout .sidebar .nav-link:hover {
+  color: #fff;
+  background: rgba(148, 208, 228, .13);
+  transform: translateX(2px);
+}
+.vertical-layout .sidebar .nav-link.active,
+.vertical-layout .sidebar .nav-item.active > .nav-link {
+  color: #fff;
+  background: linear-gradient(90deg, rgba(35,143,189,.9), rgba(79,176,210,.72));
+  box-shadow: 0 8px 22px rgba(0, 102, 165, .25);
+}
+.vertical-layout .sidebar .nav-link > i { color: currentColor; font-size: 1.05rem; width: 1.6rem; text-align: center; }
+.vertical-layout .sidebar .dropdown-menu {
+  background: rgba(2, 38, 59, .56);
+  border: 0;
+  box-shadow: none;
+  margin: .15rem .65rem .5rem;
+  border-radius: .65rem;
+}
+.vertical-layout .sidebar .dropdown-item { color: #c5e5f1; border-radius: .5rem; padding: .55rem .75rem; }
+.vertical-layout .sidebar .dropdown-item:hover,
+.vertical-layout .sidebar .dropdown-item.active { color: #fff; background: rgba(79,176,210,.18); }
+.vertical-layout .sidebar .dropdown-header { color: #94d0e4; }
+
+header.navbar, .secondary-bar {
+  background: rgba(255,255,255,.96) !important;
+  border: 0;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 4px 18px rgba(23,32,51,.045) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* Global search: explicit RTL radii, independent of Bootstrap's physical sides. */
+.my-global-search-form { direction: rtl; width: min(22rem, 100%); }
+.my-global-search-form > .form-control {
+  border-radius: .7rem 0 0 .7rem !important;
+  border-right: 0;
+  padding-right: 1rem;
+  text-align: right;
+}
+.my-global-search-form > .input-group-text {
+  order: -1;
+  min-width: 2.75rem;
+  justify-content: center;
+  border-radius: 0 .7rem .7rem 0 !important;
+  border-left: 0;
+  background: #fff;
+}
+.my-global-search-form:focus-within > * { border-color: #4fb0d2; }
+
+/* Breadcrumb spacing and RTL alignment. */
+.breadcrumb {
+  direction: rtl;
+  align-items: center;
+  column-gap: .4rem;
+}
+.breadcrumb .breadcrumb-item { padding: 0 !important; }
+.breadcrumb .breadcrumb-item > a {
+  display: inline-flex;
+  align-items: center;
+  gap: .42rem;
+  min-height: 2rem;
+}
+.breadcrumb .breadcrumb-item > a > i {
+  flex: 0 0 1.15rem;
+  width: 1.15rem;
+  margin: 0 !important;
+  text-align: center;
+}
+.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  float: none !important;
+  padding: 0 .15rem !important;
+  margin: 0 !important;
+}
+
+/* User preferences is a legacy table; explicitly normalize it for RTL. */
+.page-preference main,
+.page-preference main .card-tabs,
+.page-preference main .tab-content,
+.page-preference main .tab-pane,
+.page-preference main form,
+.page-preference main table {
+  direction: rtl;
+  text-align: right;
+}
+.page-preference main .nav-tabs { justify-content: flex-start; direction: rtl; }
+.page-preference main .tab_cadre_fixe th,
+.page-preference main .tab_cadre_fixe td {
+  text-align: right !important;
+  vertical-align: middle;
+}
+.page-preference main label { display: inline-block; text-align: right; line-height: 1.7; }
+.page-preference main .form-control,
+.page-preference main .form-select,
+.page-preference main .select2-selection { direction: rtl; text-align: right; }
+.horizontal-layout .topbar {
+  background: linear-gradient(100deg, #06263b, #0066a5) !important;
+}
+.horizontal-layout .topbar .container-fluid { min-height: 4.25rem; gap: .4rem; }
+.horizontal-layout .topbar .navbar-brand { width: 9rem; min-width: 9rem; padding: 0 .25rem; }
+.horizontal-layout .topbar .glpi-logo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  background: none !important;
+}
+.horizontal-layout .topbar .glpi-logo::after {
+  content: "";
+  display: block;
+  width: 8.5rem;
+  height: 3rem;
+  background-image: url("/public/pics/fanaone-logo.png");
+  background-repeat: no-repeat;
+  background-size: 11.2rem 7.47rem;
+  background-position: -1.78rem -2.08rem;
+}
+.horizontal-layout .topbar .nav-link { display: flex; align-items: center; gap: .48rem; color: #e2f2f8; border-radius: .6rem; padding: .62rem .7rem; }
+.horizontal-layout .topbar .nav-link:hover,
+.horizontal-layout .topbar .nav-link.active { color: #fff; background: rgba(255,255,255,.1); border-radius: .6rem; }
+.horizontal-layout .topbar .menu-label { font-weight: 600; }
+.horizontal-layout .topbar .nav-link > i { color: #94d0e4; }
+
+/* Correct RTL dropdown geometry and keep menus inside the viewport. */
+.horizontal-layout #navbar-menu { overflow: visible; }
+.horizontal-layout #navbar-menu > .navbar-nav { direction: rtl; }
+.horizontal-layout #navbar-menu > .navbar-nav > .nav-item { position: relative; }
+.horizontal-layout #navbar-menu > .navbar-nav > .nav-item > .dropdown-menu {
+  right: 0 !important;
+  left: auto !important;
+  direction: rtl;
+  text-align: right;
+  max-width: min(46rem, calc(100vw - 2rem));
+  overflow-x: hidden;
+  transform-origin: top right !important;
+}
+.horizontal-layout .dropdown-menu-columns { direction: rtl; }
+.horizontal-layout .dropdown-menu-column { min-width: 13rem; }
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  min-height: 2.45rem;
+  text-align: right;
+}
+.dropdown-item > i:first-child { flex: 0 0 1.35rem; width: 1.35rem !important; margin: 0 !important; text-align: center; color: #238fbd; }
+.dropdown-item .text-wrap { line-height: 1.7; }
+.dropdown-toggle::after { margin-right: .35rem; margin-left: 0; }
+
+/* Account dropdown: keep nested profile menu inside the content area in RTL. */
+.user-menu .dropdown-menu {
+  min-width: 15rem;
+  max-width: min(20rem, calc(100vw - 1.5rem));
+  overflow: visible !important;
+  direction: rtl;
+  text-align: right;
+}
+.user-menu .dropdown-menu-background { overflow: visible; }
+.user-menu .dropdown-item {
+  gap: .75rem;
+  padding: .65rem .85rem;
+  line-height: 1.65;
+}
+.user-menu .dropdown-item > i:first-child {
+  flex: 0 0 1.4rem;
+  width: 1.4rem !important;
+  margin: 0 !important;
+  text-align: center;
+}
+.user-menu .dropstart { position: relative; }
+.user-menu .dropstart > .dropdown-menu {
+  right: auto !important;
+  left: calc(100% + .5rem) !important;
+  top: 0 !important;
+  margin: 0 !important;
+  min-width: 12rem;
+  border-radius: .75rem;
+  box-shadow: 0 12px 30px rgba(23,32,51,.13);
+}
+.user-menu .dropstart > .dropdown-toggle::before { transform: rotate(180deg); }
+
+/* Entity chooser: a usable RTL panel instead of the cramped nested dropdown. */
+.user-menu .entity-dropdown-toggle + .dropdown-menu {
+  width: min(30rem, calc(100vw - 2rem));
+  min-width: min(30rem, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem);
+  padding: 0 !important;
+  overflow: hidden !important;
+  transform: translateY(-4.75rem);
+  border: 1px solid #cfe4ed;
+  border-radius: 1rem;
+  box-shadow: 0 20px 50px rgba(6,38,59,.2);
+}
+.user-menu .entity-dropdown-toggle + .dropdown-menu > .dropdown-menu-background {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  max-height: calc(100vh - 2rem);
+  padding: 1rem;
+  overflow: hidden;
+  background: #fff;
+}
+.user-menu .entity-dropdown-toggle + .dropdown-menu h3 {
+  margin: 0;
+  padding-bottom: .65rem;
+  color: #073b59;
+  border-bottom: 1px solid #e6f0f4;
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-align: right;
+}
+.user-menu .entity-dropdown-toggle + .dropdown-menu .alert {
+  margin: 0;
+  padding: .65rem .8rem;
+  color: #315466;
+  background: #f3f9fc;
+  border: 0;
+  border-right: 3px solid #38a9cf;
+  border-radius: .65rem;
+  font-size: .78rem;
+  line-height: 1.8;
+}
+.user-menu .entity-dropdown-toggle + .dropdown-menu .input-group {
+  direction: ltr;
+  flex-wrap: nowrap;
+}
+.user-menu .entity-dropdown-toggle + .dropdown-menu .input-group .form-control {
+  direction: rtl;
+  text-align: right;
+  border-radius: .65rem 0 0 .65rem !important;
+}
+.user-menu .entity-dropdown-toggle + .dropdown-menu .input-group .btn {
+  min-width: 2.75rem;
+  border-radius: 0 !important;
+}
+.user-menu .entity-dropdown-toggle + .dropdown-menu .input-group .btn:last-child {
+  border-radius: 0 .65rem .65rem 0 !important;
+}
+.user-menu .entity-dropdown-toggle + .dropdown-menu .entity_tree {
+  min-height: 12rem;
+  max-height: 21rem;
+  overflow: auto;
+  border: 1px solid #e2edf2;
+  border-radius: .7rem;
+  background: #fbfdfe;
+}
+.user-menu .entity-dropdown-toggle + .dropdown-menu .entity_tree table {
+  width: 100%;
+  direction: rtl;
+}
+.user-menu .entity-dropdown-toggle + .dropdown-menu .entity_tree tr {
+  border-bottom: 1px solid #edf3f6;
+}
+.user-menu .entity-dropdown-toggle + .dropdown-menu .entity_tree td {
+  padding: .6rem .75rem !important;
+}
+.user-menu .entity-dropdown-toggle + .dropdown-menu .fancytree-active,
+.user-menu .entity-dropdown-toggle + .dropdown-menu .fancytree-selected {
+  color: #07557e !important;
+  background: #def3fb !important;
+}
+.user-menu-dropdown-toggle:focus,
+.user-menu-dropdown-toggle:focus-visible,
+.user-menu .dropdown-toggle:focus,
+.user-menu .dropdown-toggle:focus-visible {
+  outline: 0 !important;
+  border-color: #94d0e4 !important;
+  box-shadow: 0 0 0 3px rgba(35,143,189,.14) !important;
+}
+@media (max-width: 767px) {
+  .user-menu .dropstart > .dropdown-menu {
+    position: static !important;
+    max-width: 100%;
+    margin-top: .35rem !important;
+  }
+  .user-menu .entity-dropdown-toggle + .dropdown-menu {
+    width: 100%;
+    min-width: 0;
+    max-height: 70vh;
+    transform: none;
+  }
+}
+
+/* Surfaces */
+.page-body { padding-top: 1.25rem; }
+.card, .modal-content, .dropdown-menu:not(.sidebar .dropdown-menu) {
+  border: 1px solid #e5e7eb;
+  border-radius: .9rem;
+  box-shadow: 0 8px 28px rgba(23,32,51,.06);
+  background: #fff;
+}
+.card-header, .modal-header {
+  min-height: 3.2rem;
+  background: linear-gradient(180deg, #fff, #fbfdfe);
+  border-bottom: 1px solid #edf2f5;
+  border-radius: .9rem .9rem 0 0;
+}
+.card-title, .page-title, h1, h2, h3 { color: #172033; font-weight: 700; letter-spacing: -.015em; }
+
+/* Tabs use symmetric corners in RTL. */
+.nav-tabs { gap: .3rem; border-bottom-color: #dfe8ed; }
+.nav-tabs .nav-link {
+  margin: 0 !important;
+  padding: .65rem .9rem;
+  border-radius: .65rem .65rem 0 0 !important;
+}
+.nav-tabs .nav-link.active { color: #0066a5; background: #fff; border-color: #dfe8ed #dfe8ed #fff; }
+
+/* Controls */
+.btn { border-radius: .62rem; font-weight: 600; box-shadow: none; }
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(135deg, #238fbd, #0066a5);
+  border-color: #238fbd;
+  box-shadow: 0 6px 16px rgba(35,143,189,.2);
+}
+.btn-primary:hover { background: linear-gradient(135deg, #0066a5, #005486); border-color: #0066a5; }
+.btn-outline-primary { color: #0066a5; border-color: #94d0e4; }
+.form-control, .form-select, .select2-container--default .select2-selection {
+  min-height: 2.45rem;
+  border-color: #dbe4ea;
+  background-color: #fff;
+  box-shadow: none !important;
+}
+.form-control:focus, .form-select:focus,
+.select2-container--default.select2-container--focus .select2-selection {
+  border-color: #4fb0d2;
+  box-shadow: 0 0 0 3px rgba(35,143,189,.11) !important;
+}
+.input-group-text { color: #64748b; border-color: #dbe4ea; background: #f8fafc; }
+
+/* Tables and status elements */
+.table { --tblr-table-border-color: #edf1f4; }
+.table thead th { color: #263244; font-weight: 700; background: #f2f9fc; border-bottom-color: #c5e5f1; }
+.table tbody tr { transition: background-color .12s ease; }
+.table tbody tr:hover { background: #f8fcfe; }
+.badge { border-radius: 999px; font-weight: 600; padding: .35em .65em; }
+.progress { border-radius: 999px; background: #e2f2f8; }
+.progress-bar { background: linear-gradient(90deg, #238fbd, #4fb0d2); }
+
+/* Dashboard: suppress the legacy rainbow palette and keep one visual system. */
+.dashboard .card.big-number,
+.tab-content .card.big-number {
+  color: #172033 !important;
+  background: linear-gradient(145deg, #fff, #f2f9fc) !important;
+  border: 1px solid #dbeaf0 !important;
+  border-right: 4px solid #238fbd !important;
+  box-shadow: 0 5px 16px rgba(23,32,51,.055) !important;
+}
+.dashboard .card.big-number:hover,
+.tab-content .card.big-number:hover {
+  border-color: #94d0e4 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px rgba(35,143,189,.11) !important;
+}
+.dashboard .card.big-number *,
+.tab-content .card.big-number * { color: inherit !important; }
+.dashboard .card.g-chart,
+.tab-content .card.g-chart { background: #fff !important; border-color: #e7edf1 !important; }
+.alert-warning {
+  color: #7c4a03;
+  background: #fff8e8 !important;
+  border-color: #f1d69a !important;
+}
+.alert-important.alert-warning { box-shadow: none; }
+
+/* Login */
+body.welcome-anonymous {
+  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background: #f2f9fc;
+}
+.welcome-anonymous .login-wrapper {
+  height: 100vh;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(22rem, 42%) 1fr;
+  direction: rtl;
+  background: #fff;
+}
+.welcome-anonymous .login-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 1.5rem clamp(1.5rem, 5vw, 5rem);
+  overflow: hidden;
+  background: #fff;
+  direction: rtl;
+}
+.welcome-anonymous .form-box { width: 100%; max-width: 26rem; }
+.welcome-anonymous .fanaone-login-logo {
+  display: block;
+  width: 16rem;
+  max-width: 78%;
+  height: 4.75rem;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+  filter: invert(1) hue-rotate(180deg) saturate(1.15);
+}
+.welcome-anonymous .form-box .mb-5 { margin-bottom: 2rem !important; }
+.welcome-anonymous .form-box .mt-5 { margin-top: 2rem !important; }
+.welcome-anonymous .form-box h4 { margin-bottom: .65rem; font-size: 1.35rem; }
+.welcome-anonymous .input-group-custom { position: relative; margin-bottom: 1.2rem; }
+.welcome-anonymous .input-group-custom .form-label {
+  display: block;
+  margin-bottom: .45rem;
+  color: #334155;
+  font-weight: 650;
+}
+.welcome-anonymous .input-group-custom > i {
+  position: absolute;
+  z-index: 2;
+  right: .2rem;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3rem;
+  color: #238fbd;
+  font-size: 1.1rem;
+  pointer-events: none;
+  border-left: 1px solid #e1eaf0;
+}
+.welcome-anonymous .input-group-custom input {
+  display: block;
+  width: 100%;
+  height: 3rem;
+  padding: .65rem 4rem .65rem .9rem !important;
+  color: #172033;
+  background: #f8fafc;
+  border: 1px solid #dbe4ea;
+  border-radius: .72rem;
+  outline: 0;
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.welcome-anonymous .input-group-custom input:focus {
+  background: #fff;
+  border-color: #4fb0d2;
+  box-shadow: 0 0 0 4px rgba(35,143,189,.1);
+}
+.welcome-anonymous .text-start { text-align: right !important; }
+.welcome-anonymous .text-start a { color: #0066a5 !important; }
+.welcome-anonymous .btn-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  width: 100%;
+  min-height: 3rem;
+  padding: .65rem 1rem;
+  border-radius: .72rem;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.welcome-anonymous .btn-login {
+  color: #fff;
+  background: linear-gradient(135deg, #238fbd, #0066a5);
+  border: 0;
+  box-shadow: 0 8px 20px rgba(35,143,189,.22);
+}
+.welcome-anonymous .btn-login:hover { transform: translateY(-1px); box-shadow: 0 11px 26px rgba(35,143,189,.28); }
+.welcome-anonymous .fanava-footer-mark { color: #0066a5; font-size: .72rem; font-weight: 800; letter-spacing: .12em; }
+.welcome-anonymous .login-banner {
+  position: relative;
+  overflow: hidden;
+  background: #001435 url("/public/pics/fanaone-login.png") center / cover no-repeat;
+}
+.welcome-anonymous .login-banner::before,
+.welcome-anonymous .login-banner::after { display: none; }
+
+html[dir="rtl"], body { overflow-x: clip; }
+[title="درباره ما"] { display: none !important; }
+@media (max-width: 900px) {
+  body.welcome-anonymous { height: auto; min-height: 100vh; overflow-y: auto; }
+  .welcome-anonymous .login-wrapper { grid-template-columns: 1fr; }
+  .welcome-anonymous .login-banner { display: none; }
+  .welcome-anonymous .login-form-container { min-height: 100vh; }
+}
+
+.dropdown-menu { text-align: right; }
+.jalali-datepicker-container,
+jdp-container {
+  direction: rtl !important;
+  font-family: "iranSans", Tahoma, sans-serif !important;
+  z-index: 10050 !important;
+  border: 1px solid #c5e5f1 !important;
+  border-radius: .9rem !important;
+  box-shadow: 0 18px 45px rgba(6,38,59,.16) !important;
+}
+
+/* Gregorian Flatpickr remains only as the hidden value adapter. */
+html[dir="rtl"] .flatpickr-calendar { display: none !important; visibility: hidden !important; pointer-events: none !important; }
+.flatpickr.input-group { direction: rtl; }
+.flatpickr.input-group > .form-control {
+  border-radius: .65rem 0 0 .65rem !important;
+  border-right: 0;
+  text-align: right;
+  padding-right: .9rem !important;
+}
+.flatpickr.input-group > .input-group-text {
+  order: -1;
+  min-width: 2.7rem;
+  justify-content: center;
+  border-radius: 0 .65rem .65rem 0 !important;
+  border-left: 0;
+  color: #238fbd;
+  background: #f8fcfe;
+  cursor: pointer;
+}
+
+/* Put the primary ticket-form scrollbar on the outer/right edge. */
+.itil-left-side { direction: ltr; }
+.itil-left-side > * { direction: rtl; }
+.itil-left-side form,
+.itil-left-side .card,
+.itil-left-side .tab-content,
+.itil-left-side .tox,
+.itil-left-side .tox-edit-area,
+.itil-left-side textarea,
+.itil-left-side input,
+.itil-left-side select {
+  direction: rtl;
+  text-align: right;
+}
+.tox, .tox * { font-family: "IRANSansX", Tahoma, sans-serif !important; }
+
+/* Ticket side fields: normalize compound controls for RTL. */
+.itil-right-side,
+.itil-right-side form { direction: rtl; text-align: right; }
+.itil-right-side .input-group {
+  direction: rtl !important;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.itil-right-side .input-group > * { border-radius: 0 !important; }
+.itil-right-side .input-group > :first-child { border-radius: 0 .65rem .65rem 0 !important; }
+.itil-right-side .input-group > :last-child { border-radius: .65rem 0 0 .65rem !important; }
+.itil-right-side .input-group .select2-container {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto !important;
+}
+.itil-right-side .input-group .btn,
+.itil-right-side .input-group .input-group-text {
+  flex: 0 0 2.65rem;
+  width: 2.65rem;
+  justify-content: center;
+  padding-inline: .5rem;
+}
+
+/* Select2 + action buttons are emitted as a button-group, not an input-group. */
+.itil-right-side .field-container > .btn-group[role="group"] {
+  display: flex;
+  direction: ltr;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.itil-right-side .field-container > .btn-group[role="group"] > .select2-container {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto !important;
+}
+.itil-right-side .field-container > .btn-group[role="group"] > .select2-container .select2-selection {
+  direction: rtl;
+  text-align: right;
+  border-radius: .65rem 0 0 .65rem !important;
+}
+.itil-right-side .field-container > .btn-group[role="group"] > .btn {
+  flex: 0 0 2.65rem;
+  width: 2.65rem;
+  padding-inline: .5rem;
+  border-radius: 0 !important;
+}
+.itil-right-side .field-container > .btn-group[role="group"] > .dropdown_tooltip {
+  border-radius: 0 .65rem .65rem 0 !important;
+}
+
+/* Keep the Jalali trigger on the right with logical RTL corner rounding. */
+.itil-right-side .flatpickr.input-group > .form-control {
+  border-radius: .65rem 0 0 .65rem !important;
+  border-right: 0;
+}
+.itil-right-side .flatpickr.input-group > .input-group-text {
+  border-radius: 0 .65rem .65rem 0 !important;
+  border-left: 0;
+}
+
+/* Global RTL form baseline: keep layout/scroll mechanics from leaking LTR into content. */
+html[dir="rtl"] .page-body form,
+html[dir="rtl"] .page-body .card-body,
+html[dir="rtl"] .page-body .tab-content,
+html[dir="rtl"] .page-body .field-container,
+html[dir="rtl"] .page-body .form-field-row,
+html[dir="rtl"] .page-body .form-group,
+html[dir="rtl"] .itil-left-side > *,
+html[dir="rtl"] .itil-right-side > * {
+  direction: rtl !important;
+  text-align: right !important;
+}
+html[dir="rtl"] .page-body label,
+html[dir="rtl"] .page-body legend,
+html[dir="rtl"] .page-body .form-label,
+html[dir="rtl"] .page-body .col-form-label,
+html[dir="rtl"] .page-body .field-label,
+html[dir="rtl"] .page-body .form-check-label,
+html[dir="rtl"] .page-body .help-block,
+html[dir="rtl"] .page-body .form-text {
+  direction: rtl !important;
+  text-align: right !important;
+}
+html[dir="rtl"] .page-body input:not([type="number"]):not([type="range"]),
+html[dir="rtl"] .page-body textarea,
+html[dir="rtl"] .page-body select,
+html[dir="rtl"] .page-body .form-control,
+html[dir="rtl"] .page-body .form-select,
+html[dir="rtl"] .page-body .select2-selection,
+html[dir="rtl"] .page-body .select2-selection__rendered,
+html[dir="rtl"] .page-body .select2-search__field {
+  direction: rtl !important;
+  text-align: right !important;
+  font-family: "IRANSansX", Tahoma, sans-serif !important;
+}
+html[dir="rtl"] .page-body .select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding-right: .8rem !important;
+  padding-left: 2rem !important;
+}
+html[dir="rtl"] .page-body .select2-container--default .select2-selection--single .select2-selection__arrow {
+  right: auto !important;
+  left: .45rem !important;
+}
+html[dir="rtl"] .page-body .form-check {
+  direction: rtl !important;
+  text-align: right !important;
+  padding-right: 1.5em;
+  padding-left: 0;
+}
+html[dir="rtl"] .page-body .form-check .form-check-input {
+  float: right;
+  margin-right: -1.5em;
+  margin-left: .5rem;
+}
+html[dir="rtl"] .page-body .tox-edit-area,
+html[dir="rtl"] .page-body .tox-edit-area iframe {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Connected selects and side actions: one continuous RTL control everywhere. */
+html[dir="rtl"] .page-body .input-group:has(.select2-container),
+html[dir="rtl"] .modal .input-group:has(.select2-container),
+html[dir="rtl"] .dropdown-menu .input-group:has(.select2-container) {
+  direction: rtl !important;
+  flex-wrap: nowrap;
+}
+html[dir="rtl"] .page-body .input-group:has(.select2-container) > *,
+html[dir="rtl"] .modal .input-group:has(.select2-container) > *,
+html[dir="rtl"] .dropdown-menu .input-group:has(.select2-container) > * {
+  border-radius: 0 !important;
+}
+html[dir="rtl"] .page-body .input-group:has(.select2-container) > .select2-container,
+html[dir="rtl"] .modal .input-group:has(.select2-container) > .select2-container,
+html[dir="rtl"] .dropdown-menu .input-group:has(.select2-container) > .select2-container {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto !important;
+}
+html[dir="rtl"] .page-body .input-group:has(.select2-container) > .select2-container .select2-selection,
+html[dir="rtl"] .modal .input-group:has(.select2-container) > .select2-container .select2-selection,
+html[dir="rtl"] .dropdown-menu .input-group:has(.select2-container) > .select2-container .select2-selection {
+  border-radius: .65rem 0 0 .65rem !important;
+  border-right: 0 !important;
+}
+html[dir="rtl"] .page-body .input-group:has(.select2-container) > .btn,
+html[dir="rtl"] .page-body .input-group:has(.select2-container) > .input-group-text,
+html[dir="rtl"] .modal .input-group:has(.select2-container) > .btn,
+html[dir="rtl"] .modal .input-group:has(.select2-container) > .input-group-text,
+html[dir="rtl"] .dropdown-menu .input-group:has(.select2-container) > .btn,
+html[dir="rtl"] .dropdown-menu .input-group:has(.select2-container) > .input-group-text {
+  border-radius: 0 !important;
+}
+html[dir="rtl"] .page-body .input-group:has(.select2-container) > .btn:first-of-type,
+html[dir="rtl"] .page-body .input-group:has(.select2-container) > .input-group-text:first-of-type,
+html[dir="rtl"] .modal .input-group:has(.select2-container) > .btn:first-of-type,
+html[dir="rtl"] .modal .input-group:has(.select2-container) > .input-group-text:first-of-type,
+html[dir="rtl"] .dropdown-menu .input-group:has(.select2-container) > .btn:first-of-type,
+html[dir="rtl"] .dropdown-menu .input-group:has(.select2-container) > .input-group-text:first-of-type {
+  border-radius: 0 .65rem .65rem 0 !important;
+  border-left: 0 !important;
+}
+
+html[dir="rtl"] .page-body .btn-group[role="group"]:has(> .select2-container),
+html[dir="rtl"] .modal .btn-group[role="group"]:has(> .select2-container) {
+  display: flex;
+  direction: ltr !important;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+html[dir="rtl"] .page-body .btn-group[role="group"]:has(> .select2-container) > .select2-container,
+html[dir="rtl"] .modal .btn-group[role="group"]:has(> .select2-container) > .select2-container {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto !important;
+}
+html[dir="rtl"] .page-body .btn-group[role="group"]:has(> .select2-container) > .select2-container .select2-selection,
+html[dir="rtl"] .modal .btn-group[role="group"]:has(> .select2-container) > .select2-container .select2-selection {
+  direction: rtl;
+  text-align: right;
+  border-radius: .65rem 0 0 .65rem !important;
+}
+html[dir="rtl"] .page-body .btn-group[role="group"]:has(> .select2-container) > .btn,
+html[dir="rtl"] .modal .btn-group[role="group"]:has(> .select2-container) > .btn {
+  border-radius: 0 !important;
+}
+html[dir="rtl"] .page-body .btn-group[role="group"]:has(> .select2-container) > .btn:last-child,
+html[dir="rtl"] .modal .btn-group[role="group"]:has(> .select2-container) > .btn:last-child {
+  border-radius: 0 .65rem .65rem 0 !important;
+}
+
+/* Notifications and the Kavenegar module share the same Persian UI baseline. */
+html[dir="rtl"] .notification,
+html[dir="rtl"] .notification-list,
+html[dir="rtl"] .notifications,
+html[dir="rtl"] [class*="notification-item"],
+html[dir="rtl"] .toast-body,
+html[dir="rtl"] .fanaone-sms-config {
+  direction: rtl !important;
+  text-align: right !important;
+  font-family: "IRANSansX", Tahoma, sans-serif !important;
+}
+html[dir="rtl"] [class*="notification-item"] {
+  padding: .75rem .85rem;
+  border-bottom: 1px solid #e7eff3;
+}
+html[dir="rtl"] [class*="notification-item"] time,
+html[dir="rtl"] [class*="notification-item"] .date,
+html[dir="rtl"] [class*="notification-item"] .text-muted {
+  direction: rtl;
+  color: #64748b !important;
+  font-size: .78rem;
+}
+.fanaone-sms-config { max-width: 72rem; margin-inline: auto; }
+.fanaone-sms-config .card { overflow: hidden; }
+.fanaone-sms-config .card-header {
+  background: linear-gradient(135deg, #073b59, #087eae);
+}
+.fanaone-sms-config .card-header .card-title { color: #fff; }
+.fanaone-sms-config .form-label,
+.fanaone-sms-config h3 { color: #17384a; font-weight: 700; }
+
+/* Date/time controls with calendar and clear actions form one connected field. */
+html[dir="rtl"] .flatpickr.input-group {
+  direction: rtl !important;
+  flex-wrap: nowrap !important;
+  overflow: visible;
+}
+html[dir="rtl"] .flatpickr.input-group > *,
+html[dir="rtl"] .flatpickr.input-group > a > .input-group-text {
+  border-radius: 0 !important;
+}
+html[dir="rtl"] .flatpickr.input-group > .form-control,
+html[dir="rtl"] .flatpickr.input-group > input.form-control {
+  flex: 1 1 auto;
+  min-width: 0;
+  border-radius: .65rem 0 0 .65rem !important;
+  border-right: 0 !important;
+}
+html[dir="rtl"] .flatpickr.input-group > .input-group-text,
+html[dir="rtl"] .flatpickr.input-group > a {
+  flex: 0 0 2.65rem;
+  width: 2.65rem;
+  min-width: 2.65rem;
+  align-self: stretch;
+  margin: 0;
+}
+html[dir="rtl"] .flatpickr.input-group > a {
+  display: flex;
+}
+html[dir="rtl"] .flatpickr.input-group > a > .input-group-text {
+  display: flex;
+  flex: 1 1 auto;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+html[dir="rtl"] .flatpickr.input-group > .fa-calendar-alt,
+html[dir="rtl"] .flatpickr.input-group > .input-button > .fa-calendar-alt {
+  border-radius: 0 .65rem .65rem 0 !important;
+  border-left: 0 !important;
+}
+html[dir="rtl"] .flatpickr.input-group > .input-group-text:not(.fa-calendar-alt),
+html[dir="rtl"] .flatpickr.input-group > a:not(.input-button) > .input-group-text {
+  border-left-width: 1px;
+  border-right-width: 1px;
+}

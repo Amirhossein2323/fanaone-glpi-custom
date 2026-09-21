@@ -1,0 +1,56 @@
+
+{% extends 'layout/page_card_notlogged.html.twig' %}
+
+{% block content_block %}
+    
+    <div class="login-form-container">
+        <div class="form-box">
+            <div class="text-center mb-5">
+                <img class="fanaone-login-logo" src="{{ asset_path('/public/pics/fanaone-logo.png') }}" alt="FanaOne">
+                <h4 class="mt-4">ورود به سامانه</h4>
+                <p class="text-muted small">لطفاً نام کاربری و رمز عبور خود را وارد کنید</p>
+            </div>
+
+            <form action="{{ path('front/login.php') }}" method="post" autocomplete="off">
+                <input type="hidden" name="_glpi_csrf_token" value="{{ csrf_token() }}" />
+                
+                <div class="input-group-custom">
+                    <label class="form-label small">نام کاربری</label>
+                    <i class="ti ti-user"></i>
+                    <input type="text" name="{{ namfield }}" id="login_name" placeholder="نام کاربری خود را وارد کنید">
+                </div>
+
+                <div class="input-group-custom">
+                    <label class="form-label small">رمز عبور</label>
+                    <i class="ti ti-lock"></i>
+                    <input type="password" name="{{ pwdfield }}" placeholder="رمز عبور خود را وارد کنید">
+                </div>
+
+                <div class="text-start mb-4">
+                    <a href="{{ path('front/lostpassword.php?lostpassword=1') }}" style="color: #0084ff; text-decoration: none; font-size: 0.8rem;">رمز عبور خود را فراموش کرده‌اید؟</a>
+                </div>
+
+                <button type="submit" name="submit" class="btn-login">ورود</button>
+            </form>
+
+            <div class="text-center mt-5">
+                <span class="fanava-footer-mark">FANAONE SERVICE DESK</span>
+                <p class="text-muted mt-2" style="font-size: 0.7rem;">۱۴۰۳ گروه فناوا. تمامی حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+{#
+{% block footer_block %}
+   {{ copyright_message|raw }}
+{% endblock %}
+#}
+{% block javascript_block %}
+<script type="text/javascript">
+   $(function () {
+$('#login_name').focus();
+});
+</script>
+{% endblock %}

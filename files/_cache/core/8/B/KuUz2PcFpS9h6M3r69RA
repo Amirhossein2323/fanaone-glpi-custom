@@ -1,0 +1,37 @@
+1787061938
+b1e92418b512d6af5e541323e22f59fdd3f77176
+a:1:{s:52:"bn_count_Change_ab950dbd-cd25-466d-8dff-7dcaca386564";s:1083:"      <style>
+         #bn_559355811 {
+            background-color: #cae3c4;
+            color: #569546;
+         }
+
+         #bn_559355811:hover {
+            background-color: #9bca90;
+            border: 1px solid #6db25c;
+         }
+
+         .theme-dark #bn_559355811 {
+            background-color: #569546;
+            color: #cae3c4;
+         }
+
+         .theme-dark #bn_559355811:hover {
+            background-color: #9bca90;
+            color: #569546;
+            border: 1px solid #6db25c;
+         }
+      </style>
+      <a href='/front/change.php?reset=reset'
+         id="bn_559355811"
+         class="card big-number  filter-dates filter-dates_mod"
+         title="">
+         <span class="content">            <span title="65"
+                  class="formatted-number"
+                  data-precision='0'>
+               <span class="number">65</span>
+               <span class="suffix"></span>
+            </span></span>
+         <div class="label" title="تغییرات">تغییرات</div>
+         <i class="main-icon ti ti-clipboard-check"></i>
+      </a>";}

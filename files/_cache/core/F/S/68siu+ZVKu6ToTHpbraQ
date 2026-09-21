@@ -1,0 +1,37 @@
+1787061939
+091b5259915780fb339d7e5a90cc7f0e6d051aed
+a:1:{s:50:"bn_count_User_ac0cbe52-3593-43c1-8ecc-0eb115de494d";s:1086:"      <style>
+         #bn_138066244 {
+            background-color: #fafafa;
+            color: #949494;
+         }
+
+         #bn_138066244:hover {
+            background-color: #d4d4d4;
+            border: 1px solid #aeaeae;
+         }
+
+         .theme-dark #bn_138066244 {
+            background-color: #949494;
+            color: #fafafa;
+         }
+
+         .theme-dark #bn_138066244:hover {
+            background-color: #d4d4d4;
+            color: #949494;
+            border: 1px solid #aeaeae;
+         }
+      </style>
+      <a href='/front/user.php?reset=reset'
+         id="bn_138066244"
+         class="card big-number  filter-dates filter-dates_mod filter-location"
+         title="">
+         <span class="content">            <span title="90"
+                  class="formatted-number"
+                  data-precision='0'>
+               <span class="number">90</span>
+               <span class="suffix"></span>
+            </span></span>
+         <div class="label" title="کاربران">کاربران</div>
+         <i class="main-icon ti ti-user"></i>
+      </a>";}

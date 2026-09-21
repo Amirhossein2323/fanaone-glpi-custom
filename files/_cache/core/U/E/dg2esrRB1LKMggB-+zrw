@@ -1,0 +1,37 @@
+1787061960
+3d4c4827f2de7b3a620c0f86af39bd6e8df0f3f4
+a:1:{s:52:"bn_count_Ticket_d5bf3576-5033-40fb-bbdb-292294a7698e";s:1150:"      <style>
+         #bn_1220724867 {
+            background-color: #ffd957;
+            color: #8a6b00;
+         }
+
+         #bn_1220724867:hover {
+            background-color: #ffc80b;
+            border: 1px solid #bd9200;
+         }
+
+         .theme-dark #bn_1220724867 {
+            background-color: #8a6b00;
+            color: #ffd957;
+         }
+
+         .theme-dark #bn_1220724867:hover {
+            background-color: #ffc80b;
+            color: #8a6b00;
+            border: 1px solid #bd9200;
+         }
+      </style>
+      <a href='/front/ticket.php?reset=reset'
+         id="bn_1220724867"
+         class="card big-number  filter-dates filter-dates_mod filter-requesttype filter-location filter-tickettype"
+         title="">
+         <span class="content">            <span title="510"
+                  class="formatted-number"
+                  data-precision='0'>
+               <span class="number">510</span>
+               <span class="suffix"></span>
+            </span></span>
+         <div class="label" title="درخواست ها">درخواست ها</div>
+         <i class="main-icon ti ti-alert-circle"></i>
+      </a>";}

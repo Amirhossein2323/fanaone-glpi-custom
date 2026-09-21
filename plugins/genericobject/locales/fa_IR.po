@@ -1,0 +1,111 @@
+msgid "(No types defined yet)"
+msgstr "(هنوز هیچ نوعی تعریف نشده است)"
+
+msgid "A type already exists with the same name"
+msgstr "نوعی با همین نام از قبل وجود دارد"
+
+msgid "Add new field"
+msgstr "افزودن فیلد جدید"
+
+msgid "Behaviour"
+msgstr "رفتار"
+
+msgid "Empty family"
+msgstr "خانواده خالی"
+
+msgid "Family of type of objects"
+msgstr "خانواده نوع اشیاء"
+
+msgid "Field added successfully"
+msgstr "فیلد با موفقیت اضافه شد"
+
+msgid "Field(s) deleted successfully"
+msgstr "فیلد(ها) با موفقیت حذف شدند"
+
+msgid "Fields associated with the object"
+msgstr "فیلدهای مرتبط با شیء"
+
+msgid "General"
+msgstr "عمومی"
+
+msgid "Icon (impact analysis)"
+msgstr "آیکون (تحلیل تأثیر)"
+
+msgid "Internal identifier"
+msgstr "شناسه داخلی"
+
+msgid "Label"
+msgstr "برچسب"
+
+msgid "Link to other objects"
+msgstr "پیوند به سایر اشیاء"
+
+msgid "Name in DB"
+msgstr "نام در پایگاه داده"
+
+msgid "Network connections"
+msgstr "اتصالات شبکه"
+
+msgid "Object preview"
+msgstr "پیش‌نمایش شیء"
+
+msgid "Objects"
+msgstr "اشیاء"
+
+msgid "Objects management"
+msgstr "مدیریت اشیاء"
+
+msgid "Other"
+msgstr "سایر"
+
+
+msgid "Read-only field"
+msgstr "فیلد فقط خواندنی"
+
+msgid "Regenerate files"
+msgstr "بازتولید فایل‌ها"
+
+msgid "The requested dropdown does not exists"
+msgstr "فهرست کشویی درخواست‌شده وجود ندارد"
+
+msgid "Type must start with a letter"
+msgstr "نام نوع باید با یک حرف شروع شود"
+
+msgid "Type name is missing"
+msgstr "نام نوع وارد نشده است"
+
+msgid "Type name must be longer"
+msgstr "نام نوع باید طولانی‌تر باشد"
+
+msgid "Type of objects"
+msgstr "نوع اشیاء"
+
+msgid "Types 'field', 'object' and 'type' are reserved. Please choose another one"
+msgstr "نوع‌های 'field'، 'object' و 'type' رزرو شده‌اند. لطفاً نام دیگری انتخاب کنید"
+
+msgid "Unable to load the class %1$s."
+msgstr "امکان بارگذاری کلاس %1$s وجود ندارد."
+
+msgid "You must configure rights to enable the preview"
+msgstr "برای فعال‌سازی پیش‌نمایش باید دسترسی‌ها را پیکربندی کنید"
+
+msgid "You probably have garbage data in your database for this plugin and missing files in %1$s"
+msgstr "احتمالاً داده‌های نامعتبر در پایگاه داده برای این افزونه وجود دارد و فایل‌هایی در %1$s مفقود هستند"
+
+msgid "geninventorynumber plugin"
+msgstr "افزونه geninventorynumber"
+
+msgid "injection file plugin"
+msgstr "افزونه فایل تزریقی"
+
+msgid "item's uninstallation plugin"
+msgstr "افزونه حذف نصب آیتم"
+
+msgid "order plugin"
+msgstr "افزونه سفارش"
+
+msgid "simcard plugin"
+msgstr "افزونه سیم‌کارت"
+
+msgid "treeview plugin"
+msgstr "افزونه نمای درختی"
