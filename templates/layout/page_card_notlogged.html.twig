@@ -1,4 +1,5 @@
 {#
+ #
  # ---------------------------------------------------------------------
  #
  # GLPI - Gestionnaire Libre de Parc Informatique
@@ -51,8 +52,15 @@
 <div class="login-wrapper">
 
                {% block content_block %}{% endblock %}
-<div class="login-banner">
-      
+<div class="login-banner" aria-label="تصویر معرفی شرکت گلپخش اول">
+      <img
+         class="login-banner-image"
+         src="{{ asset_path('/public/pics/golpakhsh-login.png') }}"
+         alt=""
+         aria-hidden="true"
+         fetchpriority="high"
+         decoding="async"
+      />
     </div>
 
 </div>

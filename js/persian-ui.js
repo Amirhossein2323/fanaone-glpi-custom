@@ -35,10 +35,8 @@
       const visible = fp.altInput;
       const hidden = fp.input;
       const withTime = Boolean(fp.config.enableTime);
-      fp.config.clickOpens = false;
-      fp.close();
-      fp.open = function () {};
-      fp.toggle = function () {};
+      // Do not disable GLPI's original picker. It is the accessible fallback
+      // and must stay usable if the Jalali widget fails to initialize.
       visible.removeAttribute('readonly');
       visible.setAttribute('autocomplete', 'off');
       visible.setAttribute('data-jdp', '');
@@ -46,16 +44,7 @@
       visible.setAttribute('dir', 'ltr');
       visible.setAttribute('placeholder', withTime ? '۱۴۰۳/۰۱/۰۱ ۱۲:۰۰:۰۰' : '۱۴۰۳/۰۱/۰۱');
 
-      const oldToggle = wrapper.querySelector('[data-toggle]');
-      if (oldToggle) {
-         const jalaliToggle = oldToggle.cloneNode(true);
-         jalaliToggle.removeAttribute('data-toggle');
-         oldToggle.replaceWith(jalaliToggle);
-         jalaliToggle.addEventListener('click', () => {
-            visible.focus();
-            visible.click();
-         });
-      }
+      // Preserve the Flatpickr toggle and its original event handlers.
 
       const refresh = () => {
          const converted = toJalali(hidden.value, withTime);
@@ -137,7 +126,7 @@
          ['Root entity', 'موجودیت اصلی'],
          ['Super-Admin', 'مدیر سامانه'],
          ['GLPI', 'FanaOne Service Desk'],
-         ['glpi', 'مدیر اصلی'],
+         // Do not disguise a real login name; change account credentials in GLPI instead.
          ['post-only', 'کاربر محدود'],
          ['tech', 'کارشناس'],
          ['normal', 'کاربر عادی'],

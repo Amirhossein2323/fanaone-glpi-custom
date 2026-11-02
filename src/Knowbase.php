@@ -108,10 +108,10 @@ class Knowbase extends CommonGLPI
        // Search a solution
         if (
             !isset($_GET["contains"])
-            && isset($_GET["itemtype"])
-            && isset($_GET["items_id"])
+            && isset($_GET["item_itemtype"])
+            && isset($_GET["item_items_id"])
         ) {
-            if (in_array($_GET["item_itemtype"], $CFG_GLPI['kb_types']) && $item = getItemForItemtype($_GET["itemtype"])) {
+            if (in_array($_GET["item_itemtype"], $CFG_GLPI['kb_types'], true) && $item = getItemForItemtype($_GET["item_itemtype"])) {
                 if ($item->can($_GET["item_items_id"], READ)) {
                     $_GET["contains"] = addslashes($item->getField('name'));
                 }
@@ -123,21 +123,27 @@ class Knowbase extends CommonGLPI
         } else if (isset($_SESSION['kbcontains'])) {
             $_GET['contains'] = $_SESSION["kbcontains"];
         }
+        echo "<section class='fanaone-kb'>";
+        echo "<header class='fanaone-kb-header'><div class='fanaone-kb-eyebrow'>FANAONE SERVICE DESK</div>";
+        echo "<h2>پایگاه دانش</h2><p>راهنماها و پاسخ‌های ثبت‌شده را جست‌وجو کنید.</p></header>";
         $ki = new KnowbaseItem();
         $ki->searchForm($_GET);
 
         if (!isset($_GET['contains']) || empty($_GET['contains'])) {
-            echo "<div><table class='mx-auto' width='950px'><tr class='noHover'><td class='center top'>";
+            echo "<div class='fanaone-kb-overview'>";
+            echo "<section class='fanaone-kb-panel'>";
             KnowbaseItem::showRecentPopular("recent");
-            echo "</td><td class='center top'>";
+            echo "</section><section class='fanaone-kb-panel'>";
             KnowbaseItem::showRecentPopular("lastupdate");
-            echo "</td><td class='center top'>";
+            echo "</section><section class='fanaone-kb-panel'>";
             KnowbaseItem::showRecentPopular("popular");
-            echo "</td></tr>";
-            echo "</table></div>";
+            echo "</section></div>";
         } else {
+            echo "<div class='fanaone-kb-results'>";
             KnowbaseItem::showList($_GET, 'search');
+            echo "</div>";
         }
+        echo "</section>";
     }
 
 
@@ -210,13 +216,13 @@ class Knowbase extends CommonGLPI
          });
 JAVASCRIPT;
         echo Html::scriptBlock($JS);
-        echo "<div id='tree_browse'>
+        echo "<section class='fanaone-kb fanaone-kb-browse'><header class='fanaone-kb-header'><div class='fanaone-kb-eyebrow'>FANAONE SERVICE DESK</div><h2>دسته‌بندی راهنماها</h2><p>موضوع موردنظر را از فهرست انتخاب کنید.</p></header><div id='tree_browse'>
          <div class='browser_tree'>
             <input type='text' class='browser_tree_search' id='browser_tree_search$rand'>
             <div id='tree_category$rand'></div>
          </div>
          <div id='items_list$rand' class='browser_items'></div>
-      </div>";
+      </div></section>";
     }
 
     /**

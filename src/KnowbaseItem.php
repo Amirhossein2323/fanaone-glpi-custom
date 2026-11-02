@@ -1338,11 +1338,12 @@ class KnowbaseItem extends CommonDBVisible implements ExtraVisibilityCriteria
             }
         }
 
-        echo "<form method='get' action='" . $this->getSearchURL() . "' class='d-flex justify-content-center'>";
-        echo "<input class='form-control me-1' type='text' size='50' name='contains' value=\"" .
-             Html::cleanInputText(stripslashes($params["contains"])) . "\">";
-        echo "<input type='submit' value=\"" . _sx('button', 'Search') . "\" class='btn btn-primary'>";
-        echo "</table>";
+        echo "<form method='get' action='" . $this->getSearchURL() . "' class='fanaone-kb-search-form' role='search'>";
+        echo "<label class='visually-hidden' for='fanaone-kb-query'>" . _sx('button', 'Search') . "</label>";
+        echo '<input id="fanaone-kb-query" class="form-control" type="search" size="50" name="contains" placeholder="جست‌وجو در راهنماها و مقالات..." aria-label="جست‌وجوی پایگاه دانش" value="' .
+             Html::cleanInputText(stripslashes($params["contains"])) . '">';
+        echo "<button type='submit' class='btn btn-primary'><i class='ti ti-search' aria-hidden='true'></i> " .
+             _sx('button', 'Search') . "</button>";
         if (
             isset($options['item_itemtype'])
             && isset($options['item_items_id'])
@@ -1538,9 +1539,8 @@ class KnowbaseItem extends CommonDBVisible implements ExtraVisibilityCriteria
         ];
         if ($params['knowbaseitemcategories_id'] > 0) {
             $criteria['WHERE'][KnowbaseItem_KnowbaseItemCategory::getTableField('knowbaseitemcategories_id')] = $params['knowbaseitemcategories_id'];
-        } else {
-            $criteria['WHERE'][KnowbaseItem_KnowbaseItemCategory::getTableField('knowbaseitemcategories_id')] = null;
         }
+        // No category filter means searching all articles, including categorized ones.
 
         if (
             KnowbaseItemTranslation::isKbTranslationActive()

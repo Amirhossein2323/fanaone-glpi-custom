@@ -1,3 +1,3 @@
 0
 4da0c0710c04e865a3df26f1ec696bc44f19ded8
-a:1:{s:40:"72bd657c43ed113ff81a5cfebc02d8b918f0eb35";a:1:{i:0;a:2:{s:3:"key";i:0;s:5:"title";s:60:"<a href='/front/central.php?active_entity=0'>Root entity</a>";}}}
+a:2:{s:40:"72bd657c43ed113ff81a5cfebc02d8b918f0eb35";a:1:{i:0;a:2:{s:3:"key";i:0;s:5:"title";s:60:"<a href='/front/central.php?active_entity=0'>Root entity</a>";}}s:40:"a08c308995693213c61f3be841adf33d314004b7";a:1:{i:0;a:2:{s:3:"key";i:0;s:5:"title";s:76:"<a href='/glpi-front-test/front/central.php?active_entity=0'>Root Entity</a>";}}}

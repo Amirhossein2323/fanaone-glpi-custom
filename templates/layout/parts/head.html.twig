@@ -56,8 +56,10 @@
    {% endfor %}
 
    {{ custom_css() }}
+   {# FanaOne overrides loaded last to protect RTL date fields and knowledge base layouts. #}
+   <link rel="stylesheet" href="{{ asset_path('/public/fanaone-ui-fixes.css') }}?v=20261030" />
 
-   <link rel="shortcut icon" type="images/x-icon" href="{{ asset_path('/pics/favicon.ico') }}" />
+   <link rel="icon" type="image/png" href="{{ asset_path('/public/pics/fanaone-logo.png') }}" />
 
    {% for js_file in js_files %}
       <script type="text/javascript" src="{{ js_path(js_file.path, js_file.options ?? []) }}"></script>

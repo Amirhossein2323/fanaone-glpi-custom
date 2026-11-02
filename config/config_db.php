@@ -1,9 +1,9 @@
 <?php
 class DB extends DBmysql {
-   public $dbhost = 'localhost';
+   public $dbhost = '127.0.0.1';
    public $dbuser = 'root';
    public $dbpassword = '';
-   public $dbdefault = 'glpi';
+   public $dbdefault = 'glpi_front_test';
    public $use_timezones = true;
    public $use_utf8mb4 = true;
    public $allow_myisam = false;

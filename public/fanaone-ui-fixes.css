@@ -1,0 +1,118 @@
+/* FanaOne UI hotfix — local frontend layer, no core data or auth changes. */
+
+/* 1. Non-destructive RTL treatment for legacy table cells and form controls. */
+html[dir="rtl"] #page .tab_cadre td,
+html[dir="rtl"] #page .tab_cadre_fixe td,
+html[dir="rtl"] #page .tab_cadre_fixehov td,
+html[dir="rtl"] #page .tab_cadrehov td {
+  text-align: right;
+  direction: rtl;
+  vertical-align: middle;
+}
+html[dir="rtl"] #page :is(.tab_cadre, .tab_cadre_fixe, .tab_cadre_fixehov, .tab_cadrehov)
+:is(.flatpickr.input-group, .input-group.flatpickr) {
+  display: flex !important;
+  visibility: visible !important;
+  min-width: 12rem;
+  max-width: 100%;
+  align-items: stretch;
+  direction: ltr; /* calendar buttons stay in the expected order */
+}
+html[dir="rtl"] #page .flatpickr.input-group input.form-control,
+html[dir="rtl"] #page .flatpickr.input-group input.flatpickr-input:not([type="hidden"]),
+html[dir="rtl"] #page .flatpickr.input-group input.form-control.input {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  min-width: 9rem;
+  width: 100%;
+  direction: ltr;
+  text-align: center;
+}
+html[dir="rtl"] .flatpickr-calendar.open {
+  display: block !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  z-index: 10550 !important;
+}
+html[dir="rtl"] #page .tab_cadre_fixe,
+html[dir="rtl"] #page .tab_cadre { max-width: 100%; }
+
+/* 2. Knowledge-base layout and search: works in RTL and on narrow screens. */
+.fanaone-kb {
+  --kb-primary: #066a9b;
+  --kb-border: #dce7ee;
+  --kb-shadow: 0 12px 30px rgba(16, 47, 73, .065);
+  direction: rtl;
+  max-width: 1280px;
+  margin: 0 auto 2rem;
+  padding: clamp(1rem, 3vw, 2.25rem);
+  color: #1b3446;
+}
+.fanaone-kb-header {
+  padding: 1.6rem clamp(1rem, 3vw, 2.5rem);
+  border-radius: 1.3rem;
+  background: linear-gradient(105deg, #073d5b, #087ea8);
+  color: #fff;
+  box-shadow: var(--kb-shadow);
+  margin-bottom: 1.35rem;
+}
+.fanaone-kb-eyebrow {font-size: .69rem; letter-spacing: .16em; opacity: .78;}
+.fanaone-kb-header h2 {color: #fff; margin: .5rem 0; font-size: clamp(1.35rem, 2.5vw, 2rem); font-weight: 800;}
+.fanaone-kb-header p {color: #dceff8; font-size: .92rem; margin: 0;}
+.fanaone-kb-search-form {
+  display: flex;
+  align-items: stretch;
+  gap: .75rem;
+  margin-bottom: 1.4rem;
+  background: #fff;
+  border: 1px solid var(--kb-border);
+  padding: .8rem;
+  border-radius: 1rem;
+  box-shadow: var(--kb-shadow);
+}
+.fanaone-kb-search-form input[type=search] {
+  min-width: 0;
+  flex: 1 1 0;
+  padding: .75rem 1rem;
+  border: 1px solid var(--kb-border);
+  border-radius: .7rem;
+  text-align: right;
+  direction: rtl;
+}
+.fanaone-kb-search-form .btn {white-space: nowrap; background: var(--kb-primary); border-color: var(--kb-primary); border-radius: .7rem; padding-inline: 1.25rem;}
+.fanaone-kb-overview {display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; align-items: start;}
+.fanaone-kb-panel, .fanaone-kb-results {
+  min-width: 0;
+  overflow-x: auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--kb-border);
+  background: #fff;
+  box-shadow: var(--kb-shadow);
+}
+.fanaone-kb :is(table, .tab_cadre, .tab_cadre_fixe) {max-width: 100%; width: 100%;}
+.fanaone-kb :is(th, td) {text-align: right; overflow-wrap: anywhere;}
+.fanaone-kb a {color: var(--kb-primary);}
+.fanaone-kb a:hover {text-decoration: underline;}
+.fanaone-kb #tree_browse {display: grid; grid-template-columns: minmax(220px, 30%) minmax(0,1fr); gap: 1rem;}
+.fanaone-kb #tree_browse .browser_tree,
+.fanaone-kb #tree_browse .browser_items {float: none; width: auto; min-width: 0; max-width: 100%;}
+.fanaone-kb #tree_browse .browser_tree {
+  padding: 1rem; border: 1px solid var(--kb-border); border-radius: 1rem; background: #fff;
+}
+.fanaone-kb #tree_browse .browser_items {
+  padding: 1rem; border: 1px solid var(--kb-border); border-radius: 1rem; background: #fff;
+}
+.fanaone-kb #tree_browse .browser_tree_search {width: 100%; max-width: 100%; padding: .6rem; border: 1px solid var(--kb-border); border-radius: .65rem;}
+@media (max-width: 950px) {
+  .fanaone-kb-overview {grid-template-columns: 1fr;}
+  .fanaone-kb #tree_browse {grid-template-columns: 1fr;}
+}
+@media (max-width: 560px) {
+  .fanaone-kb {padding: .5rem;}
+  .fanaone-kb-search-form {flex-direction: column;}
+  .fanaone-kb-search-form .btn {width: 100%;}
+  html[dir="rtl"] #page .tab_cadre_fixe td .flatpickr.input-group {min-width: 10rem;}
+}

@@ -149298,3 +149298,267 @@ Response:
 [2026-09-21 20:01:12] glpiphplog.WARNING: Test logger  
 [2026-09-21 20:01:40] glpiphplog.WARNING: Test logger  
 [2026-09-21 20:01:40] glpiphplog.WARNING: Test logger  
+[2026-10-15 10:21:07] glpiphplog.WARNING:   *** PHP Warning (2): mysqli::real_connect(): (HY000/1049): Unknown database 'glpi' in C:\xampp\htdocs\glpi\src\DBmysql.php at line 250
+  Backtrace :
+  src\DBmysql.php:250                                mysqli->real_connect()
+  src\DBmysql.php:209                                DBmysql->connect()
+  src\DBConnection.php:412                           DBmysql->__construct()
+  src\DBConnection.php:501                           DBConnection::switchToMaster()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-15 10:21:07] glpiphplog.WARNING:   *** PHP Warning (2): Undefined array key "glpilanguage" in C:\xampp\htdocs\glpi\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-15 10:21:07] glpiphplog.WARNING:   *** PHP Warning (2): Undefined array key "" in C:\xampp\htdocs\glpi\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-15 10:21:07] glpiphplog.WARNING:   *** PHP Warning (2): Trying to access array offset on value of type null in C:\xampp\htdocs\glpi\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-15 10:50:28] glpiphplog.WARNING:   *** PHP Warning (2): mysqli::real_connect(): (HY000/1049): Unknown database 'glpi' in C:\xampp\htdocs\glpi\src\DBmysql.php at line 250
+  Backtrace :
+  src\DBmysql.php:250                                mysqli->real_connect()
+  src\DBmysql.php:209                                DBmysql->connect()
+  src\DBConnection.php:412                           DBmysql->__construct()
+  src\DBConnection.php:501                           DBConnection::switchToMaster()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-15 10:50:28] glpiphplog.WARNING:   *** PHP Warning (2): Undefined array key "glpilanguage" in C:\xampp\htdocs\glpi\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-15 10:50:28] glpiphplog.WARNING:   *** PHP Warning (2): Undefined array key "" in C:\xampp\htdocs\glpi\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-15 10:50:28] glpiphplog.WARNING:   *** PHP Warning (2): Trying to access array offset on value of type null in C:\xampp\htdocs\glpi\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-17 12:09:36] glpiphplog.WARNING:   *** PHP Warning (2): mysqli::real_connect(): (HY000/1049): Unknown database 'glpi' in C:\xampp\htdocs\glpi\src\DBmysql.php at line 250
+  Backtrace :
+  src\DBmysql.php:250                                mysqli->real_connect()
+  src\DBmysql.php:209                                DBmysql->connect()
+  src\DBConnection.php:412                           DBmysql->__construct()
+  src\DBConnection.php:501                           DBConnection::switchToMaster()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-17 12:09:36] glpiphplog.WARNING:   *** PHP Warning (2): Undefined array key "glpilanguage" in C:\xampp\htdocs\glpi\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-17 12:09:36] glpiphplog.WARNING:   *** PHP Warning (2): Undefined array key "" in C:\xampp\htdocs\glpi\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-17 12:09:36] glpiphplog.WARNING:   *** PHP Warning (2): Trying to access array offset on value of type null in C:\xampp\htdocs\glpi\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-17 22:21:32] glpiphplog.WARNING:   *** PHP User Warning (512): Missing required intl PHP extension in C:\xampp\htdocs\glpi\src\Session.php at line 694
+  Backtrace :
+  src\Session.php:694                                trigger_error()
+  inc\config.php:69                                  Session::loadLanguage()
+  inc\includes.php:59                                include_once()
+  front\locale.php:41                                include()
+  
+[2026-10-18 06:44:38] glpiphplog.WARNING: Test logger  
+[2026-10-18 06:48:18] glpiphplog.WARNING: Test logger  
+[2026-10-18 06:49:31] glpiphplog.WARNING: Test logger  
+[2026-10-18 06:49:58] glpiphplog.WARNING: Test logger  
+[2026-10-18 06:55:08] glpiphplog.WARNING: Test logger  
+[2026-10-30 07:31:14] glpiphplog.WARNING:   *** PHP Warning (2): mysqli::real_connect(): (HY000/2002): No connection could be made because the target machine actively refused it in C:\xampp\htdocs\glpi-front-test\src\DBmysql.php at line 250
+  Backtrace :
+  src\DBmysql.php:250                                mysqli->real_connect()
+  src\DBmysql.php:209                                DBmysql->connect()
+  src\DBConnection.php:412                           DBmysql->__construct()
+  src\DBConnection.php:501                           DBConnection::switchToMaster()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-30 07:31:14] glpiphplog.WARNING:   *** PHP Warning (2): Undefined array key "glpilanguage" in C:\xampp\htdocs\glpi-front-test\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-30 07:31:14] glpiphplog.WARNING:   *** PHP Warning (2): Undefined array key "" in C:\xampp\htdocs\glpi-front-test\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-30 07:31:14] glpiphplog.WARNING:   *** PHP Warning (2): Trying to access array offset on value of type null in C:\xampp\htdocs\glpi-front-test\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-30 07:36:28] glpiphplog.WARNING:   *** PHP Warning (2): mysqli::real_connect(): (HY000/2002): No connection could be made because the target machine actively refused it in C:\xampp\htdocs\glpi-front-test\src\DBmysql.php at line 250
+  Backtrace :
+  src\DBmysql.php:250                                mysqli->real_connect()
+  src\DBmysql.php:209                                DBmysql->connect()
+  src\DBConnection.php:412                           DBmysql->__construct()
+  src\DBConnection.php:501                           DBConnection::switchToMaster()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-30 07:36:30] glpiphplog.WARNING:   *** PHP Warning (2): mysqli::real_connect(): (HY000/2002): No connection could be made because the target machine actively refused it in C:\xampp\htdocs\glpi-front-test\src\DBmysql.php at line 250
+  Backtrace :
+  src\DBmysql.php:250                                mysqli->real_connect()
+  src\DBmysql.php:209                                DBmysql->connect()
+  src\DBConnection.php:412                           DBmysql->__construct()
+  src\DBConnection.php:501                           DBConnection::switchToMaster()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  front\locale.php:41                                include()
+  
+[2026-10-30 07:49:25] glpiphplog.WARNING:   *** PHP Warning (2): mysqli::real_connect(): Error while reading greeting packet. PID=15956 in C:\xampp\htdocs\glpi-front-test\src\DBmysql.php at line 250
+  Backtrace :
+  src\DBmysql.php:250                                mysqli->real_connect()
+  src\DBmysql.php:209                                DBmysql->connect()
+  src\DBConnection.php:412                           DBmysql->__construct()
+  src\DBConnection.php:501                           DBConnection::switchToMaster()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-30 07:49:25] glpiphplog.WARNING:   *** PHP Warning (2): mysqli::real_connect(): (HY000/2006): MySQL server has gone away in C:\xampp\htdocs\glpi-front-test\src\DBmysql.php at line 250
+  Backtrace :
+  src\DBmysql.php:250                                mysqli->real_connect()
+  src\DBmysql.php:209                                DBmysql->connect()
+  src\DBConnection.php:412                           DBmysql->__construct()
+  src\DBConnection.php:501                           DBConnection::switchToMaster()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-30 07:49:25] glpiphplog.WARNING:   *** PHP Warning (2): Undefined array key "glpilanguage" in C:\xampp\htdocs\glpi-front-test\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-30 07:49:25] glpiphplog.WARNING:   *** PHP Warning (2): Undefined array key "" in C:\xampp\htdocs\glpi-front-test\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-10-30 07:49:25] glpiphplog.WARNING:   *** PHP Warning (2): Trying to access array offset on value of type null in C:\xampp\htdocs\glpi-front-test\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-11-02 19:53:43] glpiphplog.WARNING:   *** PHP Warning (2): mysqli::real_connect(): (HY000/2002): No connection could be made because the target machine actively refused it in C:\xampp\htdocs\glpi-front-test\src\DBmysql.php at line 250
+  Backtrace :
+  src\DBmysql.php:250                                mysqli->real_connect()
+  src\DBmysql.php:209                                DBmysql->connect()
+  src\DBConnection.php:412                           DBmysql->__construct()
+  src\DBConnection.php:501                           DBConnection::switchToMaster()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-11-02 19:53:43] glpiphplog.WARNING:   *** PHP Warning (2): Undefined array key "glpilanguage" in C:\xampp\htdocs\glpi-front-test\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-11-02 19:53:43] glpiphplog.WARNING:   *** PHP Warning (2): Undefined array key "" in C:\xampp\htdocs\glpi-front-test\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
+[2026-11-02 19:53:43] glpiphplog.WARNING:   *** PHP Warning (2): Trying to access array offset on value of type null in C:\xampp\htdocs\glpi-front-test\src\Html.php at line 1194
+  Backtrace :
+  src\Html.php:2124                                  Html::includeHeader()
+  src\DBConnection.php:600                           Html::nullHeader()
+  src\DBConnection.php:536                           DBConnection::displayMySQLError()
+  inc\config.php:114                                 DBConnection::establishDBConnection()
+  inc\includes.php:59                                include_once()
+  index.php:89                                       include()
+  
