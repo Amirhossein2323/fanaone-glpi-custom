@@ -165,7 +165,7 @@ $(document).ready(function() {
       modal += '</div>';
       modal += '<div class="modal-body">';
       modal += '<div class="ratio ratio-4x3">';
-      modal += '<iframe src="{{ path('front/displaypreference.form.php?itemtype=' ~ itemtype|escape('url')) }}"></iframe>'
+      modal += '<iframe title="{{ __('Select default items to show') }}" src="{{ path('front/displaypreference.form.php?itemtype=' ~ itemtype|escape('url')) }}"></iframe>'
       modal += '</div>';
       modal += '</div>';
       modal += '</div>';
@@ -205,43 +205,47 @@ $(document).ready(function() {
             if (show_search) {
                $("html, body, .search-container").animate({ scrollTop: 0 });
             }
+         },
+         error: function() {
+            $('.fold-search').prop('checked', !show_search);
+            glpi_toast_error('امکان تغییر وضعیت فیلترها وجود ندارد. اتصال را بررسی و دوباره تلاش کنید.');
          }
       });
    });
 
-   // Callbacks for copy success/failure
-   function copy_success() {
-      glpi_toast_info(__('Results copied to clipboard'));
-      $('#export_dropdown_icon').removeClass('fa-circle-notch');
-      $('#export_dropdown_icon').removeClass('fa-spin');
-      $('#export_dropdown_icon').addClass('fa-file-download');
-      $('#export_dropdown_icon').parent().parent().addClass('dropdown-toggle');
-   }
-   function copy_error() {
-      glpi_toast_error(__('Unexpected error'));
-      $('#export_dropdown_icon').removeClass('fa-circle-notch');
-      $('#export_dropdown_icon').removeClass('fa-spin');
-      $('#export_dropdown_icon').addClass('fa-file-download');
-      $('#export_dropdown_icon').parent().parent().addClass('dropdown-toggle');
-   }
-
-   $('#copy_names_to_clipboard').click(function(e) {
-      // Get target link
-      var link = $(this).find('a').prop('href');
-
-      // Show loading indicator
-      $('#export_dropdown_icon').removeClass('fa-file-download');
-      $('#export_dropdown_icon').addClass('fa-circle-notch');
-      $('#export_dropdown_icon').addClass('fa-spin');
-      $('#export_dropdown_icon').parent().parent().removeClass('dropdown-toggle');
-
-      // Prevent link from working
+   // Handle each search table separately, including controls re-rendered by AJAX.
+   // Clipboard may be unavailable on non-secure origins or denied by the browser.
+   $('body').on('click', '[id="copy_names_to_clipboard"]', function(e) {
       e.preventDefault();
+      var $item = $(this);
+      if ($item.data('fanaone-copying')) return;
+      var link = $item.find('a').prop('href');
+      var $icon = $item.closest('.search-controls').find('[id="export_dropdown_icon"]');
+      $item.data('fanaone-copying', true);
+      $icon.removeClass('fa-file-download').addClass('fa-circle-notch fa-spin');
 
-      // Get data using ajax
-      $.get(link, function (data) {
-         navigator.clipboard.writeText(data).then(copy_success, copy_error);
-      }).fail(copy_error);
+      function restore() {
+         $icon.removeClass('fa-circle-notch fa-spin').addClass('fa-file-download');
+         $item.data('fanaone-copying', false);
+      }
+
+      $.get(link).done(function(data) {
+         if (!navigator.clipboard || !navigator.clipboard.writeText) {
+            glpi_toast_error('مرورگر اجازهٔ کپی خودکار نمی‌دهد. اتصال امن (HTTPS) را بررسی کنید یا از خروجی CSV استفاده کنید.');
+            restore();
+            return;
+         }
+         navigator.clipboard.writeText(String(data)).then(function() {
+            glpi_toast_info(__('Results copied to clipboard'));
+            restore();
+         }, function() {
+            glpi_toast_error('دسترسی به کلیپ‌بورد رد شد. مجوز مرورگر را بررسی کنید یا از خروجی CSV استفاده کنید.');
+            restore();
+         });
+      }).fail(function() {
+         glpi_toast_error('دریافت فهرست نام‌ها انجام نشد. اتصال را بررسی و دوباره تلاش کنید.');
+         restore();
+      });
    });
 });
 </script>
