@@ -16,11 +16,11 @@ This is a **repository-based design specification**. A complete Figma component 
 Existing GLPI and brand themes retain authority outside the scoped UX layer. Validate all token contrast combinations against WCAG AA (at least 4.5:1 for normal text), including themes and disabled states.
 
 ## Component contracts
-**Buttons:** use actual `button` for actions and `a` for navigation; label icon-only buttons; the primary action is visually stronger, destructive actions remain separate and confirmed; do not add unexpected submit actions.
+**Buttons:** use actual `button` for actions and `a` for navigation; label icon-only buttons; the primary action is visually stronger, destructive actions remain separate and confirmed; do not add unexpected submit actions. In long asset forms, the action row is sticky near the viewport bottom (verify visibility inside modals).
 
-**Forms:** associate labels with inputs; preserve native validation and data; minimum 2.5rem control height; expose clear hints and actionable server validation errors; no auto-submit on mere focus.
+**Forms:** associate labels with inputs; preserve native validation and data; minimum 2.5rem control height; expose clear hints and actionable server validation errors; no auto-submit on mere focus. New client-side feedback only handles native `invalid` events and never replaces server validation.
 
-**Tables:** retain GLPI server-side sorts/filters and selection; optional local filter is explicitly scoped to current page; supply named selection checkboxes, column scope, and a clear-filter action; allow horizontal scrolling rather than clipping columns.
+**Tables:** retain GLPI server-side sorts/filters and selection; optional local filter is explicitly scoped to current page; supply named selection checkboxes, column scope, and a clear-filter action; make sortable columns actual keyboard-focusable buttons that bubble clicks to GLPI's existing sorter and expose `aria-sort`; allow horizontal scrolling rather than clipping columns.
 
 **Notifications:** informational status is polite and transient; error/warning messages persist until explicitly dismissed, with distinct visible header and close button; never rely only on color.
 
