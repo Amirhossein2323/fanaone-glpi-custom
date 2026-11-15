@@ -5,6 +5,7 @@ Date: 2026-11-15. Scope: shared UI and representative ticket, asset, search and 
 ## Deliverables
 - [UX audit](UX_AUDIT.md): source-evidence-backed hypotheses, not a claim of completed user testing.
 - [User flow diagrams](USER_FLOWS.md): Mermaid as-is/to-be task flows.
+- [Module-by-module coverage register](MODULE_COVERAGE.md): initial source scope and outstanding runtime evidence.
 - [Design tokens and component standards](DESIGN_SYSTEM.md): implementation-ready specification.
 - [Interactive RTL UI kit preview](UI_KIT_PREVIEW.html): standalone, responsive examples of buttons, forms, tables, notifications and a modal. A native Figma file has **not** been created.
 - [Acceptance tests](ACCEPTANCE_TESTS.md): reproducible baseline and post-change measurements.
