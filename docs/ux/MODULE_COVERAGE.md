@@ -18,7 +18,7 @@ Assessment date: 2026-11-15. Evidence: project source tree, not a signed-in prod
 | Certificates and services | `templates/pages/management/certificate.html.twig`, `appliance.html.twig` | Shared forms, errors | Date selection, expiration actions, relations |
 | Projects and tasks | `templates/pages/tools/project_task.html.twig` | Common form/table styling | Assign and close tasks; relationships |
 | Knowledge base | `public/fanaone-ui-fixes.css`, related knowledge templates | Existing KB RTL styles; focus enhancements where inherited | Public / authenticated search, article findability, empty states |
-| Self-service | `templates/pages/self-service/home.html.twig` | Some shared typography/focus rules | First-time request onboarding and service catalog |
+| Self-service | `templates/pages/self-service/home.html.twig` | Optional native quick-start guide plus shared typography/focus rules | Confirm clarity of guide, actual menu labels and service catalog navigation |
 | Administration | `templates/pages/admin/*` | Shared search and actions | Rule creation, event logs, role management |
 | Setup and notifications | `templates/pages/setup/*`, `templates/components/messages_after_redirect_toasts.html.twig` | Actionable feedback and persistent warnings | Test configuration failures, recovery instructions |
 | Account profiles & permissions | `templates/layout/parts/user_header.html.twig`, `profile_selector.html.twig` | Global navigation | Validate multiple profiles/entities and permission boundaries |
