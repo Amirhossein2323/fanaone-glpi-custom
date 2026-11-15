@@ -87,6 +87,44 @@
     if (summary) summary.remove();
   });
 
+  /*
+   * Dirty-state protection for ordinary GLPI asset forms. This does not store
+   * form contents, alter requests, or override the server's saving rules.
+   */
+  function markFormEdited(event) {
+    var field = event.target;
+    if (!field || !field.matches || !field.matches('input, select, textarea')) return;
+    if (field.matches('input[type="hidden"], input[type="submit"], input[type="button"], input[type="reset"]')) return;
+    var form = field.form;
+    if (!form || !form.matches('form[name="asset_form"]') || !form.querySelector('.fanaone-form-actions')) return;
+    form.dataset.fanaoneDirty = 'true';
+    form.dataset.fanaoneSubmitting = '';
+    var status = form.querySelector('.fanaone-unsaved-status');
+    if (status) status.hidden = false;
+  }
+
+  document.addEventListener('input', markFormEdited);
+  document.addEventListener('change', markFormEdited);
+  document.addEventListener('submit', function (event) {
+    var form = event.target;
+    if (!form || !form.matches || !form.matches('form[name="asset_form"]')) return;
+    // Suppress the warning during normal submission, but restore it if a
+    // client-side AJAX handler cancels navigation or leaves the form in place.
+    form.dataset.fanaoneSubmitting = 'true';
+    setTimeout(function () {
+      if (form.isConnected) form.dataset.fanaoneSubmitting = '';
+    }, 2500);
+  });
+  window.addEventListener('beforeunload', function (event) {
+    var dirty = Array.prototype.some.call(
+      document.querySelectorAll('form[name="asset_form"][data-fanaone-dirty="true"]'),
+      function (form) { return form.dataset.fanaoneSubmitting !== 'true'; }
+    );
+    if (!dirty) return;
+    event.preventDefault();
+    event.returnValue = '';
+  });
+
   /* GLPI replaces search result panels with AJAX. Reapply a current search to new rows. */
   var queued = false;
   var observer = new MutationObserver(function (mutations) {
