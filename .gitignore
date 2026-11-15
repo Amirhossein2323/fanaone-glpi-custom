@@ -10,3 +10,22 @@ files/_rss/
 files/_sessions/
 files/_tmp/
 files/_uploads/
+
+
+# Production runtime configuration is provisioned on the host, never committed.
+config/config_db.php
+config/config_db.php.*
+config/glpicrypt.key
+config/*.key
+config/*.pem
+config/*.p12
+config/*.pfx
+config/.*.sw?
+config/*.sw?
+.env
+.env.*
+!.env.example
+# Avoid committing temporary editor and backup files.
+*.swp
+*.swo
+*~
