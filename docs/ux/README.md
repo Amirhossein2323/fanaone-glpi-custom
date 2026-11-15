@@ -2,6 +2,8 @@
 
 Date: 2026-11-15. Scope: shared UI and representative ticket, asset, search and global-navigation journeys.
 
+For a Persian management-ready summary, see [EXECUTIVE_SUMMARY_FA.md](EXECUTIVE_SUMMARY_FA.md).
+
 ## Deliverables
 - [UX audit](UX_AUDIT.md): source-evidence-backed hypotheses, not a claim of completed user testing.
 - [User flow diagrams](USER_FLOWS.md): Mermaid as-is/to-be task flows.
