@@ -1,0 +1,70 @@
+/*
+ * FanaOne shared UX design tokens and progressive enhancements.
+ * Intentionally avoids changing GLPI data, routes, permissions or backend logic.
+ */
+:root {
+  --fanaone-ux-primary: #066a9b;
+  --fanaone-ux-primary-hover: #07577c;
+  --fanaone-ux-focus: #147fb5;
+  --fanaone-ux-border: #d3e1e9;
+  --fanaone-ux-surface: #fff;
+  --fanaone-ux-text: #19394b;
+  --fanaone-ux-radius: .65rem;
+}
+.fanaone-skip-link {
+  position: fixed;
+  top: .5rem;
+  inset-inline-start: .5rem;
+  z-index: 12000;
+  background: #fff;
+  color: #063f64;
+  padding: .7rem 1rem;
+  border: 2px solid var(--fanaone-ux-primary);
+  border-radius: var(--fanaone-ux-radius);
+  transform: translateY(-180%);
+}
+.fanaone-skip-link:focus { transform: none; }
+.fanaone-mobile-search {
+  background: var(--fanaone-ux-surface);
+  border-bottom: 1px solid var(--fanaone-ux-border);
+}
+.fanaone-mobile-search .my-global-search-form { max-width: 100%; }
+#page :is(button, a, input, textarea, select, [tabindex]):focus-visible,
+.fanaone-mobile-search :is(button, input):focus-visible,
+.navbar :is(button, a):focus-visible {
+  outline: 3px solid var(--fanaone-ux-focus);
+  outline-offset: 2px;
+}
+#page :is(.btn, .form-control, .form-select, .select2-selection) {
+  border-radius: var(--fanaone-ux-radius);
+}
+#page .btn-primary:not(:disabled) { font-weight: 650; }
+#page :is(.form-control, .form-select) { min-height: 2.5rem; }
+#page .search-results th { vertical-align: middle; white-space: normal; }
+#page .search-results td { vertical-align: middle; }
+#page .table-responsive { max-width: 100%; scrollbar-width: thin; }
+.fanaone-table-filter {
+  margin: .75rem 1rem;
+  padding: .8rem 1rem;
+  border: 1px solid var(--fanaone-ux-border);
+  border-radius: var(--fanaone-ux-radius);
+  background: var(--fanaone-ux-surface);
+  color: var(--fanaone-ux-text);
+}
+.fanaone-table-filter label { display: block; margin-bottom: .35rem; font-weight: 600; }
+.fanaone-filter-row { display: flex; align-items: center; gap: .5rem; max-width: 36rem; }
+.fanaone-filter-row input { min-width: 0; flex: 1; }
+.fanaone-filter-count { display: block; margin-top: .35rem; font-size: .84rem; color: #506575; }
+#page .modal-dialog { max-width: min(var(--bs-modal-width, 500px), calc(100vw - 1rem)); }
+#page .modal-content { border-radius: var(--fanaone-ux-radius); }
+#page .modal-body { overflow-wrap: anywhere; }
+.fanaone-toast { animation: none; }
+@media (max-width: 600px) {
+  .fanaone-filter-row { flex-direction: column; align-items: stretch; }
+  .fanaone-filter-row > * { width: 100%; }
+  #page .search-controls { flex-wrap: wrap; gap: .25rem; }
+  #page .card-header.search-header { flex-wrap: wrap; gap: .5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fanaone-skip-link, .fanaone-toast { transition: none !important; animation: none !important; }
+}
