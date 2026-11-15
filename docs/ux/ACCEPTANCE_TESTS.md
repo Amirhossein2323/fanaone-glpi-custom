@@ -24,6 +24,7 @@ Record at least 10 representative completions per task and role on both the base
 | RTL date input | Asset or ticket form with Jalali UI | Valid date stored | failed attempts |
 
 ## Required functional checks
+- [x] New JavaScript filter syntax and dependency-free smoke tests passed in GitHub Actions on 2026-11-15 (checks `43706407782` and `43706408230`)
 - [ ] Twig templates compile without warnings in target GLPI version
 - [ ] Existing `main` branch unaffected before approved merge
 - [ ] Global mobile search is absent for unauthorized/non-central profiles
@@ -35,6 +36,9 @@ Record at least 10 representative completions per task and role on both the base
 - [ ] Informational toast disappears after 10 seconds
 - [ ] Form save, destructive action and CSRF token remain unchanged
 - [ ] RTL flatpickr, Select2 and custom plugins still work
+- [ ] Native invalid-field summary appears only on invalid submission and clears on editing
+- [ ] Sticky action row does not obstruct form content or modal interaction
+- [ ] Table sort controls work with keyboard and mouse, and `aria-sort` is accurate
 - [ ] Keyboard focus visible; screen-reader labels verified
 - [ ] Browser zoom 200%, reduced-motion preference, and 320px through 1440px checked
 - [ ] Check contrast and reflow against WCAG 2.2 AA
