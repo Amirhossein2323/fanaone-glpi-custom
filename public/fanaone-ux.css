@@ -97,3 +97,32 @@
   .fanaone-table-filter, .fanaone-skip-link, .fanaone-mobile-search { display: none !important; }
   #page .fanaone-form-actions { position: static; box-shadow: none; }
 }
+
+
+#page .search-results th .fanaone-sort-trigger {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .4rem;
+  width: 100%;
+  padding: .3rem .2rem;
+  min-height: 2rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: start;
+  cursor: pointer;
+}
+#page .search-results th .fanaone-sort-trigger:hover {
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+#page .search-results th .fanaone-sort-trigger:focus-visible {
+  outline: 3px solid var(--fanaone-ux-focus);
+  outline-offset: 2px;
+  border-radius: .25rem;
+}
