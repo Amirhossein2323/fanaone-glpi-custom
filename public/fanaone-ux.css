@@ -141,3 +141,30 @@
   font-weight: 700;
 }
 #page .fanaone-unsaved-status[hidden] { display: none !important; }
+
+
+/* Lightweight self-service onboarding: native details works without JS. */
+#page .fanaone-onboarding {
+  background: #f5fbff;
+  border: 1px solid var(--fanaone-ux-border);
+  border-inline-start: .3rem solid var(--fanaone-ux-primary);
+  border-radius: var(--fanaone-ux-radius);
+  margin: 1rem 0;
+  color: var(--fanaone-ux-text);
+}
+#page .fanaone-onboarding > summary {
+  cursor: pointer;
+  padding: .8rem 1rem;
+  font-weight: 700;
+  border-radius: var(--fanaone-ux-radius);
+}
+#page .fanaone-onboarding[open] > summary {
+  border-bottom: 1px solid var(--fanaone-ux-border);
+}
+#page .fanaone-onboarding-content { padding: .8rem 1.25rem; }
+#page .fanaone-onboarding-content ol { padding-inline-start: 1.5rem; margin: .4rem 0 .8rem; }
+#page .fanaone-onboarding-content li { margin-block: .4rem; }
+#page .fanaone-onboarding > summary:focus-visible {
+  outline: 3px solid var(--fanaone-ux-focus);
+  outline-offset: 2px;
+}
