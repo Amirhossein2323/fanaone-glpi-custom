@@ -42,6 +42,8 @@ Record at least 10 representative completions per task and role on both the base
 - [ ] Keyboard focus visible; screen-reader labels verified
 - [ ] Browser zoom 200%, reduced-motion preference, and 320px through 1440px checked
 - [ ] Check contrast and reflow against WCAG 2.2 AA
+- [ ] Open standalone `docs/ux/UI_KIT_PREVIEW.html` and verify keyboard focus, dialog, filter and example form across viewports
+- [ ] Trigger unsaved asset-form warning on user edits, then verify normal submit and canceled navigation
 - [ ] Run Playwright or browser regression checks against staging plus PHP/Twig tests
 
 ## Evidence log schema
