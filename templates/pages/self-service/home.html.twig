@@ -50,6 +50,23 @@
    </div>
 {% endif %}
 
+{# Non-intrusive, opt-in onboarding for end users. Keeps the existing dashboard intact. #}
+<details class="fanaone-onboarding" aria-label="راهنمای شروع کار با سامانه">
+   <summary>
+      <i class="ti ti-help-circle" aria-hidden="true"></i>
+      تازه وارد سامانه شده‌اید؟ راهنمای شروع سریع
+   </summary>
+   <div class="fanaone-onboarding-content">
+      <p>برای ثبت و پیگیری درخواست‌های پشتیبانی، این سه مرحله را انجام دهید:</p>
+      <ol>
+         <li>از منوی خدمات یا بخش درخواست‌ها، فرم ایجاد درخواست جدید را باز کنید.</li>
+         <li>موضوعی کوتاه و روشن و شرح دقیق مشکل یا نیاز را وارد کنید؛ در صورت نیاز فایل مرتبط را پیوست کنید.</li>
+         <li>پس از ثبت، شمارهٔ درخواست را نگه دارید و وضعیت پاسخ‌گویی را از فهرست درخواست‌های خود دنبال کنید.</li>
+      </ol>
+      <p class="mb-0">اگر پیام خطا دیدید، متن خطا را بررسی و مورد خواسته‌شده را اصلاح کنید؛ در صورت ادامهٔ مشکل با پشتیبانی تماس بگیرید.</p>
+   </div>
+</details>
+
 <table class="central">
    {{ call_plugin_hook(constant('Glpi\\Plugin\\Hooks::DISPLAY_CENTRAL')) }}
 </table>
