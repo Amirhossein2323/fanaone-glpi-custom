@@ -13,7 +13,9 @@
 | UX-07 | `public/css/golpakhsh-overrides.css` contains extensive login-specific overrides, `public/fanaone-ui-fixes.css` adds other page-specific rules | Repeated ad hoc styles risk component drift | Medium | Introduce additive scoped tokens, avoid replacing brand-specific work |
 | UX-08 | Shared search toolbar `templates/components/search/controls.html.twig` relies on icon-only controls/tooltips | Accessible purpose may be unclear before hover | Medium | Label export/config/filter controls |
 | UX-09 | `templates/layout/parts/page_header.html.twig` begins content without a keyboard skip shortcut | Keyboard navigation may traverse repetitive menus on each page | Medium | Add skip-to-content |
-| SEC-01 | `config/config_db.php`, backup, `config/glpicrypt.key` are tracked in the public repo | Potential secret disclosure, not a UX issue | Critical/security | Escalate immediately; do not expose contents or rotate blind |
+| UX-10 | `js/modules/Search/Table.js` registers click on sortable column `<th>`; original table header lacks a focusable control | Keyboard users cannot initiate sorting reliably | High | Wrap sortable labels in native buttons, preserve existing delegated click behavior and `aria-sort` |
+| UX-11 | Asset forms have action buttons at the bottom of potentially long content; native browser validation has limited task context | Extra scroll to save, unclear invalid field during submission | Medium | Sticky action row plus summary for native invalid events; retain server-side validation |
+| SEC-01 | `config/config_db.php`, backup, `config/glpicrypt.key` are tracked in the public repo | Potential secret disclosure, not a UX issue | Critical/security | Escalate immediately; do not expose contents or rotate blind; separate security PR #2 prepared |
 
 ## Screenshot collection template (pending)
 For each issue record: unique screenshot filename (e.g. `UX-01-mobile-search-before.png`), tested Git commit, environment, user role, viewport width, browser, page URL without tokens or PII, expected/actual outcome, and redacted before/after capture. No real screenshots are claimed or attached.
