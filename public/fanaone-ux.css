@@ -1,0 +1,170 @@
+/*
+ * FanaOne shared UX design tokens and progressive enhancements.
+ * Intentionally avoids changing GLPI data, routes, permissions or backend logic.
+ */
+:root {
+  --fanaone-ux-primary: #066a9b;
+  --fanaone-ux-primary-hover: #07577c;
+  --fanaone-ux-focus: #147fb5;
+  --fanaone-ux-border: #d3e1e9;
+  --fanaone-ux-surface: #fff;
+  --fanaone-ux-text: #19394b;
+  --fanaone-ux-radius: .65rem;
+}
+.fanaone-skip-link {
+  position: fixed;
+  top: .5rem;
+  inset-inline-start: .5rem;
+  z-index: 12000;
+  background: #fff;
+  color: #063f64;
+  padding: .7rem 1rem;
+  border: 2px solid var(--fanaone-ux-primary);
+  border-radius: var(--fanaone-ux-radius);
+  transform: translateY(-180%);
+}
+.fanaone-skip-link:focus { transform: none; }
+.fanaone-mobile-search {
+  background: var(--fanaone-ux-surface);
+  border-bottom: 1px solid var(--fanaone-ux-border);
+}
+.fanaone-mobile-search .my-global-search-form { max-width: 100%; }
+#page :is(button, a, input, textarea, select, [tabindex]):focus-visible,
+.fanaone-mobile-search :is(button, input):focus-visible,
+.navbar :is(button, a):focus-visible {
+  outline: 3px solid var(--fanaone-ux-focus);
+  outline-offset: 2px;
+}
+#page :is(.btn, .form-control, .form-select, .select2-selection) {
+  border-radius: var(--fanaone-ux-radius);
+}
+#page .btn-primary:not(:disabled) { font-weight: 650; }
+#page :is(.form-control, .form-select) { min-height: 2.5rem; }
+#page .search-results th { vertical-align: middle; white-space: normal; }
+#page .search-results td { vertical-align: middle; }
+#page .table-responsive { max-width: 100%; scrollbar-width: thin; }
+.fanaone-table-filter {
+  margin: .75rem 1rem;
+  padding: .8rem 1rem;
+  border: 1px solid var(--fanaone-ux-border);
+  border-radius: var(--fanaone-ux-radius);
+  background: var(--fanaone-ux-surface);
+  color: var(--fanaone-ux-text);
+}
+.fanaone-table-filter label { display: block; margin-bottom: .35rem; font-weight: 600; }
+.fanaone-filter-row { display: flex; align-items: center; gap: .5rem; max-width: 36rem; }
+.fanaone-filter-row input { min-width: 0; flex: 1; }
+.fanaone-filter-count { display: block; margin-top: .35rem; font-size: .84rem; color: #506575; }
+#page .modal-dialog { max-width: min(var(--bs-modal-width, 500px), calc(100vw - 1rem)); }
+#page .modal-content { border-radius: var(--fanaone-ux-radius); }
+#page .modal-body { overflow-wrap: anywhere; }
+.fanaone-toast { animation: none; }
+@media (max-width: 600px) {
+  .fanaone-filter-row { flex-direction: column; align-items: stretch; }
+  .fanaone-filter-row > * { width: 100%; }
+  #page .search-controls { flex-wrap: wrap; gap: .25rem; }
+  #page .card-header.search-header { flex-wrap: wrap; gap: .5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fanaone-skip-link, .fanaone-toast { transition: none !important; animation: none !important; }
+}
+
+
+/* Keep long form actions reachable without changing submission semantics. */
+#page .fanaone-form-actions {
+  position: sticky;
+  bottom: 0;
+  z-index: 30;
+  background: rgba(255, 255, 255, .98);
+  border-color: var(--fanaone-ux-border) !important;
+  box-shadow: 0 -5px 18px rgba(16, 47, 73, .08);
+  padding-block: .75rem;
+  gap: .5rem;
+}
+#page .fanaone-form-actions > .btn { min-height: 2.5rem; }
+#page .fanaone-validation-summary {
+  border-inline-start: .3rem solid #b42318;
+  margin: .75rem;
+  scroll-margin-top: 5rem;
+}
+#page .search-results tbody tr[hidden] { display: none !important; }
+#page .fanaone-table-filter [type="search"] { min-height: 2.65rem; }
+@media (max-width: 600px) {
+  #page .fanaone-form-actions { gap: .35rem; padding: .6rem; }
+  #page .fanaone-form-actions > .btn { flex: 1 1 auto; }
+}
+@media print {
+  .fanaone-table-filter, .fanaone-skip-link, .fanaone-mobile-search { display: none !important; }
+  #page .fanaone-form-actions { position: static; box-shadow: none; }
+}
+
+
+#page .search-results th .fanaone-sort-trigger {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .4rem;
+  width: 100%;
+  padding: .3rem .2rem;
+  min-height: 2rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: start;
+  cursor: pointer;
+}
+#page .search-results th .fanaone-sort-trigger:hover {
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+#page .search-results th .fanaone-sort-trigger:focus-visible {
+  outline: 3px solid var(--fanaone-ux-focus);
+  outline-offset: 2px;
+  border-radius: .25rem;
+}
+
+/* Persistently visible feedback after a user edits an asset form. */
+#page .fanaone-unsaved-status {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  background: #fff4cf;
+  border: 1px solid #b98515;
+  border-radius: 999px;
+  color: #633f00;
+  padding: .4rem .8rem;
+  font-size: .85rem;
+  font-weight: 700;
+}
+#page .fanaone-unsaved-status[hidden] { display: none !important; }
+
+
+/* Lightweight self-service onboarding: native details works without JS. */
+#page .fanaone-onboarding {
+  background: #f5fbff;
+  border: 1px solid var(--fanaone-ux-border);
+  border-inline-start: .3rem solid var(--fanaone-ux-primary);
+  border-radius: var(--fanaone-ux-radius);
+  margin: 1rem 0;
+  color: var(--fanaone-ux-text);
+}
+#page .fanaone-onboarding > summary {
+  cursor: pointer;
+  padding: .8rem 1rem;
+  font-weight: 700;
+  border-radius: var(--fanaone-ux-radius);
+}
+#page .fanaone-onboarding[open] > summary {
+  border-bottom: 1px solid var(--fanaone-ux-border);
+}
+#page .fanaone-onboarding-content { padding: .8rem 1.25rem; }
+#page .fanaone-onboarding-content ol { padding-inline-start: 1.5rem; margin: .4rem 0 .8rem; }
+#page .fanaone-onboarding-content li { margin-block: .4rem; }
+#page .fanaone-onboarding > summary:focus-visible {
+  outline: 3px solid var(--fanaone-ux-focus);
+  outline-offset: 2px;
+}
