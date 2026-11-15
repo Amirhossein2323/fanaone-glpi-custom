@@ -10,6 +10,8 @@ const vm = require('node:vm');
 
 function environment(texts) {
   const listeners = Object.create(null);
+  const windowListeners = Object.create(null);
+  const timers = [];
   const rows = texts.map((text) => ({
     textContent: text,
     style: { display: '' },
@@ -29,6 +31,19 @@ function environment(texts) {
     getAttribute(key) { return key === 'data-fanaone-filter-clear' ? 'search_test' : null; },
     closest(selector) { return selector === '[data-fanaone-filter-clear]' ? this : null; }
   };
+  const formStatus = { hidden: true };
+  const form = {
+    dataset: {}, isConnected: true,
+    matches(selector) { return selector === 'form[name="asset_form"]'; },
+    querySelector(selector) {
+      return selector === '.fanaone-form-actions' ? {} :
+        selector === '.fanaone-unsaved-status' ? formStatus : null;
+    }
+  };
+  const field = {
+    form, matches(selector) { return selector === 'input, select, textarea'; },
+    closest() { return null; }
+  };
   const doc = {
     readyState: 'complete',
     addEventListener(type, fn) { (listeners[type] ||= []).push(fn); },
@@ -39,20 +54,33 @@ function environment(texts) {
       return null;
     },
     querySelectorAll(selector) {
-      return selector === '[data-fanaone-page-filter]' ? [input] : [];
+      if (selector === '[data-fanaone-page-filter]') return [input];
+      if (selector === 'form[name="asset_form"][data-fanaone-dirty="true"]') {
+        return form.dataset.fanaoneDirty === 'true' ? [form] : [];
+      }
+      return [];
     }
   };
   const source = fs.readFileSync(path.join(__dirname, '../../js/fanaone-ux.js'), 'utf8');
   const raf = (callback) => callback();
   vm.runInNewContext(source, {
-    document: doc, window: { requestAnimationFrame: raf },
+    document: doc, window: {
+      requestAnimationFrame: raf,
+      addEventListener(type, fn) { (windowListeners[type] ||= []).push(fn); }
+    },
     MutationObserver: class { observe() {} },
     CSS: { escape: (value) => value },
     requestAnimationFrame: raf,
-    setTimeout: (fn) => { fn(); return 1; }, clearTimeout() {}
+    setTimeout: (fn, delay) => {
+      if (delay >= 1000) timers.push(fn);
+      else fn();
+      return 1;
+    }, clearTimeout() {}
   });
   return {
-    input, clear, rows, status,
+    input, clear, rows, status, field, form, formStatus,
+    dispatchWindow(type, event) { (windowListeners[type] || []).forEach((fn) => fn(event)); },
+    finishTimers() { while (timers.length) timers.shift()(); },
     dispatch(type, target) {
       (listeners[type] || []).forEach((listener) => listener({ target }));
     }
@@ -84,4 +112,31 @@ test('empty result is visible in status; clearing restores original rows', () =>
   assert.ok(h.rows.every((r) => !r.hidden));
   assert.equal(h.input.value, '');
   assert.equal(h.input.focused, true);
+});
+
+test('unsaved changes trigger a navigation warning on edited asset forms', () => {
+  const h = environment(['تیکت']);
+  let warnings = 0;
+  const unload = { preventDefault() { warnings++; } };
+  h.dispatchWindow('beforeunload', unload);
+  assert.equal(warnings, 0);
+  h.dispatch('change', h.field);
+  assert.equal(h.form.dataset.fanaoneDirty, 'true');
+  assert.equal(h.formStatus.hidden, false);
+  h.dispatchWindow('beforeunload', unload);
+  assert.equal(warnings, 1);
+  assert.equal(unload.returnValue, '');
+});
+
+test('normal asset form submission bypasses warning, but canceled navigation restores it', () => {
+  const h = environment(['تیکت']);
+  h.dispatch('input', h.field);
+  h.dispatch('submit', h.form);
+  let warnings = 0;
+  const unload = { preventDefault() { warnings++; } };
+  h.dispatchWindow('beforeunload', unload);
+  assert.equal(warnings, 0);
+  h.finishTimers();
+  h.dispatchWindow('beforeunload', unload);
+  assert.equal(warnings, 1);
 });
