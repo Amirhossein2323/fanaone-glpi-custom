@@ -43,7 +43,7 @@
                 {% set class = 'bg-danger text-white' %}
                 {% set title = __('Error') %}
             {% elseif type == constant('WARNING') %}
-                {% set class = 'bg-warning text-white' %}
+                {% set class = 'bg-warning text-dark' %}
                 {% set title = __('Warning') %}
             {% else %}
                 {% set class = 'bg-info text-white' %}
@@ -56,7 +56,7 @@
                  data-bs-autohide="{{ is_urgent ? 'false' : 'true' }}">
                 <div class="toast-header {{ class }} ">
                     <strong class="me-auto">{{ title }}</strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="{{ __('Close') }}"></button>
+                    <button type="button" class="btn-close {{ type == constant('ERROR') ? 'btn-close-white' : '' }}" data-bs-dismiss="toast" aria-label="{{ __('Close') }}"></button>
                 </div>
                 <div class="toast-body">
                     {{ message|raw }}
