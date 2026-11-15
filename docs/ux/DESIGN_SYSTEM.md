@@ -1,6 +1,6 @@
 # FanaOne shared UX system — v0.1 (code tokens + UI specification)
 
-This is a **repository-based design specification**. A complete Figma component library has not yet been created or linked. Do not label it as a delivered native Figma UI kit.
+This is a **repository-based design specification** together with an [interactive HTML UI kit preview](UI_KIT_PREVIEW.html). The preview is a safe, standalone demonstration only, not an authenticated GLPI page. A native Figma component library has not been created or linked. Do not describe the HTML preview as a native Figma UI kit.
 
 ## Tokens
 | Token | Value | Use |
