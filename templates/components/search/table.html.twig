@@ -34,7 +34,7 @@
 {% set searchform_id = data['searchform_id']|default('search_' ~ rand) %}
 
 {% if count > 0 %}
-<div class="fanaone-table-filter" role="search" aria-label="فیلتر نتایج همین صفحه">
+<div class="fanaone-table-filter" role="search" aria-label="فیلتر نتایج همین صفحه" data-fanaone-filter-scope="current-page">
    <label for="fanaone_filter_{{ searchform_id }}">فیلتر سریع ردیف‌های همین صفحه</label>
    <div class="fanaone-filter-row">
       <input type="search" id="fanaone_filter_{{ searchform_id }}" class="form-control"
@@ -42,7 +42,7 @@
              placeholder="جست‌وجو در نتایج نمایش‌داده‌شده" autocomplete="off" />
       <button type="button" class="btn btn-outline-secondary" data-fanaone-filter-clear="{{ searchform_id }}">پاک کردن</button>
    </div>
-   <output class="fanaone-filter-count" data-fanaone-filter-count="{{ searchform_id }}" role="status" aria-live="polite"></output>
+   <output class="fanaone-filter-count" data-fanaone-filter-count="{{ searchform_id }}" role="status" aria-live="polite" aria-atomic="true"></output>
 </div>
 {% endif %}
 <div class="table-responsive">
