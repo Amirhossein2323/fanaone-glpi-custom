@@ -36,6 +36,7 @@ Record at least 10 representative completions per task and role on both the base
 - [ ] Informational toast disappears after 10 seconds
 - [ ] Form save, destructive action and CSRF token remain unchanged
 - [ ] RTL flatpickr, Select2 and custom plugins still work
+- [ ] Self-service quick-start guide opens and closes using keyboard and conveys correct steps for the local deployment
 - [ ] Native invalid-field summary appears only on invalid submission and clears on editing
 - [ ] Sticky action row does not obstruct form content or modal interaction
 - [ ] Table sort controls work with keyboard and mouse, and `aria-sort` is accurate
