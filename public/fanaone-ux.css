@@ -68,3 +68,32 @@
 @media (prefers-reduced-motion: reduce) {
   .fanaone-skip-link, .fanaone-toast { transition: none !important; animation: none !important; }
 }
+
+
+/* Keep long form actions reachable without changing submission semantics. */
+#page .fanaone-form-actions {
+  position: sticky;
+  bottom: 0;
+  z-index: 30;
+  background: rgba(255, 255, 255, .98);
+  border-color: var(--fanaone-ux-border) !important;
+  box-shadow: 0 -5px 18px rgba(16, 47, 73, .08);
+  padding-block: .75rem;
+  gap: .5rem;
+}
+#page .fanaone-form-actions > .btn { min-height: 2.5rem; }
+#page .fanaone-validation-summary {
+  border-inline-start: .3rem solid #b42318;
+  margin: .75rem;
+  scroll-margin-top: 5rem;
+}
+#page .search-results tbody tr[hidden] { display: none !important; }
+#page .fanaone-table-filter [type="search"] { min-height: 2.65rem; }
+@media (max-width: 600px) {
+  #page .fanaone-form-actions { gap: .35rem; padding: .6rem; }
+  #page .fanaone-form-actions > .btn { flex: 1 1 auto; }
+}
+@media print {
+  .fanaone-table-filter, .fanaone-skip-link, .fanaone-mobile-search { display: none !important; }
+  #page .fanaone-form-actions { position: static; box-shadow: none; }
+}
