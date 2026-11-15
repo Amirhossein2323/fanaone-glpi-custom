@@ -15,6 +15,7 @@
 | UX-09 | `templates/layout/parts/page_header.html.twig` begins content without a keyboard skip shortcut | Keyboard navigation may traverse repetitive menus on each page | Medium | Add skip-to-content |
 | UX-10 | `js/modules/Search/Table.js` registers click on sortable column `<th>`; original table header lacks a focusable control | Keyboard users cannot initiate sorting reliably | High | Wrap sortable labels in native buttons, preserve existing delegated click behavior and `aria-sort` |
 | UX-11 | Asset forms have action buttons at the bottom of potentially long content; native browser validation has limited task context | Extra scroll to save, unclear invalid field during submission | Medium | Sticky action row plus summary for native invalid events; retain server-side validation |
+| UX-12 | `templates/pages/self-service/home.html.twig` displayed dashboard content without a dedicated compact first-use guide | New users may struggle to identify request submission and follow-up steps | Medium | Add optional native `<details>` guide; validate wording and actual menu labels with users |
 | SEC-01 | `config/config_db.php`, backup, `config/glpicrypt.key` are tracked in the public repo | Potential secret disclosure, not a UX issue | Critical/security | Escalate immediately; do not expose contents or rotate blind; separate security PR #2 prepared |
 
 ## Screenshot collection template (pending)
