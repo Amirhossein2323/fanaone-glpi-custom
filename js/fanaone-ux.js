@@ -54,7 +54,11 @@
   /* GLPI replaces search result panels with AJAX. Reapply a current search to new rows. */
   var queued = false;
   var observer = new MutationObserver(function (mutations) {
-    if (queued || !mutations.some(function (m) { return m.addedNodes.length > 0 || m.removedNodes.length > 0; })) return;
+    if (queued || !mutations.some(function (m) {
+      return Array.prototype.some.call(m.addedNodes, function (node) {
+        return node.nodeType === 1 && (node.matches('[data-fanaone-page-filter]') || node.querySelector('[data-fanaone-page-filter]'));
+      });
+    })) return;
     queued = true;
     requestAnimationFrame(function () {
       queued = false;
