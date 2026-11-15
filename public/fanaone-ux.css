@@ -126,3 +126,18 @@
   outline-offset: 2px;
   border-radius: .25rem;
 }
+
+/* Persistently visible feedback after a user edits an asset form. */
+#page .fanaone-unsaved-status {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  background: #fff4cf;
+  border: 1px solid #b98515;
+  border-radius: 999px;
+  color: #633f00;
+  padding: .4rem .8rem;
+  font-size: .85rem;
+  font-weight: 700;
+}
+#page .fanaone-unsaved-status[hidden] { display: none !important; }
