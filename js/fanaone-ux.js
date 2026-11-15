@@ -51,6 +51,42 @@
     input.focus();
   });
 
+  /*
+   * Native form validation recovery. This does not override GLPI's server
+   * validation or submit handlers. Feedback is only shown on an invalid event.
+   */
+  document.addEventListener('invalid', function (event) {
+    var field = event.target;
+    var form = field && field.form;
+    if (!form || !form.matches('form[name="asset_form"]')) return;
+    window.requestAnimationFrame(function () {
+      if (!form.isConnected) return;
+      var first = form.querySelector('input:invalid, select:invalid, textarea:invalid');
+      if (!first) return;
+      var summary = form.querySelector('[data-fanaone-validation-summary]');
+      if (!summary) {
+        summary = document.createElement('div');
+        summary.className = 'alert alert-danger fanaone-validation-summary';
+        summary.setAttribute('role', 'alert');
+        summary.setAttribute('aria-live', 'assertive');
+        summary.setAttribute('data-fanaone-validation-summary', '');
+        form.insertBefore(summary, form.firstChild);
+      }
+      var label = first.labels && first.labels.length
+        ? first.labels[0].textContent.trim()
+        : (first.getAttribute('aria-label') || first.name || 'این فیلد');
+      summary.textContent = 'امکان ثبت فرم وجود ندارد. مقدار «' + label +
+        '» را بررسی کنید. ' + (first.validationMessage || 'فیلد الزامی یا نامعتبر است.');
+    });
+  }, true);
+  document.addEventListener('input', function (event) {
+    var field = event.target;
+    var form = field && field.form;
+    if (!form || !form.matches('form[name="asset_form"]')) return;
+    var summary = form.querySelector('[data-fanaone-validation-summary]');
+    if (summary) summary.remove();
+  });
+
   /* GLPI replaces search result panels with AJAX. Reapply a current search to new rows. */
   var queued = false;
   var observer = new MutationObserver(function (mutations) {
