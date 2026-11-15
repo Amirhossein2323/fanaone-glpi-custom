@@ -8,6 +8,9 @@ Date: 2026-11-15. Scope: shared UI and representative ticket, asset, search and 
 - [Design tokens and component standards](DESIGN_SYSTEM.md): implementation-ready textual UI kit; a native Figma file has **not** been created.
 - [Acceptance tests](ACCEPTANCE_TESTS.md): reproducible baseline and post-change measurements.
 - Front-end: `public/fanaone-ux.css`, `js/fanaone-ux.js`, and shared Twig template adjustments.
+- Validation feedback for native invalid GLPI asset forms; sticky save/action row in long forms.
+- Keyboard-accessible sorting buttons on sortable GLPI table headers.
+- Dependency-free Node smoke tests: `node --test tests/ux/fanaone-ux.test.cjs`; automated GitHub Actions workflow `ux-smoke.yml`.
 
 ## Implementation boundaries
 Only a first shared-component pass is delivered. No production screenshots, authenticated UX test, full-module review or controlled human study has been performed. Users must review and test the PR in staging before merging into `main`. GLPI full-dataset filters remain server-driven; the added quick filter operates on the **current rendered page only**.
