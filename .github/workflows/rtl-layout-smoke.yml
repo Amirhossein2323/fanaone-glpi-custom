@@ -1,0 +1,41 @@
+name: RTL layout source smoke tests
+
+on:
+  push:
+    branches:
+      - fix/rtl-layout-audit-20261126
+    paths:
+      - 'css/**'
+      - 'public/fanaone-ui-fixes.css'
+      - 'src/Html.php'
+      - 'src/KnowbaseItem.php'
+      - 'src/CommonITILObject.php'
+      - 'templates/**'
+      - 'tests/rtl/**'
+      - '.github/workflows/rtl-layout-smoke.yml'
+  pull_request:
+    paths:
+      - 'css/**'
+      - 'public/fanaone-ui-fixes.css'
+      - 'src/Html.php'
+      - 'src/KnowbaseItem.php'
+      - 'src/CommonITILObject.php'
+      - 'templates/**'
+      - 'tests/rtl/**'
+      - '.github/workflows/rtl-layout-smoke.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  rtl-source-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Run RTL source regression checks
+        run: node --test tests/rtl/rtl-css.test.cjs
