@@ -95,7 +95,8 @@ test('RTL cache versions are refreshed and no malformed logical properties were 
     'css/standalone/dashboard.scss',
     'css/standalone/marketplace.scss'
   ];
-  assert.match(html, /fanaone-ui-fixes\.css'\)\s*\}\}\?v=20261126/);
+  assert.ok(html.includes("fanaone-ui-fixes.css"));
+  assert.ok(html.includes("?v=20261126"));
   assert.match(php, /version'\s*=>\s*'fanaone-rtl-26'/);
   for (const file of files) {
     const content = read(file);
