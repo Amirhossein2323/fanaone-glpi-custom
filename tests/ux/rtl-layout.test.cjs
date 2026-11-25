@@ -43,6 +43,6 @@ test('ITIL footer keeps timeline actions and form actions under matching panes',
 });
 
 test('ITIL footer direction overrides are scoped to RTL and the footer only', () => {
-  assert.doesNotMatch(uxCss, /\.buttons-bar\s*\{\s*direction:\s*ltr;/);
+  assert.doesNotMatch(uxCss, /(?:^|\n)\s*\.buttons-bar\s*\{\s*direction:\s*ltr;/);
   assert.doesNotMatch(uxCss, /html\[dir="rtl"\]\s+body\s*\{\s*direction:\s*ltr;/);
 });
