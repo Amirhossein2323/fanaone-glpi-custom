@@ -958,7 +958,8 @@
    /** KB comments **/
 
    .comments {
-      margin: 0 0 0 1em;
+      margin-block: 0;
+      margin-inline-start: 1em;
 
       /* indentation */
       padding: 0;
@@ -966,13 +967,14 @@
       position: relative;
 
       ul {
-         margin: 0 0 0 1em;
+         margin-block: 0;
+      margin-inline-start: 1em;
 
          /* indentation */
          padding: 0;
          list-style: none;
          position: relative;
-         margin-left: 3em;
+         margin-inline-start: 3em;
          clear: both;
       }
 
@@ -994,7 +996,7 @@
 
          /* default list item's `line-height` */
          position: relative;
-         clear: left;
+         clear: inline-start;
 
          &:before {
             content: "";
@@ -1009,7 +1011,7 @@
             /* border top width */
             position: absolute;
             top: 5em;
-            left: 0;
+            inset-inline-start: 0;
          }
 
          &:last-child:before {
