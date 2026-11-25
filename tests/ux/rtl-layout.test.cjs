@@ -46,3 +46,9 @@ test('ITIL footer direction overrides are scoped to RTL and the footer only', ()
   assert.doesNotMatch(uxCss, /(?:^|\n)\s*\.buttons-bar\s*\{\s*direction:\s*ltr;/);
   assert.doesNotMatch(uxCss, /html\[dir="rtl"\]\s+body\s*\{\s*direction:\s*ltr;/);
 });
+
+test('collapsed RTL vertical navigation opens its flyout toward the content area', () => {
+  assert.match(uxCss, /body\.vertical-layout\.navbar-collapsed[\s\S]*?\.dropdown-menu\s*\{\s*left:\s*auto\s*!important;\s*right:\s*calc\(100%\s*\+\s*1px\)\s*!important;/);
+  assert.match(uxCss, /\.dropdown-menu\.animate__fadeInLeft::before\s*\{\s*left:\s*auto;\s*right:\s*-2px;/);
+  assert.match(uxCss, /\.dropdown-item\.active[\s\S]*?border-right-color:\s*var\(--fanaone-ux-primary\)/);
+});
