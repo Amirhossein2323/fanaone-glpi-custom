@@ -488,7 +488,7 @@
 
                 .validation-footer {
                     position: absolute;
-                    left: -45px;
+                    inset-inline-start: -45px;
                     display: none;
                     flex-direction: column;
                     top: 3px;
