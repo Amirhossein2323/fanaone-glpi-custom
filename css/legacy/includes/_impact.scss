@@ -44,7 +44,7 @@
    &.fullscreen {
       position        : fixed;
       left            : 0;
-      right           : 0;
+      inset-inline-end : 0;
       top             : 0;
       bottom          : 0;
       width           : 100%;
@@ -65,8 +65,8 @@
 }
 
 #impact_tools {
-   margin-left     : auto;
-   margin-right    : 5px;
+   margin-inline-start: auto;
+   margin-inline-end: 5px;
    background-color: white;
    padding         : 5px;
    border          : 1px solid lightgray;
@@ -107,7 +107,7 @@ i.fa-impact-manipulation {
    flex-wrap      : wrap;
 
    span {
-      float     : left;
+      float     : inline-start;
       color     : gray;
       font-size : 1.3em;
       padding   : 4px 8px;
@@ -129,7 +129,7 @@ i.fa-impact-manipulation {
 }
 
 .impact_toolbar_right {
-   float: right !important;
+   float: inline-end !important;
 }
 
 .clean {
@@ -159,12 +159,12 @@ i.fa-impact-manipulation {
  */
 
 .cy-context-menus-cxt-menuitem {
-   padding-left: 5px !important;
+   padding-inline-start: 5px !important;
    font-size: 1.15em;
    background-color:white;
 
    i {
-      padding-right: 10px !important;
+      padding-inline-end: 10px !important;
       color: gray;
       max-width: 10px;
    }
@@ -295,12 +295,12 @@ i.fa-impact-manipulation {
    align-items: center;
 
    h2 {
-      margin-left: auto;
+      margin-inline-start: auto;
    }
 
    #switchview {
-      margin-left: auto;
-      margin-right: 10px;
+      margin-inline-start: auto;
+      margin-inline-end: 10px;
 
       a {
          font-size: 0.85em !important;
@@ -323,7 +323,7 @@ i.fa-impact-manipulation {
 }
 
 .impact-left {
-   padding-left: 10px !important;
+   padding-inline-start: 10px !important;
 }
 
 .impact-pointer {
@@ -334,7 +334,7 @@ i.fa-impact-manipulation {
    display: flex;
    flex-direction: column;
    flex-wrap: wrap;
-   text-align: right;
+   text-align: end;
 }
 
 .impact-list-toolbar i {
@@ -350,14 +350,14 @@ i.fa-impact-manipulation {
 }
 
 .impact-toggle-subitems-master {
-   float: right;
-   padding-right: 5px;
+   float: inline-end;
+   padding-inline-end: 5px;
    font-size: 1.15rem;
 }
 
 .impact-toggle-subitems {
-   float: right;
-   padding-right: 5px;
+   float: inline-end;
+   padding-inline-end: 5px;
    font-size: 1.15rem;
 }
 
@@ -369,18 +369,18 @@ i.fa-impact-manipulation {
    // width           : 40px;
    position        : absolute;
    top             : 0;
-   right           : 0;
+   inset-inline-end : 0;
    background-color: var(--table-head-bg);
    color: var(--table-head-color);
    z-index         : 1050;
-   border-left     : 1px solid var(--table-head-border-color);
-   border-right    : 1px solid var(--table-head-border-color);
+   border-inline-start : 1px solid var(--table-head-border-color);
+   border-inline-end : 1px solid var(--table-head-border-color);
    display         : flex;
    justify-content: space-between;
 
    ul {
       list-style : none;
-      border-left: 1px solid var(--table-head-border-color);
+      border-inline-start: 1px solid var(--table-head-border-color);
       text-align: center;
       margin: 0;
       padding: 0;
@@ -425,10 +425,10 @@ i.fa-impact-manipulation {
 
    &.impact-side-expanded {
       // width : 250px;
-      border-left: 3px solid #f1f1f1;
+      border-inline-start: 3px solid #f1f1f1;
 
       li {
-         text-align: right;
+         text-align: end;
       }
    }
 
@@ -481,13 +481,13 @@ i.fa-impact-manipulation {
 
    i {
       cursor: pointer;
-      margin-right: 5px;
+      margin-inline-end: 5px;
    }
 
    img {
       width: 16px;
       height: 16px;
-      margin-right: 5px;
+      margin-inline-end: 5px;
    }
 
    h4 {
@@ -503,7 +503,7 @@ i.fa-impact-manipulation {
    cursor: pointer;
 
    i {
-      margin-right: 3px;
+      margin-inline-end: 3px;
    }
 }
 
@@ -550,7 +550,7 @@ i.fa-impact-manipulation {
 
    span {
       display: inline;
-      margin-left: 4px;
+      margin-inline-start: 4px;
    }
    h4 {
       margin-top: 0;
@@ -569,7 +569,7 @@ i.fa-impact-manipulation {
 }
 
 .impact-checkbox-label {
-   margin-left: 8px;
+   margin-inline-start: 8px;
 }
 
 .impact-side-settings {
@@ -585,7 +585,7 @@ i.fa-impact-manipulation {
 }
 
 .impact-res-hidden {
-   float: right;
+   float: inline-end;
 }
 
 .impact-res-disabled {
