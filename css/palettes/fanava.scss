@@ -1250,3 +1250,34 @@ html[dir="rtl"]
     border-left-width: 1px;
     border-right-width: 1px;
 }
+
+
+/* Keep explicitly LTR data readable inside the Persian RTL interface.
+   The broad form defaults above remain RTL; these selectors are opt-in or
+   limited to inherently LTR input types and code/data values. */
+html[dir="rtl"] .page-body input:not([type="number"]):not([type="range"])[type="email"],
+html[dir="rtl"] .page-body input:not([type="number"]):not([type="range"])[type="url"],
+html[dir="rtl"] .page-body input:not([type="number"]):not([type="range"])[type="tel"],
+html[dir="rtl"] .page-body input:not([type="number"]):not([type="range"])[type="password"],
+html[dir="rtl"] .page-body input:not([type="number"]):not([type="range"])[type="date"],
+html[dir="rtl"] .page-body input:not([type="number"]):not([type="range"])[type="time"],
+html[dir="rtl"] .page-body input:not([type="number"]):not([type="range"])[type="datetime-local"],
+html[dir="rtl"] .page-body input:not([type="number"]):not([type="range"])[type="month"],
+html[dir="rtl"] .page-body input:not([type="number"]):not([type="range"])[type="week"],
+html[dir="rtl"] .page-body input:not([type="number"]):not([type="range"])[dir="ltr"],
+html[dir="rtl"] .page-body textarea[dir="ltr"],
+html[dir="rtl"] .page-body select[dir="ltr"],
+html[dir="rtl"] .page-body .form-control[dir="ltr"],
+html[dir="rtl"] .page-body .form-select[dir="ltr"],
+html[dir="rtl"] .page-body .select2-selection[dir="ltr"],
+html[dir="rtl"] .page-body .fanaone-ltr {
+    direction: ltr !important;
+    text-align: left !important;
+    unicode-bidi: isolate;
+}
+
+html[dir="rtl"] .page-body :is(code, pre, kbd, samp, .font-monospace) {
+    direction: ltr;
+    text-align: left;
+    unicode-bidi: isolate;
+}
