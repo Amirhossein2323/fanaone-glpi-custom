@@ -61,7 +61,7 @@ a {
 #bloc {
     width: 760px;
     margin: 0 auto;
-    text-align: left;
+    text-align: start;
     position: relative;
     padding: 10px;
     background: #3a5693;
@@ -101,7 +101,7 @@ p {
 .tab_check td i.fas,
 .tab_check td i.fa-solid {
     font-size: 12px;
-    margin-right: 3px;
+    margin-inline-end: 3px;
 }
 
 .tab_check td i.fa-check {
