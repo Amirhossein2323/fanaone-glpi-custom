@@ -43,17 +43,20 @@
                 {% set class = 'bg-danger text-white' %}
                 {% set title = __('Error') %}
             {% elseif type == constant('WARNING') %}
-                {% set class = 'bg-warning text-white' %}
+                {% set class = 'bg-warning text-dark' %}
                 {% set title = __('Warning') %}
             {% else %}
                 {% set class = 'bg-info text-white' %}
                 {% set title = _n('Information', 'Informations', 1) %}
             {% endif %}
 
-            <div class="toast animate__animated animate__tada animate__delay-2s animate__slow" role="alert" aria-live="assertive" aria-atomic="true">
+            {% set is_urgent = type == constant('ERROR') or type == constant('WARNING') %}
+            <div class="toast fanaone-toast" role="{{ is_urgent ? 'alert' : 'status' }}"
+                 aria-live="{{ is_urgent ? 'assertive' : 'polite' }}" aria-atomic="true"
+                 data-bs-autohide="{{ is_urgent ? 'false' : 'true' }}">
                 <div class="toast-header {{ class }} ">
                     <strong class="me-auto">{{ title }}</strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    <button type="button" class="btn-close {{ type == constant('ERROR') ? 'btn-close-white' : '' }}" data-bs-dismiss="toast" aria-label="{{ __('Close') }}"></button>
                 </div>
                 <div class="toast-body">
                     {{ message|raw }}
@@ -73,6 +76,7 @@
             var toastList = toastElList.map(function (toastEl) {
                 var toast = new bootstrap.Toast(toastEl, {
                     delay: 10000,
+                    autohide: toastEl.getAttribute('data-bs-autohide') !== 'false',
                 })
                 toast.show()
 

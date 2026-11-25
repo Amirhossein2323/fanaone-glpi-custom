@@ -116,3 +116,38 @@ html[dir="rtl"] #page .tab_cadre { max-width: 100%; }
   .fanaone-kb-search-form .btn {width: 100%;}
   html[dir="rtl"] #page .tab_cadre_fixe td .flatpickr.input-group {min-width: 10rem;}
 }
+
+
+/* 3. RTL correction for legacy GLPI Knowledge Base markup.
+   The core .kb/.kb_resume/.tdkb helpers intentionally use physical left alignment.
+   Override only Knowledge Base content; leave legacy form action cells untouched. */
+html[dir="rtl"] .fanaone-kb .tab_cadrehov td.left,
+html[dir="rtl"] .fanaone-kb .kb,
+html[dir="rtl"] .fanaone-kb .kb_resume,
+html[dir="rtl"] .fanaone-kb .tdkb,
+html[dir="rtl"] .tab_cadre_fixe .kb,
+html[dir="rtl"] .tab_cadre_fixe .kb_resume,
+html[dir="rtl"] .tab_cadre_fixe .tdkb,
+html[dir="rtl"] .tab_cadre_fixe td.left:has(> h2) {
+  direction: rtl;
+  text-align: start !important;
+}
+
+/* Legacy .kb_resume uses left padding for LTR indentation. Mirror that spacing. */
+html[dir="rtl"] .fanaone-kb .kb_resume,
+html[dir="rtl"] .tab_cadre_fixe .kb_resume {
+  padding-left: 0;
+  padding-inline-start: 25px;
+}
+
+html[dir="rtl"] .fanaone-kb a.knowbase,
+html[dir="rtl"] .tab_cadre_fixe a.knowbase {
+  margin-left: 0;
+  margin-inline-start: 8px;
+}
+
+/* The article body inherits RTL, while inline/code elements keep their own direction. */
+html[dir="rtl"] #kbanswer {
+  direction: rtl;
+  text-align: start;
+}

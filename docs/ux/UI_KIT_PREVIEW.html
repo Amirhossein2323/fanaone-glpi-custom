@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>FanaOne GLPI — UI Kit v0.1</title>
+<style>
+:root {
+  --primary:#066a9b;--primary-hover:#07577c;--focus:#147fb5;
+  --border:#d3e1e9;--surface:#fff;--muted:#526876;
+  --text:#19394b;--subtle:#f4f8fb;--radius:.65rem;
+  --success:#16784c;--danger:#b42318;--warning:#946000;
+  --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;
+  --space-6:1.5rem;--space-8:2rem;--shadow:0 .4rem 1.8rem #123b5210;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font:400 1rem/1.8 Tahoma,"Segoe UI",sans-serif;background:var(--subtle);color:var(--text);margin:0}
+button,input,select,textarea{font:inherit}
+a{color:var(--primary)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+header{background:linear-gradient(110deg,#073d5b,#087ea8);color:white;padding:2rem clamp(1rem,4vw,3rem)}
+header h1{margin:0 0 .4rem;font-size:clamp(1.5rem,3vw,2.2rem)}
+header p{margin:0;max-width:65rem;color:#e3f5fc}
+header small{display:block;margin-top:1rem}
+.container{max-width:1200px;margin:auto;padding:clamp(1rem,3vw,2rem)}
+nav{display:flex;gap:.6rem;flex-wrap:wrap;padding:.8rem 0}
+nav a{border:1px solid var(--border);background:#fff;text-decoration:none;padding:.25rem .75rem;border-radius:999px}
+section{margin:1.5rem 0;background:#fff;padding:clamp(1rem,2vw,1.6rem);border:1px solid var(--border);border-radius:1rem;box-shadow:var(--shadow)}
+h2{font-size:1.25rem;margin:0 0 1rem}
+h3{font-size:1rem;margin:.4rem 0}
+.meta{color:var(--muted);font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:1rem}
+.swatch{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:white}
+.swatch-color{height:4rem}
+.swatch span{display:block;padding:.5rem .75rem;font-family:system-ui;direction:ltr;text-align:center}
+.stack{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:.5rem;padding:.48rem 1rem;border:1px solid transparent;border-radius:var(--radius);min-height:2.6rem;text-align:center;cursor:pointer;background:white}
+.btn.primary{background:var(--primary);color:white}.btn.primary:hover{background:var(--primary-hover)}
+.btn.secondary{border-color:var(--border);color:var(--text)}
+.btn.critical{border-color:#e5aaa4;background:#fff4f3;color:#8e2219}
+.btn:disabled{opacity:.48;cursor:not-allowed}
+.field{display:flex;flex-direction:column;gap:.3rem}
+.field label{font-weight:700}
+.field small{color:var(--muted)}
+.field input,.field select,.field textarea{padding:.5rem .75rem;border:1px solid #a8c2d2;border-radius:var(--radius);background:white;width:100%;min-height:2.6rem;color:var(--text)}
+.field .error{color:var(--danger);font-weight:700}
+.field [aria-invalid="true"]{border-color:var(--danger);box-shadow:0 0 0 1px var(--danger)}
+.table-wrap{max-width:100%;overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius)}
+table{width:100%;border-collapse:collapse;min-width:500px;text-align:right}
+th,td{padding:.7rem .8rem;border-bottom:1px solid var(--border)}
+th{background:#f1f7fa}
+tbody tr:hover{background:#f5fafe}
+.status{display:inline-block;padding:.12rem .65rem;border-radius:1rem;font-size:.82rem;font-weight:700}
+.status.ok{background:#e4f5ec;color:#126443}
+.status.warn{background:#fff1ca;color:#6f4700}
+.note{border-radius:var(--radius);border:1px solid var(--border);border-inline-start:.3rem solid var(--primary);padding:.8rem 1rem;background:#f7fbfe}
+.note.danger{border-inline-start-color:var(--danger);background:#fff5f4}
+.note.success{border-inline-start-color:var(--success);background:#effaf5}
+.toast-preview{max-width:31rem;border:1px solid var(--border);border-radius:var(--radius);padding:1rem;background:white;box-shadow:var(--shadow)}
+.toast-preview[hidden]{display:none}
+.dialog{border:0;border-radius:1rem;padding:0;box-shadow:0 1.5rem 4rem #123b5247;max-width:min(28rem,calc(100vw - 2rem));width:100%;color:var(--text)}
+.dialog::backdrop{background:#143d5899}
+.dialog-header{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem;border-bottom:1px solid var(--border)}
+.dialog-body{padding:1rem}
+.dialog-footer{display:flex;justify-content:flex-end;gap:.5rem;padding:1rem;border-top:1px solid var(--border)}
+code{direction:ltr;display:inline-block;border-radius:.3rem;background:#eff4f7;padding:.05rem .35rem}
+@media(max-width:600px){.stack>.btn{flex:1}.grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <h1>دیزاین سیستم FanaOne / GLPI</h1>
+  <p>کتابخانهٔ قابل‌مشاهده برای استانداردسازی کامپوننت‌های سازمانی. نمونه‌های این صفحه مستقل از سامانه هستند و هیچ اطلاعاتی را ذخیره یا ارسال نمی‌کنند.</p>
+  <small>نسخهٔ آزمایشی ۰٫۱ — ۱۵ نوامبر ۲۰۲۶ — فارسی / راست‌به‌چپ</small>
+</header>
+<main class="container">
+<nav aria-label="فهرست بخش‌ها">
+  <a href="#colors">رنگ‌ها</a><a href="#buttons">دکمه‌ها</a><a href="#forms">فرم‌ها</a><a href="#tables">جدول</a>
+  <a href="#feedback">بازخوردها</a><a href="#dialogs">مودال</a><a href="#accessibility">دسترس‌پذیری</a>
+</nav>
+<section id="colors">
+<h2>۱. رنگ‌ها و پایهٔ بصری</h2>
+<div class="grid">
+  <div class="swatch"><div class="swatch-color" style="background:#066a9b"></div><span>#066A9B — Primary</span></div>
+  <div class="swatch"><div class="swatch-color" style="background:#07577c"></div><span>#07577C — Hover</span></div>
+  <div class="swatch"><div class="swatch-color" style="background:#147fb5"></div><span>#147FB5 — Focus</span></div>
+  <div class="swatch"><div class="swatch-color" style="background:#d3e1e9"></div><span>#D3E1E9 — Border</span></div>
+  <div class="swatch"><div class="swatch-color" style="background:#19394b"></div><span>#19394B — Text</span></div>
+  <div class="swatch"><div class="swatch-color" style="background:#f4f8fb"></div><span>#F4F8FB — Canvas</span></div>
+</div>
+<p class="meta">فونت نمونه: Tahoma و Segoe UI؛ نسبت کنتراست همهٔ ترکیب‌ها باید قبل از عرضه در تم‌های مختلف بررسی شود. فاصله‌ها: ۴، ۸، ۱۲، ۱۶، ۲۴ و ۳۲ پیکسل.</p>
+</section>
+<section id="buttons">
+<h2>۲. دکمه‌ها و حالت‌ها</h2>
+<div class="stack">
+  <button class="btn primary" type="button">ثبت و ذخیره</button>
+  <button class="btn secondary" type="button">انصراف</button>
+  <button class="btn critical" type="button" id="delete-demo">حذف با تأیید</button>
+  <button class="btn primary" type="button" disabled>در حال ارسال…</button>
+</div>
+<p class="meta">در هر فرم یک اقدام اصلی؛ حذف و اقدامات غیرقابل بازگشت باید با تأیید و توضیح اثر همراه باشند.</p>
+</section>
+<section id="forms">
+<h2>۳. فرم استاندارد</h2>
+<form id="form-demo" class="grid" novalidate>
+  <div class="field">
+    <label for="ticket-name">عنوان درخواست <span aria-hidden="true">*</span></label>
+    <input id="ticket-name" name="name" required placeholder="مثلاً درخواست دسترسی جدید" aria-describedby="ticket-name-help">
+    <small id="ticket-name-help">عنوان کوتاه و قابل جست‌وجو بنویسید.</small>
+    <small id="ticket-error" class="error" hidden>وارد کردن عنوان الزامی است.</small>
+  </div>
+  <div class="field">
+    <label for="ticket-priority">اولویت</label>
+    <select id="ticket-priority"><option>معمولی</option><option>زیاد</option><option>فوری</option></select>
+    <small>تأثیر و فوریت را هنگام انتخاب اولویت در نظر بگیرید.</small>
+  </div>
+  <div class="field" style="grid-column:1/-1">
+    <label for="ticket-description">توضیحات</label>
+    <textarea id="ticket-description" rows="3" placeholder="شرح مسئله یا نیاز"></textarea>
+  </div>
+  <div class="stack" style="grid-column:1/-1"><button class="btn primary" type="submit">بررسی فرم نمونه</button><span class="meta" id="form-status" role="status" aria-live="polite"></span></div>
+</form>
+</section>
+<section id="tables">
+<h2>۴. جدول داده و فیلتر در صفحه</h2>
+<div class="field" style="max-width:30rem;margin-bottom:1rem">
+  <label for="filter-demo">فیلتر ردیف‌های همین صفحه</label>
+  <input type="search" id="filter-demo" placeholder="نام، وضعیت یا شناسه…">
+  <small id="count-demo" role="status" aria-live="polite">۳ ردیف نمایش داده می‌شود.</small>
+</div>
+<div class="table-wrap"><table id="table-demo">
+<thead><tr><th scope="col">شناسه</th><th scope="col">عنوان</th><th scope="col">وضعیت</th><th scope="col">عملیات</th></tr></thead>
+<tbody>
+<tr><td>1001</td><td>درخواست دسترسی به سامانه</td><td><span class="status ok">انجام‌شده</span></td><td><button type="button" class="btn secondary">مشاهده</button></td></tr>
+<tr><td>1002</td><td>بررسی دارایی واحد مالی</td><td><span class="status warn">در انتظار</span></td><td><button type="button" class="btn secondary">مشاهده</button></td></tr>
+<tr><td>1003</td><td>تیکت پشتیبانی شبکه</td><td><span class="status warn">در حال بررسی</span></td><td><button type="button" class="btn secondary">مشاهده</button></td></tr>
+</tbody></table></div>
+<p class="meta">فیلتر این نمونه فقط روی ردیف‌های حاضر کار می‌کند؛ در محصول اصلی فیلترهای سروری GLPI برای کل داده‌ها حفظ شده‌اند.</p>
+</section>
+<section id="feedback">
+<h2>۵. پیام‌های وضعیت و خطا</h2>
+<div class="grid">
+<div class="note success" role="status">اطلاعات با موفقیت ثبت شد. پیام موفقیت باید کوتاه باشد.</div>
+<div class="note danger" role="alert">ثبت درخواست متوقف شد. فیلد الزامی را تکمیل کنید و دوباره تلاش کنید.</div>
+<div class="note">پیام اطلاع‌رسانی، بدون ایجاد وقفه یا از دست رفتن تمرکز کاربر.</div>
+</div>
+<div class="stack" style="margin-top:1rem"><button type="button" class="btn secondary" id="toast-demo">نمایش اعلان ماندگار</button>
+<div class="toast-preview" id="demo-toast" role="alert" hidden>عملیات انجام نشد. بعد از اصلاح ورودی دوباره تلاش کنید. <button type="button" class="btn secondary" id="toast-dismiss">بستن</button></div></div>
+</section>
+<section id="dialogs">
+<h2>۶. پنجرهٔ تأیید</h2>
+<button type="button" class="btn secondary" id="dialog-demo">نمایش مودال نمونه</button>
+<p class="meta">کلید Escape مودال را می‌بندد؛ تمرکز باید داخل دیالوگ قرار گیرد و پس از بستن به دکمهٔ اولیه برگردد.</p>
+</section>
+<section id="accessibility">
+<h2>۷. الزامات تست</h2>
+<p>زبان فارسی، راست‌به‌چپ، فوکوس آشکار، کلید Tab/Shift+Tab، حداقل متن ۴٫۵ به ۱، بزرگ‌نمایی ۲۰۰٪، عرض ۳۲۰ تا ۱۴۴۰ پیکسل، پیام خطا با متن (نه فقط رنگ)، و حفظ عملکرد اصلی GLPI.</p>
+<div class="note">این صفحه نمونهٔ طراحی است و جای تست روی GLPI واقعی، اسکرین‌شات‌های محیط اجرا یا کتابخانهٔ native فیگما را نمی‌گیرد.</div>
+</section>
+</main>
+<dialog class="dialog" id="demo-dialog" aria-labelledby="demo-title">
+<div class="dialog-header"><h3 id="demo-title">تأیید عملیات</h3><button class="btn secondary" type="button" id="close-demo" aria-label="بستن">×</button></div>
+<div class="dialog-body">در محیط واقعی، اثر عملیات باید قبل از تأیید نهایی روشن باشد. این فقط یک نمونهٔ بدون اتصال به داده است.</div>
+<div class="dialog-footer"><button type="button" class="btn secondary" id="cancel-demo">انصراف</button><button type="button" class="btn critical" id="confirm-demo">تأیید نمونه</button></div>
+</dialog>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var modal = $('demo-dialog');
+  var opener = null;
+  function openModal(button) { opener = button; if (modal.showModal) modal.showModal(); }
+  function closeModal() { if (modal.open) modal.close(); if (opener) opener.focus(); }
+  $('dialog-demo').addEventListener('click', function () { openModal(this); });
+  $('delete-demo').addEventListener('click', function () { openModal(this); });
+  ['close-demo','cancel-demo','confirm-demo'].forEach(function (id) { $(id).addEventListener('click', closeModal); });
+  $('toast-demo').addEventListener('click', function () { $('demo-toast').hidden = false; });
+  $('toast-dismiss').addEventListener('click', function () { $('demo-toast').hidden = true; $('toast-demo').focus(); });
+  $('form-demo').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var field = $('ticket-name');
+    var valid = !!field.value.trim();
+    field.setAttribute('aria-invalid', valid ? 'false' : 'true');
+    $('ticket-error').hidden = valid;
+    $('form-status').textContent = valid ? 'فرم نمونه آمادهٔ ثبت است؛ داده‌ای ارسال نشد.' : 'عنوان درخواست را تکمیل کنید.';
+    if (!valid) field.focus();
+  });
+  $('filter-demo').addEventListener('input', function () {
+    var q = this.value.normalize('NFKC').replace(/ي/g,'ی').replace(/ك/g,'ک').toLowerCase();
+    var rows = Array.prototype.slice.call($('table-demo').tBodies[0].rows);
+    var visible = 0;
+    rows.forEach(function (r) {
+      var text = r.textContent.normalize('NFKC').replace(/ي/g,'ی').replace(/ك/g,'ک').toLowerCase();
+      r.hidden = !!q && !text.includes(q);
+      if (!r.hidden) visible++;
+    });
+    $('count-demo').textContent = visible + ' ردیف از ' + rows.length + ' ردیف نمایش داده می‌شود.';
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+name: FanaOne UX smoke checks
+
+on:
+  pull_request:
+    paths:
+      - 'js/fanaone-ux.js'
+      - 'public/fanaone-ux.css'
+      - 'public/fanaone-ui-fixes.css'
+      - 'templates/components/**'
+      - 'templates/layout/parts/**'
+      - 'tests/ux/**'
+      - '.github/workflows/ux-smoke.yml'
+  push:
+    branches: ['ux/**']
+    paths:
+      - 'js/fanaone-ux.js'
+      - 'public/fanaone-ux.css'
+      - 'public/fanaone-ui-fixes.css'
+      - 'tests/ux/**'
+      - '.github/workflows/ux-smoke.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            js/fanaone-ux.js
+            tests/ux
+            public/fanaone-ux.css
+            public/fanaone-ui-fixes.css
+            templates/components/itilobject/footer.html.twig
+          sparse-checkout-cone-mode: false
+      - name: Validate JavaScript syntax
+        run: node --check js/fanaone-ux.js
+      - name: Test UX and RTL/LTR regressions
+        run: node --test tests/ux/*.test.cjs

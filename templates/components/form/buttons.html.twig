@@ -41,7 +41,8 @@
          </div>
 
 {% if canedit or item.canEdit(item.fields['id']) %}
-      <div class="card-body mx-n2 mb-4 border-top d-flex flex-row-reverse align-items-start flex-wrap">
+      <div class="card-body mx-n2 mb-4 border-top d-flex flex-row-reverse align-items-start flex-wrap fanaone-form-actions" aria-label="{{ __('Actions') }}">
+         <span class="fanaone-unsaved-status" role="status" aria-live="polite" hidden>تغییرات ذخیره نشده‌اند</span>
          {% if withtemplate|length > 0 or item.isNewID(id) %}
             {% if id <= 0 or withtemplate == 2 %}
                <button class="btn btn-primary me-2" type="submit" name="add" value="1">
@@ -102,7 +103,7 @@
                                 </label>
                             </span>
                         {% endif %}
-                     <span>
+                     </span>
                   {% endif %}
                {% else %}
                   {% if (not item.maybeDeleted() or item.useDeletedToLockIfDynamic()) %}

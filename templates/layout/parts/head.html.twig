@@ -57,7 +57,9 @@
 
    {{ custom_css() }}
    {# FanaOne overrides loaded last to protect RTL date fields and knowledge base layouts. #}
-   <link rel="stylesheet" href="{{ asset_path('/public/fanaone-ui-fixes.css') }}?v=20261030" />
+   <link rel="stylesheet" href="{{ asset_path('/public/fanaone-ui-fixes.css') }}?v=20261126" />
+   {# Shared UX layer. Loaded after theme overrides; scoped to GLPI content. #}
+   <link rel="stylesheet" href="{{ asset_path('/public/fanaone-ux.css') }}?v=20261126" />
 
    <link rel="icon" type="image/png" href="{{ asset_path('/public/pics/fanaone-logo.png') }}" />
 
@@ -69,4 +71,5 @@
       <script type="module" src="{{ js_path(js_file.path, js_file.options ?? []) }}"></script>
    {% endfor %}
    {{ locales_js() }}
+   <script defer src="{{ asset_path('/js/fanaone-ux.js') }}?v=20261115"></script>
 </head>
