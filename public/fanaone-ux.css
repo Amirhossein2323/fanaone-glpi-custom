@@ -219,3 +219,8 @@ html[dir="rtl"] #itil-footer > .buttons-bar > .form-buttons > span:last-child {
     border-right-color: var(--fanaone-ux-primary);
   }
 }
+
+/* Mirror the save/delete button order inside the RTL form-action group. */
+html[dir="rtl"] #itil-footer > .buttons-bar > .form-buttons > span:last-child .btn-group {
+  flex-direction: row-reverse;
+}
