@@ -33,22 +33,22 @@
 
 .saved-searches-panel {
     border-color: rgba($color: $secondary, $alpha: 30%);
-    border-left-width: 0;
+    border-inline-start-width: 0;
     border-radius: unset;
     position: fixed;
     top: $contextbar-height;
     bottom: 0;
-    left: $sidebar-width;
+    inset-inline-start: $sidebar-width;
     z-index: $zindex-fixed;
-    transition: left var(--animate-duration);
+    transition: inset-inline-start var(--animate-duration);
     min-width: 400px;
     padding: 0;
 
     &.pinned {
         position: sticky;
         top: 0;
-        left: 0;
-        border-left-width: 1px;
+        inset-inline-start: 0;
+        border-inline-start-width: 1px;
         height: calc(100vh - #{$contextbar-height} - #{$content-margin});
         min-width: 320px;
 
@@ -87,7 +87,7 @@
                 }
 
                 .default-ctrl {
-                    padding-right: 0;
+                    padding-inline-end: 0;
                 }
 
                 .badge {
@@ -105,7 +105,7 @@ body.navbar-collapsed {
 
         &:not(.pinned) {
             top: $contextbar-height;
-            left: 70px;
+            inset-inline-start: 70px;
         }
     }
 }
@@ -113,7 +113,7 @@ body.navbar-collapsed {
 body.horizontal-layout {
     .saved-searches-panel {
         top: $topbar-height;
-        left: 0;
+        inset-inline-start: 0;
 
         &.pinned {
             top: 0;
@@ -138,10 +138,10 @@ body.horizontal-layout {
         top: 79px !important;
         line-height: 20px;
         bottom: 0;
-        left: 0 !important;
+        inset-inline-start: 0 !important;
         margin-top: 0 !important;
         padding-bottom: 20px;
-        margin-left: 0 !important;
+        margin-inline-start: 0 !important;
         z-index: $zindex-fixed;
         display: flex !important;
 
@@ -163,7 +163,7 @@ body.horizontal-layout {
 
 @include media-breakpoint-down(lg) {
     .saved-searches-panel {
-        left: 0 !important;
+        inset-inline-start: 0 !important;
         min-width: 200px;
     }
 }
