@@ -36,6 +36,12 @@ Record at least 10 representative completions per task and role on both the base
 - [ ] Informational toast disappears after 10 seconds
 - [ ] Form save, destructive action and CSRF token remain unchanged
 - [ ] RTL flatpickr, Select2 and custom plugins still work
+- [ ] Knowledge-base recent / latest-update / popular cards align consistently in RTL
+- [ ] Full knowledge-base article title, rich text, attachments and author metadata render correctly in RTL
+- [ ] ITIL footer keeps timeline actions under the left timeline pane and save/delete actions under the right fields pane
+- [ ] ITIL footer remains correct in regular, expanded and collapsed panel states at mobile and desktop widths
+- [ ] Collapsed vertical RTL sidebar opens nested flyouts toward the page content, not off-screen
+- [ ] Formcreator catalog, rendered form, wizard and drag-and-drop designer are checked in RTL before any plugin-specific override
 - [ ] Self-service quick-start guide opens and closes using keyboard and conveys correct steps for the local deployment
 - [ ] Native invalid-field summary appears only on invalid submission and clears on editing
 - [ ] Sticky action row does not obstruct form content or modal interaction
