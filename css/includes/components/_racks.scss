@@ -574,7 +574,7 @@ ul.indexes {
 
     label {
         font-weight: bold;
-        margin-right: 3px;
+        margin-inline-end: 3px;
     }
 }
 
@@ -597,7 +597,7 @@ ul.indexes {
     border: 1px solid $table-border-color;
     background-color: $table-head-bg;
     color: $table-head-color;
-    text-align: left;
+    text-align: start;
     font-size: 11px;
     margin-bottom: 20px;
 }
@@ -623,7 +623,7 @@ div#viewgraph .rack_side_block .pdu_list {
     background: none;
 
     td {
-        text-align: left;
+        text-align: start;
         border: 1px solid rgba(0, 0, 0, 20%);
         padding: 0 3px;
     }
