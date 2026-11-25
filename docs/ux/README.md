@@ -11,6 +11,7 @@ For a Persian management-ready summary, see [EXECUTIVE_SUMMARY_FA.md](EXECUTIVE_
 - [Design tokens and component standards](DESIGN_SYSTEM.md): implementation-ready specification.
 - [Interactive RTL UI kit preview](UI_KIT_PREVIEW.html): standalone, responsive examples of buttons, forms, tables, notifications and a modal. A native Figma file has **not** been created.
 - [Acceptance tests](ACCEPTANCE_TESTS.md): reproducible baseline and post-change measurements.
+- [RTL/LTR audit](RTL_LTR_AUDIT.md): source evidence, three targeted fixes, scope boundaries and staging checklist.
 - Front-end: `public/fanaone-ux.css`, `js/fanaone-ux.js`, and shared Twig template adjustments.
 - Validation feedback for native invalid GLPI asset forms; sticky save/action row in long forms.
 - Keyboard-accessible sorting buttons on sortable GLPI table headers.
