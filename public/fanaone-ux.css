@@ -168,3 +168,26 @@
   outline: 3px solid var(--fanaone-ux-focus);
   outline-offset: 2px;
 }
+
+
+/* 4. RTL ITIL footer: keep each action group under its matching content pane.
+   In the template timeline-buttons comes first (left pane), form-buttons second
+   (right fields pane). The document is RTL, so this bar alone uses an LTR
+   flex track to preserve that physical pane order; each group restores its
+   own intended inline direction. */
+html[dir="rtl"] #itil-footer > .buttons-bar {
+  direction: ltr;
+}
+
+html[dir="rtl"] #itil-footer > .buttons-bar > .timeline-buttons {
+  direction: rtl;
+  justify-content: flex-end;
+}
+
+html[dir="rtl"] #itil-footer > .buttons-bar > .form-buttons {
+  direction: ltr;
+}
+
+html[dir="rtl"] #itil-footer > .buttons-bar > .form-buttons > span:last-child {
+  direction: rtl;
+}
