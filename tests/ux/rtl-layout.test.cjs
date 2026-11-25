@@ -40,6 +40,7 @@ test('ITIL footer keeps timeline actions and form actions under matching panes',
   assert.match(uxCss, /#itil-footer\s*>\s*\.buttons-bar\s*>\s*\.timeline-buttons\s*\{\s*direction:\s*rtl;\s*justify-content:\s*flex-end;/);
   assert.match(uxCss, /#itil-footer\s*>\s*\.buttons-bar\s*>\s*\.form-buttons\s*\{\s*direction:\s*ltr;/);
   assert.match(uxCss, /#itil-footer\s*>\s*\.buttons-bar\s*>\s*\.form-buttons\s*>\s*span:last-child\s*\{\s*direction:\s*rtl;/);
+  assert.match(uxCss, /#itil-footer\s*>\s*\.buttons-bar\s*>\s*\.form-buttons\s*>\s*span:last-child\s*\.btn-group\s*\{\s*flex-direction:\s*row-reverse;/);
 });
 
 test('ITIL footer direction overrides are scoped to RTL and the footer only', () => {
