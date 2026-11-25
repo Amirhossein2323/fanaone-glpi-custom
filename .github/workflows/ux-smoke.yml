@@ -5,6 +5,7 @@ on:
     paths:
       - 'js/fanaone-ux.js'
       - 'public/fanaone-ux.css'
+      - 'public/fanaone-ui-fixes.css'
       - 'templates/components/**'
       - 'templates/layout/parts/**'
       - 'tests/ux/**'
@@ -13,6 +14,8 @@ on:
     branches: ['ux/**']
     paths:
       - 'js/fanaone-ux.js'
+      - 'public/fanaone-ux.css'
+      - 'public/fanaone-ui-fixes.css'
       - 'tests/ux/**'
       - '.github/workflows/ux-smoke.yml'
 
@@ -28,8 +31,11 @@ jobs:
           sparse-checkout: |
             js/fanaone-ux.js
             tests/ux
+            public/fanaone-ux.css
+            public/fanaone-ui-fixes.css
+            templates/components/itilobject/footer.html.twig
           sparse-checkout-cone-mode: false
       - name: Validate JavaScript syntax
         run: node --check js/fanaone-ux.js
-      - name: Test filter and Persian normalization
-        run: node --test tests/ux/fanaone-ux.test.cjs
+      - name: Test UX and RTL/LTR regressions
+        run: node --test tests/ux/*.test.cjs
