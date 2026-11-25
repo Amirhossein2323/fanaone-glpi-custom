@@ -403,7 +403,8 @@
 
    td, th {
       &.numeric {
-         text-align: end;
+         // Numeric columns retain their physical right alignment for digit comparison.
+         text-align: right;
       }
 
       &.htmltable_upper_separation_cell {
