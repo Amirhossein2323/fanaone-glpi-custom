@@ -52,17 +52,17 @@
         }
 
         .badge .ribbon {
-            left: 0.5rem;
+            inset-inline-start: 0.5rem;
         }
 
         // remove margin-left is small screen
         @include media-breakpoint-down(sm) {
             .card-title {
-                padding-left: 0 !important;
+                padding-inline-start: 0 !important;
             }
 
             .badge {
-                margin-left: 0 !important;
+                margin-inline-start: 0 !important;
             }
         }
     }
@@ -97,7 +97,7 @@
 
         .ribbon {
             position: relative;
-            left: -0.25rem;
+            inset-inline-start: -0.25rem;
         }
     }
 
