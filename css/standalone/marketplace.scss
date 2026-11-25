@@ -253,7 +253,7 @@ $break_s_screen: 1400px;
                     .buttons {
                         width: 39px;
                         padding: 5px;
-                        margin-left: auto;
+                        margin-inline-start: auto;
 
                         button {
                             background-color: rgba(100, 100, 100, 10%);
@@ -432,7 +432,7 @@ $break_s_screen: 1400px;
                     font-weight: bold;
 
                     & + li {
-                        border-left-width: 0;
+                        border-inline-start-width: 0;
                     }
                 }
 
@@ -455,17 +455,17 @@ $break_s_screen: 1400px;
                 }
 
                 &:first-child {
-                    border-top-left-radius: 3px;
-                    border-bottom-left-radius: 3px;
+                    border-start-start-radius: 3px;
+                    border-end-start-radius: 3px;
                 }
 
                 &:last-child {
-                    border-top-right-radius: 3px;
-                    border-bottom-right-radius: 3px;
+                    border-start-end-radius: 3px;
+                    border-end-end-radius: 3px;
                 }
 
                 &:not(:first-child) {
-                    border-left-width: 0;
+                    border-inline-start-width: 0;
                 }
             }
         }
