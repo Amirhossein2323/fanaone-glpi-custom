@@ -71,7 +71,7 @@ select:not(.form-select) {
 
    &[multiple],
    &[size]:not([size="1"]) {
-     padding-right: $form-select-padding-x;
+     padding-inline-end: $form-select-padding-x;
      background-image: none;
    }
 
