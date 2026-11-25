@@ -191,3 +191,31 @@ html[dir="rtl"] #itil-footer > .buttons-bar > .form-buttons {
 html[dir="rtl"] #itil-footer > .buttons-bar > .form-buttons > span:last-child {
   direction: rtl;
 }
+
+
+/* 5. Collapsed vertical navigation is docked on the right in RTL.
+   GLPI's base flyout uses left:100% for an LTR sidebar; mirror only this
+   collapsed vertical-menu case so its submenu opens into the content area. */
+@media (min-width: 992px) {
+  html[dir="rtl"] body.vertical-layout.navbar-collapsed .sidebar #navbar-menu .nav-item .nav-link + .dropdown-menu {
+    left: auto !important;
+    right: calc(100% + 1px) !important;
+    transform-origin: top right !important;
+  }
+
+  html[dir="rtl"] body.vertical-layout.navbar-collapsed .sidebar #navbar-menu .nav-item .nav-link + .dropdown-menu.animate__fadeInLeft::before {
+    left: auto;
+    right: -2px;
+  }
+
+  html[dir="rtl"] body.vertical-layout.navbar-collapsed .sidebar #navbar-menu .nav-item .nav-link + .dropdown-menu .dropdown-item {
+    border-left: 0;
+    border-right: 3px solid transparent;
+  }
+
+  html[dir="rtl"] body.vertical-layout.navbar-collapsed .sidebar #navbar-menu .nav-item .nav-link + .dropdown-menu .dropdown-item.active,
+  html[dir="rtl"] body.vertical-layout.navbar-collapsed .sidebar #navbar-menu .nav-item .nav-link + .dropdown-menu .dropdown-item:hover {
+    border-left-color: transparent;
+    border-right-color: var(--fanaone-ux-primary);
+  }
+}
