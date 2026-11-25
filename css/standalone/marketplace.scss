@@ -38,7 +38,7 @@ $break_s_screen: 1400px;
 .marketplace {
     $left_width: 150px;
 
-    text-align: left;
+    text-align: start;
     display: flex;
     padding: 10px;
     margin: 0 -10px;
@@ -66,14 +66,16 @@ $break_s_screen: 1400px;
             @media screen and (max-width: $break_phones) {
                 display: flex;
                 flex-wrap: wrap;
-                margin: 0 0 10px 10px;
+                margin-block-end: 10px;
+                margin-inline-start: 10px;
             }
 
             .tag {
                 border-radius: 3px;
                 border: 1px solid rgba(100, 100, 100, 20%);
                 padding: 5px;
-                margin: 0 3px 3px 0;
+                margin-block: 0 3px;
+                margin-inline: 0 3px;
                 text-align: center;
                 cursor: pointer;
 
@@ -91,7 +93,7 @@ $break_s_screen: 1400px;
     }
 
     .right-panel {
-        padding-left: 5px;
+        padding-inline-start: 5px;
         width: 100%;
 
         .left-panel + & {
@@ -103,7 +105,8 @@ $break_s_screen: 1400px;
 
             .filter-list {
                 flex: 1;
-                margin: 0 8px 5px 5px;
+                margin-block: 0 5px;
+                margin-inline: 5px 8px;
                 height: 25px;
             }
 
@@ -115,7 +118,7 @@ $break_s_screen: 1400px;
                         height: 25px;
                         text-overflow: clip;
                         text-overflow: unset;
-                        padding-left: 0;
+                        padding-inline-start: 0;
                     }
 
                     .select2-selection.select2-selection--single::before {
@@ -377,10 +380,10 @@ $break_s_screen: 1400px;
 
                     .misc-right {
                         width: calc(100% - 85px);
-                        text-align: left;
+                        text-align: start;
 
                         i {
-                            margin-right: 5px;
+                            margin-inline-end: 5px;
                         }
 
                         .authors {
@@ -393,7 +396,7 @@ $break_s_screen: 1400px;
 
                 .misc-right {
                     i {
-                        margin-right: 5px;
+                        margin-inline-end: 5px;
                     }
 
                     .authors {
@@ -487,8 +490,9 @@ $break_s_screen: 1400px;
 
                     .details {
                         flex: 1;
-                        border-right: 1px solid rgba(100, 100, 100, 30%);
-                        padding: 5px 0 0 10px;
+                        border-inline-end: 1px solid rgba(100, 100, 100, 30%);
+                        padding-block: 5px 0;
+                        padding-inline: 10px 0;
                         height: 100%;
                         display: flex;
                         flex-direction: column;
