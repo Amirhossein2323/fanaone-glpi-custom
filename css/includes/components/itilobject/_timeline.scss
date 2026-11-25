@@ -129,7 +129,7 @@
             }
 
             &.t-right {
-                border-top-right-radius: 0;
+                border-start-end-radius: 0;
 
                 &::before {
                     inset-inline-start: auto;
