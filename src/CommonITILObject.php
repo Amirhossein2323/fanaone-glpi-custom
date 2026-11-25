@@ -6030,8 +6030,8 @@ abstract class CommonITILObject extends CommonDBTM
         $candelete   = static::canDelete();
         $canupdate   = Session::haveRight(static::$rightname, UPDATE);
         $showprivate = Session::haveRight('followup', ITILFollowup::SEEPRIVATE);
-        $align       = "class='left'";
-        $align_desc  = "class='left'";
+        $align       = "class='text-start'";
+        $align_desc  = "class='text-start'";
 
         if ($item->getFromDB($id)) {
             $item_num = 1;

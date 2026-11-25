@@ -104,7 +104,7 @@ $break_tablet: 1400px;
 
         .main-icon {
             font-size: 1.5em;
-            right: 3px;
+            inset-inline-end: 3px;
             bottom: 3px;
         }
 
@@ -125,16 +125,16 @@ $break_tablet: 1400px;
             height: 55px;
             position: absolute;
             top: 30px;
-            left: 100px;
+            inset-inline-start: 100px;
         }
 
         .toolbar {
             top: 50px;
-            right: 50px;
+            inset-inline-end: 50px;
 
             &.left-toolbar {
                 top: 40px;
-                left: 250px;
+                inset-inline-start: 250px;
             }
 
             .fs-toggle {
@@ -265,20 +265,20 @@ $break_tablet: 1400px;
     .toolbar {
         position: absolute;
         top: 0;
-        right: 0;
+        inset-inline-end: 0;
         z-index: 10;
 
         &.left-toolbar {
             top: 0;
-            right: initial;
-            left: 5px;
+            inset-inline-end: initial;
+            inset-inline-start: 5px;
 
             i.fas,
             i.fa-solid,
             i.far,
             i.fa-regular,
             i.ti {
-                margin-left: 0;
+                margin-inline-start: 0;
                 font-size: 1em;
             }
         }
@@ -303,7 +303,7 @@ $break_tablet: 1400px;
             font-size: 1.35em;
             cursor: pointer;
             padding: 5px;
-            margin-left: 5px;
+            margin-inline-start: 5px;
             border: 2px solid transparent;
 
             &.ti {
@@ -353,9 +353,10 @@ $break_tablet: 1400px;
     }
 
     .filters_toolbar {
-        text-align: left;
+        text-align: start;
         height: $filter_height;
-        margin: 0 5px 5px 2px;
+        margin-block: 0 5px;
+        margin-inline: 2px 5px;
         padding-top: 0.5em;
 
         @media screen and (max-width: $break_phones) {
@@ -407,7 +408,7 @@ $break_tablet: 1400px;
                     &::after {
                         font-weight: 400;
                         content: "\f133";
-                        right: 5px;
+                        inset-inline-end: 5px;
                     }
 
                     .input-group-text {
@@ -434,7 +435,7 @@ $break_tablet: 1400px;
                     }
 
                     .select2-container {
-                        margin-right: 0;
+                        margin-inline-end: 0;
                     }
 
                     .select2-selection__rendered {
@@ -459,7 +460,7 @@ $break_tablet: 1400px;
                             font-size: 11px;
                             content: "\f057";
                             opacity: 0.7;
-                            left: 7px;
+                            inset-inline-start: 7px;
                         }
 
                         &:hover::after {
@@ -488,7 +489,7 @@ $break_tablet: 1400px;
                         opacity: 0.7;
                         pointer-events: none;
                         position: absolute;
-                        right: 0;
+                        inset-inline-end: 0;
                         top: 1px;
                     }
                 }
@@ -541,7 +542,7 @@ $break_tablet: 1400px;
 
                 .no-filter,
                 .add-filter-lbl {
-                    padding-left: 0.2em;
+                    padding-inline-start: 0.2em;
                     font-style: italic;
                     color: #74838f;
                     font-family: Arial, Helvetica, sans-serif;
@@ -558,7 +559,8 @@ $break_tablet: 1400px;
         top: calc(#{$toolbar_height} + #{$filter_height} + 5px);
         width: calc(100% + 1px);
         border: 1px solid var(--input-border);
-        border-width: 0 1px 1px 0;
+        border-block-end-width: 1px;
+        border-inline-end-width: 1px;
         background-image:
             linear-gradient(to right, var(--input-border) 1px, transparent 1px),
             linear-gradient(to bottom, var(--input-border) 1px, transparent 1px);
@@ -576,7 +578,7 @@ $break_tablet: 1400px;
 
             &::after {
                 content: "\2b";
-                left: 40%;
+                inset-inline-start: 40%;
                 top: 40%;
                 color: grey;
                 font: var(--fa-font-solid);
@@ -613,7 +615,7 @@ $break_tablet: 1400px;
                 display: none;
                 position: absolute;
                 top: 7px;
-                right: 12px;
+                inset-inline-end: 12px;
                 z-index: 11;
                 cursor: pointer;
 
@@ -631,8 +633,8 @@ $break_tablet: 1400px;
             }
 
             .placeholder-content {
-                left: $item_margin;
-                right: $item_margin;
+                inset-inline-start: $item_margin;
+                inset-inline-end: $item_margin;
             }
 
             .loading-card {
@@ -721,7 +723,7 @@ $break_tablet: 1400px;
                     color: rgba(255, 0, 0, 50%);
                     font-size: 10px;
                     bottom: 5px;
-                    left: 5px;
+                    inset-inline-start: 5px;
                 }
             }
         }
@@ -730,16 +732,17 @@ $break_tablet: 1400px;
     .card {
         @include soft-shadow;
 
-        text-align: left;
+        text-align: start;
         padding: 5px;
         height: 100%;
         width: 100%;
-        margin: 2px 0 0 2px;
+        margin-block-start: 2px;
+        margin-inline-start: 2px;
         display: block;
         color: rgba(0, 0, 0, 70%);
         border: 2px solid transparent;
         border-radius: 3px;
-        border-top-left-radius: 3px !important;
+        border-start-start-radius: 3px !important;
         position: relative;
         background-color: #ddd;
 
@@ -754,7 +757,7 @@ $break_tablet: 1400px;
         }
 
         .main-icon {
-            right: 5px;
+            inset-inline-end: 5px;
             top: 5px;
         }
 
@@ -782,7 +785,7 @@ $break_tablet: 1400px;
     .main-icon {
         font-size: 3em;
         position: absolute;
-        right: 5px;
+        inset-inline-end: 5px;
         bottom: 5px;
 
         @media screen and (min-width: $break_phones) and (max-width: $break_tablet) {
@@ -843,17 +846,17 @@ $break_tablet: 1400px;
 
                     &:not(:first-child) {
                         border: 0;
-                        border-left: 1px solid rgba(125, 125, 125, 20%);
+                        border-inline-start: 1px solid rgba(125, 125, 125, 20%);
                     }
 
                     &:hover {
                         background-color: rgba(125, 125, 125, 10%);
                         cursor: pointer;
                         border-radius: 3px;
-                        border-left-color: transparent;
+                        border-inline-start-color: transparent;
 
                         & + .line {
-                            border-left-color: transparent;
+                            border-inline-start-color: transparent;
                         }
                     }
                 }
@@ -905,7 +908,8 @@ $break_tablet: 1400px;
                 .icon {
                     position: inherit;
                     font-size: inherit;
-                    padding: 10px 0 10px 10px;
+                    padding-block: 10px;
+                    padding-inline: 10px 0;
                     line-height: $number_size;
                 }
 
@@ -917,7 +921,7 @@ $break_tablet: 1400px;
 
         .main-label {
             position: absolute;
-            left: 5px;
+            inset-inline-start: 5px;
             bottom: 5px;
         }
     }
@@ -957,7 +961,7 @@ $break_tablet: 1400px;
             }
 
             .date {
-                float: right;
+                float: inline-end;
             }
 
             a,
@@ -972,7 +976,7 @@ $break_tablet: 1400px;
 
         .main-label {
             position: absolute;
-            left: 5px;
+            inset-inline-start: 5px;
             bottom: 5px;
         }
     }
@@ -1125,12 +1129,13 @@ $break_tablet: 1400px;
         }
 
         .ct-legend {
-            text-align: left;
-            padding: 10px 0 10px 38px;
+            text-align: start;
+            padding-block: 10px;
+            padding-inline: 38px 0;
 
             li {
                 position: relative;
-                padding-left: 23px;
+                padding-inline-start: 23px;
                 margin-bottom: 3px;
             }
 
@@ -1138,7 +1143,7 @@ $break_tablet: 1400px;
                 width: 12px;
                 height: 12px;
                 position: absolute;
-                left: 0;
+                inset-inline-start: 0;
                 content: "";
                 border: 3px solid transparent;
                 border-radius: 2px;
@@ -1176,7 +1181,7 @@ $break_tablet: 1400px;
             list-style-type: disc;
 
             li {
-                margin-left: 1.5em;
+                margin-inline-start: 1.5em;
             }
         }
 
@@ -1249,7 +1254,7 @@ $break_tablet: 1400px;
 
         .main-icon {
             font-size: 2em;
-            right: 5px;
+            inset-inline-end: 5px;
             bottom: 5px;
         }
 
@@ -1290,7 +1295,8 @@ $break_tablet: 1400px;
 
         & + label {
             background: rgba($color: #000, $alpha: 5%);
-            margin: 5px 5px 0 0;
+            margin-block-start: 5px;
+            margin-inline: 0 5px;
             padding: 5px;
             border: 2px solid transparent;
             border-radius: 3px;
@@ -1312,7 +1318,7 @@ $break_tablet: 1400px;
 
             &::after {
                 content: "\f00c";
-                right: 5px;
+                inset-inline-end: 5px;
                 bottom: 3px;
                 color: rgb(39, 39, 39);
                 font: var(--fa-font-solid);

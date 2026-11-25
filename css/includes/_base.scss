@@ -121,13 +121,13 @@ body.iframed {
     & > .fab:first-child,
     & > .fa-brands:first-child,
     & > .ti:first-child {
-        margin-right: 0.5em;
+        margin-inline-end: 0.5em;
     }
 }
 
 .ti {
     font-size: 1.25em;
-    text-align: left;
+    text-align: center;
 
     &.fa-fw {
         width: 0.9em;
@@ -169,7 +169,7 @@ body.iframed {
         margin-inline-start: 0;
 
         & + * {
-            margin-left: 0.25rem;
+            margin-inline-start: 0.25rem;
         }
     }
 
@@ -181,7 +181,7 @@ body.iframed {
         i.fab,
         i.fa-brands,
         i.ti {
-            margin-right: 0;
+            margin-inline-end: 0;
             line-height: 1.5em;
         }
 

@@ -74,7 +74,7 @@ body.mce-content-body {
     a[target="_blank"]::before {
         font-family: tabler-icons;
         content: "\ea99";
-        padding-right: 4px;
+        padding-inline-end: 4px;
     }
 
     .long_text {

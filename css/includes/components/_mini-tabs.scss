@@ -33,11 +33,11 @@
 
 #switchview {
     font-size: 2em;
-    text-align: right;
-    float: right;
+    text-align: end;
+    float: inline-end;
 
     i {
-        margin-left: 0.5em;
+        margin-inline-start: 0.5em;
 
         &.selected {
             color: green;
@@ -75,13 +75,13 @@
         opacity: 0.5;
         cursor: pointer;
         position: relative;
-        padding-left: 20px;
+        padding-inline-start: 20px;
         margin: 15px 5px;
-        float: left;
+        float: inline-start;
 
         &::before {
             content: "\f204";
-            left: 0;
+            inset-inline-start: 0;
             top: 0;
             font: var(--fa-font-solid);
             font-size: 15px;

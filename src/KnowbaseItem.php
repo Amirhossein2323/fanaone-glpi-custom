@@ -2170,7 +2170,7 @@ class KnowbaseItem extends CommonDBVisible implements ExtraVisibilityCriteria
                 if (isset($data['transname']) && !empty($data['transname'])) {
                     $name = $data['transname'];
                 }
-                $output .= "<tr class='tab_bg_2'><td class='left'><div class='kb'>";
+                $output .= "<tr class='tab_bg_2'><td class='text-start'><div class='kb'>";
                 if ($data['is_faq']) {
                     $output .= "<i class='fa fa-fw fa-question-circle faq' title='" . __("This item is part of the FAQ") . "'></i>";
                 }

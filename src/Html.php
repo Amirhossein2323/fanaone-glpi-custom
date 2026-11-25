@@ -1362,7 +1362,7 @@ HTML;
         }
         $tpl_vars['css_files'][] = [
             'path' => 'css/palettes/' . $theme . '.scss',
-            'options' => ['version' => 'fanaone-ui-25'],
+            'options' => ['version' => 'fanaone-rtl-26'],
         ];
 
         $tpl_vars['js_files'][] = ['path' => 'public/lib/base.js'];

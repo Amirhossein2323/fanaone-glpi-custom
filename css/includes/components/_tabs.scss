@@ -50,7 +50,7 @@
             }
 
             .badge {
-                margin-left: 5px;
+                margin-inline-start: 5px;
                 background-color: $badge-bg;
                 color: $badge-fg;
             }
@@ -62,8 +62,8 @@
             border-bottom: $card-border-width solid $card-border-color;
 
             &.active {
-                border-left-width: 5px;
-                border-right-color: transparent !important;
+                border-inline-start-width: 5px;
+                border-inline-end-color: transparent !important;
             }
         }
     }

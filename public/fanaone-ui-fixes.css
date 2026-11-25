@@ -93,7 +93,34 @@ html[dir="rtl"] #page .tab_cadre { max-width: 100%; }
   box-shadow: var(--kb-shadow);
 }
 .fanaone-kb :is(table, .tab_cadre, .tab_cadre_fixe) {max-width: 100%; width: 100%;}
-.fanaone-kb :is(th, td) {text-align: right; overflow-wrap: anywhere;}
+.fanaone-kb :is(th, td) {
+  direction: rtl;
+  text-align: start;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}
+
+/* The legacy .kb/.kb_resume/.tdkb classes force physical left alignment.
+   Scope the correction to the FanaOne knowledge-base cards only. */
+html[dir="rtl"] .fanaone-kb .tab_cadrehov,
+html[dir="rtl"] .fanaone-kb .tab_cadrehov th,
+html[dir="rtl"] .fanaone-kb .tab_cadrehov td,
+html[dir="rtl"] .fanaone-kb .tab_cadrehov td.left,
+html[dir="rtl"] .fanaone-kb .kb,
+html[dir="rtl"] .fanaone-kb .kb_resume,
+html[dir="rtl"] .fanaone-kb .tdkb {
+  direction: rtl;
+  text-align: start;
+}
+
+html[dir="rtl"] .fanaone-kb .kb_resume {
+  padding-inline: 25px 0;
+}
+
+html[dir="rtl"] .fanaone-kb .kb a {
+  unicode-bidi: plaintext;
+  overflow-wrap: anywhere;
+}
 .fanaone-kb a {color: var(--kb-primary);}
 .fanaone-kb a:hover {text-decoration: underline;}
 .fanaone-kb #tree_browse {display: grid; grid-template-columns: minmax(220px, 30%) minmax(0,1fr); gap: 1rem;}
